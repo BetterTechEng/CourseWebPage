@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+  SEO / META — replace bracketed placeholders with your details
+============================================================= -->
+<title>AI-Augmented Quality Engineering — Course for QA Engineers</title>
+<meta name="description" content="Learn to use AI across the complete QA workflow: requirements analysis, test design, Copilot-assisted automation, defect analysis and reporting.">
+<meta name="author" content="[YOUR NAME]">
+<link rel="canonical" href="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI-Augmented Quality Engineering">
+<meta property="og:description" content="Learn to use AI across the complete QA workflow: requirements, test design, automation, defects, reporting.">
+<meta property="og:image" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/assets/og-image.jpg">
+<meta property="og:url" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI-Augmented Quality Engineering">
+<meta name="twitter:description" content="Learn to use AI across the complete QA workflow: requirements, test design, automation, defects, reporting.">
+<meta name="twitter:image" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/assets/og-image.jpg">
+
+<!-- Favicon placeholder -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<!-- Fonts: IBM Plex Sans for headings/body, IBM Plex Mono for technical labels -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- ============================================================
+  JSON-LD structured data — fill in real values before publishing
+============================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "AI-Augmented Quality Engineering",
+  "description": "A hands-on course teaching QA engineers to use AI and GitHub Copilot across the full quality workflow: requirements analysis, test design, automation, defect analysis and reporting.",
+  "provider": {
+    "@type": "Person",
+    "name": "[YOUR NAME]",
+    "sameAs": [
+      "[LINKEDIN URL]",
+      "[GITHUB URL]"
+    ]
+  }
+}
+</script>
+
+<!-- ============================================================
+  ANALYTICS — Cloudflare Web Analytics (free, privacy-focused)
+  1. Sign up at https://www.cloudflare.com/web-analytics/
+  2. Paste the token they give you below.
+  3. Works even though this site isn't hosted on Cloudflare.
+============================================================= -->
+<!--
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN"}'></script>
+-->
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+  NAV
+============================================================= -->
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a href="#top" class="nav__brand">AI-Augmented QA</a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <ul class="nav__menu" id="nav-menu">
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#instructor">Instructor</a></li>
+      <li><a href="#signup" class="nav__cta">Join the next cohort</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+    HERO
+  ============================================================= -->
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow">Applied AI for QA Engineers</p>
+        <h1>AI-Augmented Quality Engineering</h1>
+        <p class="hero__lede">Learn to use AI across the complete QA workflow — from reading a requirement to shipping a signed-off test report.</p>
+
+        <ol class="workflow-chain" aria-label="Course workflow">
+          <li>Requirements</li>
+          <li>Test Design</li>
+          <li>Automation</li>
+          <li>Defects</li>
+          <li>Reporting</li>
+        </ol>
+
+        <div class="hero__actions">
+          <a href="#signup" class="btn btn--primary">Join the next cohort</a>
+          <a href="#curriculum" class="btn btn--ghost">See the curriculum</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="flow-card">
+          <div class="flow-card__bar">
+            <span></span><span></span><span></span>
+            <span class="flow-card__title">ai-qa-workflow</span>
+          </div>
+          <ol class="flow">
+            <li class="flow__step"><span class="flow__dot"></span><span>Requirement</span></li>
+            <li class="flow__step"><span class="flow__dot"></span><span>AI Analysis</span></li>
+            <li class="flow__step"><span class="flow__dot"></span><span>Risk Identification</span></li>
+            <li class="flow__step"><span class="flow__dot"></span><span>Test Scenarios</span></li>
+            <li class="flow__step flow__step--accent"><span class="flow__dot"></span><span>Copilot-assisted Automation</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    COURSE FACTS STRIP
+  ============================================================= -->
+  <section class="facts" aria-label="Course facts">
+    <div class="facts__inner">
+      <div class="facts__item"><span class="facts__label">Level</span><span class="facts__value">[e.g. Intermediate]</span></div>
+      <div class="facts__item"><span class="facts__label">Duration</span><span class="facts__value">[e.g. 6 × 3h sessions]</span></div>
+      <div class="facts__item"><span class="facts__label">Format</span><span class="facts__value">[e.g. Live, remote]</span></div>
+      <div class="facts__item"><span class="facts__label">Language</span><span class="facts__value">[e.g. English]</span></div>
+      <div class="facts__item"><span class="facts__label">Tools</span><span class="facts__value">[e.g. GitHub Copilot]</span></div>
+      <div class="facts__item"><span class="facts__label">Next cohort</span><span class="facts__value">[e.g. March 2027]</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    ABOUT
+  ============================================================= -->
+  <section class="section" id="about">
+    <div class="section__inner section__inner--split">
+      <div class="section__head">
+        <h2>About the course</h2>
+      </div>
+      <div class="section__body">
+        <p>[Explain what the training actually is — format, depth, and philosophy. 2–3 sentences.]</p>
+        <p>[Describe the specific problem this course solves for QA engineers working with AI tools today. 2–3 sentences.]</p>
+        <p>[One sentence on who it's designed for, linking down to the "Who should attend" section.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    WHY THIS MATTERS — 6-row comparison
+  ============================================================= -->
+  <section class="section section--ink" id="why">
+    <div class="section__inner">
+      <h2>Why this matters now</h2>
+      <p class="section__intro">[One or two sentences on why AI-augmented QA is newly relevant for your audience right now.]</p>
+
+      <div class="compare-table" role="table" aria-label="Traditional QA versus AI-augmented QA">
+        <div class="compare-table__row compare-table__row--head" role="row">
+          <div role="columnheader">QA activity</div>
+          <div role="columnheader">The old way</div>
+          <div role="columnheader" class="compare-table__accent-head">This course teaches</div>
+        </div>
+
+        <div class="compare-table__row" role="row">
+          <div role="cell">Requirements Analysis</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+        <div class="compare-table__row" role="row">
+          <div role="cell">Test Planning</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+        <div class="compare-table__row" role="row">
+          <div role="cell">Test Design</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+        <div class="compare-table__row" role="row">
+          <div role="cell">Automation</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+        <div class="compare-table__row" role="row">
+          <div role="cell">Defect Analysis</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+        <div class="compare-table__row" role="row">
+          <div role="cell">Reporting</div>
+          <div role="cell">[Traditional approach and its limitation]</div>
+          <div role="cell" class="compare-table__accent">[AI-assisted approach and the benefit]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    WHAT YOU'LL LEARN
+  ============================================================= -->
+  <section class="section" id="learn">
+    <div class="section__inner">
+      <h2>What you'll walk away with</h2>
+      <ul class="outcomes">
+        <li>
+          <h3>[Outcome 1, e.g. "Turn a raw requirement into a risk-ranked test plan with AI"]</h3>
+          <p>[One sentence describing the practical skill.]</p>
+        </li>
+        <li>
+          <h3>[Outcome 2]</h3>
+          <p>[One sentence describing the practical skill.]</p>
+        </li>
+        <li>
+          <h3>[Outcome 3]</h3>
+          <p>[One sentence describing the practical skill.]</p>
+        </li>
+        <li>
+          <h3>[Outcome 4]</h3>
+          <p>[One sentence describing the practical skill.]</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    WHAT YOU'LL ACTUALLY BUILD
+  ============================================================= -->
+  <section class="section section--paper-alt" id="build">
+    <div class="section__inner">
+      <h2>What you will actually build</h2>
+      <p class="section__intro">Concrete outputs, not slides. Every module ends with something you can reuse on your own project.</p>
+
+      <div class="build-grid">
+        <article class="build-card">
+          <p class="build-card__label">01</p>
+          <h3>AI-generated risk analysis</h3>
+          <pre class="build-card__code"><code>Requirement: "Users can reset their password via email"
+Risk factors: [rate limiting, token expiry, email spoofing]
+Priority: High</code></pre>
+        </article>
+        <article class="build-card">
+          <p class="build-card__label">02</p>
+          <h3>Test scenarios from requirements</h3>
+          <pre class="build-card__code"><code>Given a valid reset request
+When the token has expired
+Then the user sees an actionable error</code></pre>
+        </article>
+        <article class="build-card">
+          <p class="build-card__label">03</p>
+          <h3>Copilot-assisted automated test</h3>
+          <pre class="build-card__code"><code>// Copilot prompt:
+// "Write a Playwright test for expired
+// password-reset tokens"</code></pre>
+        </article>
+        <article class="build-card">
+          <p class="build-card__label">04</p>
+          <h3>API test generation</h3>
+          <pre class="build-card__code"><code>POST /auth/reset
+→ 200, 400 (invalid token), 429 (rate limit)
+Generated: 12 test cases</code></pre>
+        </article>
+        <article class="build-card">
+          <p class="build-card__label">05</p>
+          <h3>Defect root-cause analysis</h3>
+          <pre class="build-card__code"><code>Defect: token accepted after expiry
+AI hypothesis: TTL check uses server-local time
+Suggested fix location: auth/token.ts:42</code></pre>
+        </article>
+        <article class="build-card">
+          <p class="build-card__label">06</p>
+          <h3>AI-generated QA report</h3>
+          <pre class="build-card__code"><code>Coverage: 87% of critical paths
+Open defects: 3 (1 high, 2 medium)
+Recommendation: fix high before release</code></pre>
+        </article>
+      </div>
+      <p class="build-note">[Replace the snippets above with real screenshots or output from your own course materials before publishing.]</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    CURRICULUM / MODULES
+  ============================================================= -->
+  <section class="section" id="curriculum">
+    <div class="section__inner">
+      <h2>Curriculum</h2>
+      <p class="section__intro">[Short line describing how the course is structured — number of modules, live vs self-paced.]</p>
+
+      <div class="modules">
+        <details class="module" open>
+          <summary>
+            <span class="module__dot" aria-hidden="true"></span>
+            <span class="module__title">[Module 1 — e.g. Requirements &amp; AI-assisted risk analysis]</span>
+          </summary>
+          <div class="module__content">
+            <p>[What's covered in this module, and what participants can do afterward.]</p>
+          </div>
+        </details>
+        <details class="module">
+          <summary>
+            <span class="module__dot" aria-hidden="true"></span>
+            <span class="module__title">[Module 2 — e.g. Test design from requirements]</span>
+          </summary>
+          <div class="module__content">
+            <p>[What's covered in this module.]</p>
+          </div>
+        </details>
+        <details class="module">
+          <summary>
+            <span class="module__dot" aria-hidden="true"></span>
+            <span class="module__title">[Module 3 — e.g. Copilot-assisted automation]</span>
+          </summary>
+          <div class="module__content">
+            <p>[What's covered in this module.]</p>
+          </div>
+        </details>
+        <details class="module">
+          <summary>
+            <span class="module__dot" aria-hidden="true"></span>
+            <span class="module__title">[Module 4 — e.g. Defect analysis &amp; reporting with AI]</span>
+          </summary>
+          <div class="module__content">
+            <p>[What's covered in this module.]</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    SAMPLE LESSON
+  ============================================================= -->
+  <section class="section section--paper-alt" id="sample-lesson">
+    <div class="section__inner">
+      <h2>Sample lesson</h2>
+      <p class="section__intro">One real workflow, start to finish — this is the shape of every module.</p>
+
+      <ol class="flow flow--horizontal">
+        <li class="flow__step"><span class="flow__dot"></span><span>Requirement</span></li>
+        <li class="flow__step"><span class="flow__dot"></span><span>Prompt</span></li>
+        <li class="flow__step"><span class="flow__dot"></span><span>AI Result</span></li>
+        <li class="flow__step"><span class="flow__dot"></span><span>QA Review</span></li>
+        <li class="flow__step flow__step--accent"><span class="flow__dot"></span><span>Final Test Cases</span></li>
+      </ol>
+      <p class="build-note">[Replace this with a real annotated example from your course: the actual requirement text, the actual prompt used, the actual AI output, and how you reviewed/corrected it.]</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    FAQ
+  ============================================================= -->
+  <section class="section" id="faq">
+    <div class="section__inner section__inner--narrow">
+      <h2>Frequently asked questions</h2>
+      <div class="modules">
+        <details class="module">
+          <summary><span class="module__title">Do I need prior QA experience?</span></summary>
+          <div class="module__content"><p>[Answer — e.g. minimum experience level expected.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">What coding level is required?</span></summary>
+          <div class="module__content"><p>[Answer — be specific: none / basic scripting / comfortable reading code, etc.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">What tools do I need?</span></summary>
+          <div class="module__content"><p>[Answer — list required software/accounts.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">Do I need a GitHub Copilot licence?</span></summary>
+          <div class="module__content"><p>[Answer — clarify if it's required, provided, or optional.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">What's the course format?</span></summary>
+          <div class="module__content"><p>[Answer — live/self-paced, group size, session length.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">Do I get recordings and materials afterward?</span></summary>
+          <div class="module__content"><p>[Answer.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">What language is the course taught in?</span></summary>
+          <div class="module__content"><p>[Answer.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">Do I get a certificate?</span></summary>
+          <div class="module__content"><p>[Answer.]</p></div>
+        </details>
+        <details class="module">
+          <summary><span class="module__title">Is there support after the training ends?</span></summary>
+          <div class="module__content"><p>[Answer — e.g. follow-up Q&amp;A, community access, office hours.]</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    WHO SHOULD ATTEND
+  ============================================================= -->
+  <section class="section" id="audience">
+    <div class="section__inner section__inner--split">
+      <div class="section__head">
+        <h2>Who should attend</h2>
+      </div>
+      <div class="section__body">
+        <div class="audience-grid">
+          <div>
+            <p class="audience-grid__label">Good fit</p>
+            <ul>
+              <li>[Role or profile, e.g. "Manual or automation QA engineers"]</li>
+              <li>[Role or profile]</li>
+              <li>[Experience level, e.g. "1+ years in a QA role"]</li>
+            </ul>
+          </div>
+          <div>
+            <p class="audience-grid__label">Not the right fit</p>
+            <ul>
+              <li>[Who this course is NOT for, to set expectations]</li>
+              <li>[Prerequisite they'd be missing]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    WHY LEARN FROM ME — proof cards (separate from bio)
+  ============================================================= -->
+  <section class="section section--ink" id="why-me">
+    <div class="section__inner">
+      <h2>Why learn from me</h2>
+      <div class="proof-grid">
+        <article class="proof-card">
+          <h3>QA Leadership</h3>
+          <p>[Evidence — e.g. years leading QA teams, size of teams, industries.]</p>
+        </article>
+        <article class="proof-card">
+          <h3>AI + Copilot</h3>
+          <p>[Evidence — e.g. specific AI/Copilot projects shipped, tools built.]</p>
+        </article>
+        <article class="proof-card">
+          <h3>Automation</h3>
+          <p>[Evidence — e.g. frameworks built, scale of automated suites maintained.]</p>
+        </article>
+        <article class="proof-card">
+          <h3>Real engineering workflows</h3>
+          <p>[Evidence — e.g. companies/products this was used in production for.]</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    BENEFITS
+  ============================================================= -->
+  <section class="section" id="benefits">
+    <div class="section__inner">
+      <h2>What changes after this course</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <p class="benefit__stat">[Stat]</p>
+          <p>[What that number represents.]</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit__stat">[Stat]</p>
+          <p>[What that number represents.]</p>
+        </div>
+        <div class="benefit">
+          <p class="benefit__stat">[Stat]</p>
+          <p>[What that number represents.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    INSTRUCTOR — expanded
+  ============================================================= -->
+  <section class="section section--paper-alt" id="instructor">
+    <div class="section__inner section__inner--split">
+      <div class="section__head">
+        <h2>Your instructor</h2>
+      </div>
+      <div class="section__body instructor">
+        <img class="instructor__photo" src="assets/instructor-photo.jpg" alt="[Instructor name]" width="160" height="160">
+        <div>
+          <h3 class="instructor__name">[Instructor Name]</h3>
+          <p class="instructor__role">[Professional title, e.g. "QA Engineering Lead · AI-Augmented Testing Specialist"]</p>
+          <p>[3–5 sentences: specific QA/AI expertise, notable projects, and speaking/training experience — conferences, workshops, in-house trainings delivered.]</p>
+
+          <ul class="instructor__credibility">
+            <li>[Credibility indicator, e.g. "X years in QA / test automation"]</li>
+            <li>[Credibility indicator, e.g. "Delivered N workshops on AI for QA"]</li>
+            <li>[Credibility indicator, e.g. "Built/maintained automation suite covering N tests"]</li>
+            <li>[Credibility indicator, e.g. "Speaker at [conference name]"]</li>
+          </ul>
+
+          <div class="instructor__links">
+            <a href="[LINKEDIN URL]" class="btn btn--ghost">LinkedIn</a>
+            <a href="[GITHUB URL]" class="btn btn--ghost">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Downloadable expertise asset -->
+      <div class="lead-magnet">
+        <div>
+          <p class="lead-magnet__label">Free download</p>
+          <h3>AI for QA — 20 GitHub Copilot Prompts for Test Engineers</h3>
+          <p>[One sentence describing what's in the PDF and who it's for.]</p>
+        </div>
+        <a href="assets/ai-qa-copilot-prompts.pdf" class="btn btn--primary" download>Download the PDF</a>
+      </div>
+
+      <!-- Course preview video -->
+      <div class="video-embed">
+        <p class="video-embed__label">60–90 second preview</p>
+        <div class="video-embed__frame">
+          <!-- Replace VIDEO_ID with your real YouTube video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID"
+            title="Course preview: AI-Augmented Quality Engineering"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    TESTIMONIALS
+    Only add real testimonials from real participants. Do not
+    fabricate quotes or names. Leave slots empty until you have
+    genuine feedback to add.
+  ============================================================= -->
+  <section class="section" id="testimonials">
+    <div class="section__inner">
+      <h2>What participants say</h2>
+      <div class="testimonials">
+        <figure class="testimonial">
+          <img class="testimonial__photo" src="assets/testimonial-1.jpg" alt="" width="56" height="56">
+          <blockquote>
+            <p>[Replace with a genuine quote from a real workshop/course participant.]</p>
+          </blockquote>
+          <figcaption>[Participant name], [Role]</figcaption>
+        </figure>
+        <figure class="testimonial">
+          <img class="testimonial__photo" src="assets/testimonial-2.jpg" alt="" width="56" height="56">
+          <blockquote>
+            <p>[Replace with a genuine quote from a real workshop/course participant.]</p>
+          </blockquote>
+          <figcaption>[Participant name], [Role]</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    CTA BAND
+  ============================================================= -->
+  <section class="cta-band">
+    <div class="cta-band__inner">
+      <h2>[Direct CTA line, e.g. "Seats are limited to keep it hands-on."]</h2>
+      <a href="#signup" class="btn btn--primary">Join the next cohort</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+    SIGNUP / CONTACT FORM
+  ============================================================= -->
+  <section class="section" id="signup">
+    <div class="section__inner section__inner--narrow">
+      <h2>Join the next cohort</h2>
+      <p class="section__intro">[One line on what happens after they submit — e.g. "I'll email you within 2 business days with next steps."]</p>
+
+      <form id="signupForm" class="form" novalidate data-thankyou="thank-you.html">
+        <!--
+          WEB3FORMS SETUP
+          1. Go to https://web3forms.com and create a free account with your Gmail.
+          2. Copy your Access Key.
+          3. Paste it below, replacing YOUR_WEB3FORMS_ACCESS_KEY_HERE.
+        -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="New sign-up: AI-Augmented Quality Engineering">
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form__row">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+
+        <div class="form__row">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+
+        <div class="form__row">
+          <label for="role">Company or role <span class="optional">(optional)</span></label>
+          <input type="text" id="role" name="role" autocomplete="organization">
+        </div>
+
+        <div class="form__row">
+          <label for="message">Message <span class="optional">(optional)</span></label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">
+          <span class="btn__label">Join the next cohort</span>
+        </button>
+
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+
+        <p class="form__privacy">Your details are used only to respond to your course enquiry. See the <a href="privacy.html">privacy notice</a> for details.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+  STICKY MOBILE CTA (mobile only, shown after scrolling past hero)
+============================================================= -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#signup" class="btn btn--primary">Join the next cohort →</a>
+</div>
+
+<!-- ============================================================
+  FOOTER
+============================================================= -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p>&copy; <span id="year"></span> [YOUR NAME OR COMPANY]. All rights reserved.</p>
+    <ul class="site-footer__links">
+      <li><a href="mailto:[YOUR-EMAIL@gmail.com]">Email</a></li>
+      <li><a href="[LINKEDIN URL]">LinkedIn</a></li>
+      <li><a href="[GITHUB OR OTHER URL]">GitHub</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

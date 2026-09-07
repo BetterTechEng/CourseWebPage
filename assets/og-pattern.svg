@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0B0F1E"/>
+
+  <!-- Node-and-line pattern reused from the hero flow card / curriculum icons -->
+  <g stroke="#2A3358" stroke-width="2" fill="none">
+    <line x1="120" y1="160" x2="120" y2="470"/>
+  </g>
+  <g font-family="IBM Plex Mono, monospace" font-size="22" fill="#D3D9F5">
+    <circle cx="120" cy="160" r="9" fill="#0B0F1E" stroke="#4C6FFF" stroke-width="3"/>
+    <text x="150" y="168">Requirement</text>
+
+    <circle cx="120" cy="238" r="9" fill="#0B0F1E" stroke="#4C6FFF" stroke-width="3"/>
+    <text x="150" y="246">AI Analysis</text>
+
+    <circle cx="120" cy="316" r="9" fill="#0B0F1E" stroke="#4C6FFF" stroke-width="3"/>
+    <text x="150" y="324">Risk Identification</text>
+
+    <circle cx="120" cy="394" r="9" fill="#0B0F1E" stroke="#4C6FFF" stroke-width="3"/>
+    <text x="150" y="402">Test Scenarios</text>
+
+    <circle cx="120" cy="472" r="10" fill="#8B5CF6" stroke="#8B5CF6" stroke-width="3"/>
+    <text x="150" y="480" fill="#FFFFFF" font-weight="600">Copilot-assisted Automation</text>
+  </g>
+
+  <text x="600" y="330" font-family="IBM Plex Sans, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF">AI-Augmented</text>
+  <text x="600" y="390" font-family="IBM Plex Sans, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF">Quality Engineering</text>
+  <text x="600" y="430" font-family="IBM Plex Mono, monospace" font-size="20" fill="#8B93C4">[YOUR NAME] · Course for QA Engineers</text>
+</svg>
