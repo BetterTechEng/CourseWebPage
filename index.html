@@ -6,70 +6,674 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ============================================================
-  SEO /  META — replace bracketed placeholders with your details
-============================================================= -->
-  <title>AI-Driven Quality Engineering — Course for QA Engineers</title>
+  SEO / META — B2B Optimized
+  ============================================================= -->
+  <title>QA Engineering with AI — From SDLC to ADLC for E-Commerce Teams</title>
   <meta name="description"
-    content="Learn to use AI across the complete QA workflow: requirements analysis, test design, Copilot-assisted automation, defect analysis and reporting.">
+    content="QA Engineering with AI for e-commerce platforms: a plain-language Enablement Initiative on moving QA from the old SDLC to the Agentic Development Lifecycle (ADLC) — covering cart, checkout, payments, inventory, and pricing.">
   <meta name="author" content="[YOUR NAME]">
   <link rel="canonical" href="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI-Driven Quality Engineering">
+  <meta property="og:title" content="QA Engineering with AI — Moving from SDLC to ADLC">
   <meta property="og:description"
-    content="Learn to use AI across the complete QA workflow: requirements, test design, automation, defects, reporting.">
+    content="Software is moving from the SDLC to the ADLC, where AI agents build and test continuously. This Program teaches e-commerce QA teams to lead that shift.">
   <meta property="og:image" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/assets/og-image.jpg">
   <meta property="og:url" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
 
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI-Driven Quality Engineering">
-  <meta name="twitter:description"
-    content="Learn to use AI across the complete QA workflow: requirements, test design, automation, defects, reporting.">
-  <meta name="twitter:image" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/assets/og-image.jpg">
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-
-  <!-- Fonts: IBM Plex Sans for headings/body, IBM Plex Mono for technical labels -->
+  <!-- Fonts: Space Grotesk (display/headings), IBM Plex Sans (body/UI), IBM Plex Mono (status + code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+       Palette is drawn from a test-report / status-board vocabulary:
+       ink (base), paper (light surface), amber (bottleneck / risk
+       signal), pass-green (resolved / AI-handled signal).
+    ============================================================= */
+    :root {
+      --ink: #12151B;
+      --ink-soft: #4A505C;
+      --ink-faint: #7B818C;
+      --paper: #EEF0EF;
+      --paper-raised: #FFFFFF;
+      --line: rgba(18, 21, 27, 0.12);
+      --line-strong: rgba(18, 21, 27, 0.22);
+      --amber: #C97A22;
+      --amber-soft: #F4E3CC;
+      --pass: #2C7A5E;
+      --pass-soft: #D7E9E1;
+      --on-ink: #EEF0EF;
+      --on-ink-soft: #A7ADB8;
 
-  <!-- ============================================================
-  JSON-LD structured data — fill in real values before publishing
-============================================================= -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "AI in Modern Software Testing",
-  "description": "A hands-on course teaching QA engineers to use AI and GitHub Copilot across the full software testing workflow: requirements analysis, test design, automation, defect analysis and reporting.",
-  "provider": {
-    "@type": "Person",
-    "name": "[YOUR NAME]",
-    "sameAs": [
-      "[LINKEDIN URL]",
-      "[GITHUB URL]"
-    ]
-  }
-}
-</script>
+      --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      --font-body: "IBM Plex Sans", sans-serif;
+      --font-mono: "IBM Plex Mono", monospace;
 
-  <!-- ============================================================
-  ANALYTICS — Cloudflare Web Analytics (free, privacy-focused)
-  1. Sign up at https://www.cloudflare.com/web-analytics/
-  2. Paste the token they give you below.
-  3. Works even though this site isn't hosted on Cloudflare.
-============================================================= -->
-  <!--
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN"}'></script>
--->
+      --measure: 62ch;
+      --radius: 3px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.5em;
+      color: var(--ink);
+    }
+
+    h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+    h3 { font-size: 1.15rem; }
+
+    p { margin: 0 0 1em; }
+    a { color: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--ink);
+      color: var(--on-ink);
+      padding: 0.75rem 1.25rem;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---------- Nav ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(238, 240, 239, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .nav__brand span {
+      color: var(--amber);
+    }
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+    .nav__toggle-bar {
+      width: 22px; height: 2px;
+      background: var(--ink);
+      display: block;
+    }
+    .nav__menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav__menu a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+    .nav__menu a:hover { color: var(--ink); }
+    .nav__cta {
+      border: 1px solid var(--ink);
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius);
+      color: var(--ink) !important;
+    }
+    .nav__cta:hover { background: var(--ink); color: var(--on-ink) !important; }
+
+    @media (max-width: 780px) {
+      .nav__toggle { display: flex; }
+      .nav__menu {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0.5rem 1.5rem 1rem;
+        display: none;
+      }
+      .nav__menu.is-open { display: flex; }
+      .nav__menu li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+      .nav__menu li:last-child { border-bottom: 0; padding-top: 0.9rem; }
+    }
+
+    /* ---------- Layout helpers ---------- */
+    .section { padding: 5.5rem 1.5rem; }
+    .section__inner { max-width: 1180px; margin: 0 auto; }
+    .section__inner--narrow { max-width: 680px; }
+    .section__inner--split {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 3rem;
+    }
+    @media (max-width: 900px) {
+      .section__inner--split { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .section--ink { background: var(--ink); color: var(--on-ink); }
+    .section--ink h2, .section--ink h3 { color: var(--on-ink); }
+    .section--paper-alt { background: var(--paper-raised); }
+    .section__intro {
+      max-width: var(--measure);
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+    .section--ink .section__intro { color: var(--on-ink-soft); }
+    .section__intro a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .section__intro a:hover { color: var(--amber); }
+    .section__lead {
+      font-size: 1.15rem;
+      color: var(--ink);
+      max-width: var(--measure);
+    }
+
+    /* status chip — used where the copy communicates an actual state,
+       not decoration */
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--amber);
+      border: 1px solid var(--amber-soft);
+      background: var(--amber-soft);
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.25rem;
+    }
+    .status-chip__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex: none;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .btn--primary {
+      background: var(--ink);
+      color: var(--on-ink);
+      border-color: var(--ink);
+    }
+    .btn--primary:hover { background: #262b35; }
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+    .btn--ghost:hover { border-color: var(--ink); }
+    .section--ink .btn--ghost { color: var(--on-ink); border-color: rgba(238,240,239,0.35); }
+    .section--ink .btn--ghost:hover { border-color: var(--on-ink); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 4.5rem 1.5rem 3.5rem; }
+    .hero__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (max-width: 940px) {
+      .hero__inner { grid-template-columns: 1fr; }
+    }
+    .hero__lede {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 54ch;
+    }
+    .hero__lede strong { color: var(--ink); }
+
+    .workflow-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0;
+      list-style: none;
+      padding: 0;
+      margin: 1.75rem 0 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+    }
+    .workflow-chain li {
+      padding: 0.4rem 0.8rem 0.4rem 0;
+      position: relative;
+    }
+    .workflow-chain li:not(:last-child)::after {
+      content: "→";
+      margin-left: 0.8rem;
+      color: var(--ink-faint);
+    }
+
+    .hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+    /* status-board visual replacing the generic "browser chrome" card */
+    .status-board {
+      background: var(--ink);
+      color: var(--on-ink);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px -25px rgba(18,21,27,0.45);
+    }
+    .status-board__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.1rem;
+      border-bottom: 1px solid rgba(238,240,239,0.12);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--on-ink-soft);
+    }
+    .status-board__runid { letter-spacing: 0.02em; }
+    .status-board__badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+    .status-board__list {
+      list-style: none;
+      margin: 0;
+      padding: 0.6rem 0;
+    }
+    .status-board__row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(238,240,239,0.06);
+    }
+    .status-board__row:last-child { border-bottom: 0; }
+    .status-board__icon {
+      width: 16px; height: 16px;
+      flex: none;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-family: var(--font-mono);
+    }
+    .status-board__icon--pass { background: var(--pass); color: var(--on-ink); }
+    .status-board__icon--wait { background: rgba(238,240,239,0.14); color: var(--on-ink-soft); }
+    .status-board__meta {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--on-ink-soft);
+    }
+
+    /* ---------- Facts strip ---------- */
+    .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-raised); }
+    .facts__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .facts__inner { grid-template-columns: repeat(2, 1fr); }
+    }
+    .facts__item { border-left: 2px solid var(--amber); padding-left: 0.85rem; }
+    .facts__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      margin-bottom: 0.3rem;
+    }
+    .facts__value { font-weight: 600; font-size: 0.95rem; }
+
+    /* ---------- Compare table ---------- */
+    .compare-table {
+      display: grid;
+      border: 1px solid rgba(238,240,239,0.16);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+    .compare-table__row {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1.3fr;
+      border-bottom: 1px solid rgba(238,240,239,0.1);
+    }
+    .compare-table__row:last-child { border-bottom: 0; }
+    .compare-table__row > div {
+      padding: 1.1rem 1.25rem;
+      font-size: 0.92rem;
+    }
+    .compare-table__row--head {
+      background: rgba(238,240,239,0.05);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--on-ink-soft);
+      text-transform: none;
+    }
+    .compare-table__row--head > div { padding: 0.9rem 1.25rem; }
+    .compare-table__accent-head { color: var(--pass) !important; }
+    .compare-table__row > div:first-child { color: var(--on-ink); font-weight: 600; }
+    .compare-table__row > div:nth-child(2) { color: var(--on-ink-soft); }
+    .compare-table__accent {
+      color: var(--on-ink);
+      background: rgba(44,122,94,0.14);
+      border-left: 2px solid var(--pass);
+    }
+    @media (max-width: 780px) {
+      .compare-table__row, .compare-table__row--head { grid-template-columns: 1fr; }
+      .compare-table__row > div:first-child { background: rgba(238,240,239,0.04); }
+    }
+
+    /* ---------- Build cards ---------- */
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) { .build-grid { grid-template-columns: 1fr; } }
+    .build-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-left: 2px solid var(--pass);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .build-card__label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      margin: 0 0 0.6rem;
+    }
+    .build-card__code {
+      background: var(--ink);
+      color: var(--on-ink);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 1rem;
+      border-radius: var(--radius);
+      overflow-x: auto;
+      line-height: 1.6;
+      margin: 1rem 0 0;
+    }
+
+    /* ---------- Toolchain / multi-LLM strip ---------- */
+    .toolchain {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) { .toolchain { grid-template-columns: 1fr; } }
+    .tool-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5rem 0.85rem;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+    .tool-badge__mark {
+      width: 22px; height: 22px;
+      border-radius: 4px;
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+    }
+    .tool-badge__mark img { width: 14px; height: 14px; display: block; }
+    .tool-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+    .toolchain-note {
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+    }
+
+    /* ---------- Lifecycle compare (SDLC vs ADLC) ---------- */
+    .lifecycle-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2.5rem 0 2rem;
+    }
+    .lifecycle-row {
+      border: 1px solid rgba(238,240,239,0.14);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+    .lifecycle-row--new {
+      border-color: var(--pass);
+      background: rgba(44,122,94,0.08);
+    }
+    .lifecycle-row__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--on-ink-soft);
+      margin-bottom: 1rem;
+    }
+    .lifecycle-row--new .lifecycle-row__label { color: var(--pass); }
+    .lifecycle-steps {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .lifecycle-step {
+      padding: 0.6rem 1rem;
+      border: 1px solid rgba(238,240,239,0.2);
+      border-radius: var(--radius);
+      font-size: 0.88rem;
+      color: var(--on-ink);
+    }
+    .lifecycle-step--gate {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+    .lifecycle-step--pass {
+      border-color: var(--pass);
+      color: var(--pass);
+    }
+    .lifecycle-arrow {
+      color: var(--on-ink-soft);
+      font-size: 1rem;
+    }
+    .lifecycle-arrow--pass { color: var(--pass); }
+    .lifecycle-row__note {
+      color: var(--on-ink-soft);
+      font-size: 0.9rem;
+      margin: 0;
+      max-width: var(--measure);
+    }
+    @media (max-width: 640px) {
+      .lifecycle-steps { flex-direction: column; align-items: flex-start; }
+      .lifecycle-arrow { transform: rotate(90deg); margin-left: 0.5rem; }
+    }
+
+    /* ---------- Modules / framework ---------- */
+    .modules { margin-top: 2.5rem; border-top: 1px solid var(--line); }
+    .module { border-bottom: 1px solid var(--line); }
+    .module summary {
+      list-style: none;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.35rem 0;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+    .module summary::-webkit-details-marker { display: none; }
+    .module__dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex: none;
+      transform: translateY(-2px);
+    }
+    .module[open] .module__dot { background: var(--pass); }
+    .module__title { font-size: 1.05rem; }
+    .module__content {
+      padding: 0 0 1.5rem 1.75rem;
+      color: var(--ink-soft);
+      max-width: var(--measure);
+    }
+
+    /* ---------- Advisor ---------- */
+    .instructor { display: flex; gap: 1.5rem; }
+    .instructor__photo {
+      border-radius: 6px;
+      flex: none;
+      display: block;
+    }
+    .instructor__name { margin-bottom: 0.15rem; }
+    .instructor__role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--amber);
+      margin-bottom: 0.9rem;
+    }
+    .instructor__links { margin-top: 1rem; }
+    @media (max-width: 560px) {
+      .instructor { flex-direction: column; }
+    }
+
+    /* ---------- Form ---------- */
+    .form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .form__row { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form__row label { font-size: 0.85rem; font-weight: 600; }
+    .form__row input, .form__row textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.75rem 0.85rem;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: var(--paper-raised);
+      color: var(--ink);
+    }
+    .form__row input:focus, .form__row textarea:focus {
+      border-color: var(--ink);
+    }
+    .honeypot { display: none; }
+    .form__submit { align-self: flex-start; margin-top: 0.5rem; }
+    .form__note { font-size: 0.82rem; color: var(--ink-faint); margin-top: -0.5rem; }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+    }
+    .site-footer__inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -78,10 +682,10 @@
 
   <!-- ============================================================
   NAV
-============================================================= -->
+  ============================================================= -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="#top" class="nav__brand">Software Testing</a>
+      <a href="#top" class="nav__brand">QA Engineering <span>with AI</span></a>
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
         <span class="nav__toggle-bar"></span>
         <span class="nav__toggle-bar"></span>
@@ -89,10 +693,14 @@
         <span class="sr-only">Menu</span>
       </button>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#curriculum">Curriculum</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#instructor">Instructor</a></li>
-        <li><a href="#signup" class="nav__cta">Join</a></li>
+        <li><a href="#adlc">SDLC → ADLC</a></li>
+        <li><a href="#agent-testing">Testing Agents</a></li>
+        <li><a href="#initiative">The Program</a></li>
+        <li><a href="#ecommerce-qa">E-Commerce QA</a></li>
+        <li><a href="#roi">Business Case</a></li>
+        <li><a href="#toolchain">Toolchain</a></li>
+        <li><a href="#advisor">Lead Advisor</a></li>
+        <li><a href="#inquire" class="nav__cta">Book a Strategy Call</a></li>
       </ul>
     </nav>
   </header>
@@ -100,48 +708,41 @@
   <main id="main">
 
     <!-- ============================================================
-    HERO
-  ============================================================= -->
+    HERO — The Bottleneck Warning
+    ============================================================= -->
     <section class="hero" id="top">
       <div class="hero__inner">
         <div class="hero__text">
-          <p class="eyebrow">Future of Software Testing</p>
-          <h1>AI in Modern Software Testing</h1>
-          <p class="hero__lede">Learn how to use AI across the complete software testing workflow.</p>
+          <span class="status-chip"><span class="status-chip__dot"></span>The shift: SDLC → ADLC</span>
+          <h1>QA Engineering with AI, for the Agentic Development Lifecycle</h1>
+          <p class="hero__lede"><strong>Software teams are moving from the SDLC to the ADLC</strong> — from people writing and testing code stage by stage, to AI agents building and testing continuously, with people directing. For e-commerce platforms, that change hits cart, checkout, pricing, and inventory logic first, where a missed edge case costs revenue. This Program teaches your QA team how to lead that shift, not get left behind by it.</p>
 
-          <ol class="workflow-chain" aria-label="Course workflow">
-            <li>Requirements</li>
-            <li>Test Strategy</li>
-            <li>Test Plan</li>
-            <li>Test Design</li>
-            <li>Test Execution</li>
-            <li>Automation</li>
-            <li>Defects</li>
-            <li>Reporting</li>
+          <ol class="workflow-chain" aria-label="AI-Augmented QA Workflow">
+            <li>Requirements Parsing</li>
+            <li>AI Risk Modeling</li>
+            <li>Smart Edge-Case Generation</li>
+            <li>Copilot Automation</li>
+            <li>Instant Root-Cause Analysis</li>
           </ol>
 
           <div class="hero__actions">
-            <a href="#signup" class="btn btn--primary">Join</a>
-            <a href="#curriculum" class="btn btn--ghost">See the curriculum</a>
+            <a href="#inquire" class="btn btn--primary">Book a Strategy Call</a>
+            <a href="#initiative" class="btn btn--ghost">See the Playbook</a>
           </div>
         </div>
 
         <div class="hero__visual" aria-hidden="true">
-          <div class="flow-card">
-            <div class="flow-card__bar">
-              <span></span><span></span><span></span>
-              <span class="flow-card__title">ai-qa-workflow</span>
+          <div class="status-board">
+            <div class="status-board__bar">
+              <span class="status-board__runid">run: ai-qa-transformation.pipeline</span>
+              <span class="status-board__badge">before → after</span>
             </div>
-            <ol class="flow">
-              <li class="flow__step"><span class="flow__dot"></span><span>Requirements Analysis</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Test Strategy</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Test Design</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Test Execution</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Automation</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Defects Management</span></li>
-              <li class="flow__step"><span class="flow__dot"></span><span>Reporting</span></li>
-              <li class="flow__step flow__step--accent"><span class="flow__dot"></span><span>AI-assisted
-                  Automation</span></li>
+            <ol class="status-board__list">
+              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Strategic scoping &amp; risk map</span><span class="status-board__meta">Week 1</span></li>
+              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Automated test-case synthesis live</span><span class="status-board__meta">Week 1</span></li>
+              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Smart edge-case generation in CI</span><span class="status-board__meta">Week 2</span></li>
+              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Agentic UI / API automation</span><span class="status-board__meta">Week 2</span></li>
+              <li class="status-board__row"><span class="status-board__icon status-board__icon--wait">…</span><span>Instant root-cause analysis handed off</span><span class="status-board__meta">ongoing</span></li>
             </ol>
           </div>
         </div>
@@ -149,246 +750,313 @@
     </section>
 
     <!-- ============================================================
-    COURSE FACTS STRIP
-  ============================================================= -->
-    <section class="facts" aria-label="Course facts">
+    PROGRAM FACTS STRIP
+    ============================================================= -->
+    <section class="facts" aria-label="Program facts">
       <div class="facts__inner">
-        <div class="facts__item"><span class="facts__label">Level</span><span class="facts__value">Intermediate</span>
-        </div>
-        <div class="facts__item"><span class="facts__label">Duration</span><span class="facts__value">2 weeks</span>
-        </div>
-        <div class="facts__item"><span class="facts__label">Format</span><span class="facts__value">Live + Remote
-            Work</span></div>
-        <div class="facts__item"><span class="facts__label">Language</span><span
-            class="facts__value">Polish/English</span></div>
-        <div class="facts__item"><span class="facts__label">LLMs</span><span class="facts__value">GitHub Copilot,
-            Claude, Gemini</span></div>
-        <div class="facts__item"><span class="facts__label">Area</span><span class="facts__value">UI, REST API,
-            Database, ETL</span></div>
+        <div class="facts__item"><span class="facts__label">Built for</span><span class="facts__value">CTOs, QA Leads &amp; Eng. Directors</span></div>
+        <div class="facts__item"><span class="facts__label">Duration</span><span class="facts__value">2-Week Sprint</span></div>
+        <div class="facts__item"><span class="facts__label">Format</span><span class="facts__value">Guided Enablement Initiative</span></div>
+        <div class="facts__item"><span class="facts__label">Model stack</span><span class="facts__value">Copilot, Claude, Gemini</span></div>
+        <div class="facts__item"><span class="facts__label">Domain focus</span><span class="facts__value">E-commerce: cart, checkout, catalog, payments</span></div>
       </div>
     </section>
 
     <!-- ============================================================
-    ABOUT
-  ============================================================= -->
+    SDLC → ADLC EXPLAINER
+    ============================================================= -->
+    <section class="section section--ink" id="adlc">
+      <div class="section__inner">
+        <h2>Two Ways of Working, in Plain Terms</h2>
+        <p class="section__intro">
+          <strong>SDLC</strong> (Software Development Lifecycle) is the familiar way: people plan, build, and test in stages, one after another.
+          <strong>ADLC</strong> (Agentic Development Lifecycle) is the new way: AI agents build and test continuously, while people direct and review. This Program is about moving your QA team from the first row below to the second.
+        </p>
+
+        <div class="lifecycle-compare">
+          <div class="lifecycle-row">
+            <span class="lifecycle-row__label">Old way — SDLC</span>
+            <div class="lifecycle-steps">
+              <span class="lifecycle-step">Plan</span>
+              <span class="lifecycle-arrow">→</span>
+              <span class="lifecycle-step">Build</span>
+              <span class="lifecycle-arrow">→</span>
+              <span class="lifecycle-step lifecycle-step--gate">QA tests, at the end</span>
+              <span class="lifecycle-arrow">→</span>
+              <span class="lifecycle-step">Release</span>
+            </div>
+            <p class="lifecycle-row__note">QA is one slow stage near the end. If it runs late, the release runs late.</p>
+          </div>
+
+          <div class="lifecycle-row lifecycle-row--new">
+            <span class="lifecycle-row__label">New way — ADLC</span>
+            <div class="lifecycle-steps">
+              <span class="lifecycle-step">Agents build</span>
+              <span class="lifecycle-arrow lifecycle-arrow--pass">⇄</span>
+              <span class="lifecycle-step lifecycle-step--gate lifecycle-step--pass">Agents test, every change</span>
+              <span class="lifecycle-arrow lifecycle-arrow--pass">⇄</span>
+              <span class="lifecycle-step">Agents fix</span>
+            </div>
+            <p class="lifecycle-row__note">People direct and review. Testing happens constantly, not once at the end — so QA stops being the bottleneck.</p>
+          </div>
+        </div>
+
+        <p class="section__intro">Your team's new job: tell the agents what "correct" looks like for your storefront, check their judgment on the cases that matter, and step in when something needs a human call.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    HOW AGENTS GET TESTED (ADLC: Test)
+    ============================================================= -->
+    <section class="section section--paper-alt" id="agent-testing">
+      <div class="section__inner">
+        <h2>How You Know an Agent Is Ready to Ship</h2>
+        <p class="section__intro">
+          Testing an agent isn't like testing a script. Before a checkout assistant, a returns bot, or a pricing agent goes live, your team needs a fast way to tell if it's ready — not a perfect test suite on day one, just enough to catch obvious failures, compare one version against another, and avoid shipping a change blind.
+        </p>
+
+        <div class="build-grid">
+          <article class="build-card">
+            <p class="build-card__label">Start small, not perfect</p>
+            <h3>A first set of real tasks, not a full suite</h3>
+            <p>Most teams start with a small set of representative tasks: a few pulled from expected use cases, others from manual testing, support tickets, or known edge cases. It's a regression suite for a system that talks and decides, not one that only executes steps. Real traffic makes it stronger later — it doesn't need to start there.</p>
+          </article>
+          <article class="build-card">
+            <p class="build-card__label">Datasets &amp; metrics</p>
+            <h3>So a fixed failure doesn't quietly come back</h3>
+            <p>Datasets capture what your team has already learned, so a bug fixed once doesn't resurface after a prompt change or model upgrade. Some checks have one right answer — did the agent apply the correct discount, pull the correct order ID. Others don't — did the agent explain a delay clearly, or know when to hand off to a person. Those get judged against criteria, not a single correct answer.</p>
+          </article>
+          <article class="build-card">
+            <p class="build-card__label">Experiments</p>
+            <h3>Proof a change actually helped</h3>
+            <p>Experiments run a new prompt, model, or tool setup against the same evaluation set as the last version, so your team can see whether a change made things better or worse before it ever reaches a customer.</p>
+          </article>
+          <article class="build-card">
+            <p class="build-card__label">Simulation</p>
+            <h3>Testing a conversation, not just an answer</h3>
+            <p>Many agents don't just answer once — they hold a conversation, look things up, and adjust. A support agent may need to calm a frustrated shopper, check an order, and decide whether to escalate. That needs a simulated back-and-forth, not a single question and answer.</p>
+          </article>
+        </div>
+
+        <p class="section__intro">Put together, this is what "testing" means in the ADLC: turn what "good" looks like into a dataset, the dataset into an experiment, and the experiment into a better version of the agent. Once it's live, real conversations feed back into the same datasets, so the eval set keeps getting harder and more realistic. Further reading: <a href="https://docs.langchain.com/langsmith/multi-turn-simulation">multi-turn simulation for agent evals</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    ABOUT THE INITIATIVE
+    ============================================================= -->
     <section class="section" id="about">
       <div class="section__inner section__inner--split">
         <div class="section__head">
-          <h2>About the course</h2>
+          <h2>The Transformation Program</h2>
         </div>
         <div class="section__body">
           <p class="section__lead">
-            Artificial intelligence is dynamically transforming the Software Development Life Cycle, with a profound
-            impact on software testing.
+            Manual, hand-scripted testing was built for the old SDLC. It can't keep up with agents that build and change code continuously.
           </p>
           <p>
-            Join us in mastering the core competencies required to navigate AI-driven transformation in quality
-            engineering.
+            The AI-Augmented QA Playbook prepares your existing testing staff for the ADLC — no backfill, no headcount risk. They keep their jobs; the job itself changes, from writing every test by hand to directing and checking AI agents that do.
           </p>
           <p>
-            This course is designed for QA engineers in <b>E-commerce</b> domains looking to leverage AI tools to enhance testing processes, boost
-            efficiency, and stay ahead in a rapidly evolving field.
-          </p>
-            <p>
-            By the end of this course, you'll be equipped with practical skills to integrate AI into your testing workflow, from requirements analysis to defect reporting. 
+            Built for teams scaling e-commerce, API, and data-heavy platforms, so QA speed stops trailing engineering speed and starts matching it.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-    WHY THIS MATTERS — 6-row comparison
-  ============================================================= -->
-    <section class="section section--ink" id="why">
+    E-COMMERCE QA ACTIVITIES
+    ============================================================= -->
+    <section class="section section--paper-alt" id="ecommerce-qa">
       <div class="section__inner">
-        <h2>Why this matters now</h2>
-        <p class="section__intro">Most QA engineers use AI tools as simple autocomplete rather than true testing partners. Those who master AI-driven quality assurance will lead decision-making in fast-moving engineering teams.</p>
-
-        <div class="compare-table" role="table" aria-label="Traditional QA versus AI-Driven QA">
-          <div class="compare-table__row compare-table__row--head" role="row">
-            <div role="columnheader">QA activity</div>
-            <div role="columnheader">The old way</div>
-            <div role="columnheader" class="compare-table__accent-head">This course teaches</div>
-          </div>
-
-          <div class="compare-table__row" role="row">
-            <div role="cell">Requirements Analysis</div>
-            <div role="cell">Manually reading user stories line-by-line — ambiguous phrasing slips through under deadline pressure.</div>
-            <div role="cell" class="compare-table__accent">Running a personal QA agent that continuously scans new stories and flags ambiguous criteria for you to review, before they turn into the wrong test cases.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Test Planning</div>
-            <div role="cell">Scope, approach, and effort estimated from memory and gut feel — hard to defend, harder to repeat.</div>
-            <div role="cell" class="compare-table__accent">Confronting AI-generated test strategy options against the actual requirements, then auditing and owning the final call.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Test Design</div>
-            <div role="cell">Drafting test cases from scratch — coverage limited to what one person can imagine.</div>
-            <div role="cell" class="compare-table__accent">Delegating first-draft scenario generation to an agent that learns from past defects; you edit and approve.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Automation</div>
-            <div role="cell">Writing and maintaining scripts by hand — breaking constantly when UI selectors change.</div>
-            <div role="cell" class="compare-table__accent">Running an agent that watches the suite and proposes healed locators; you review before it merges.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Defect Analysis</div>
-            <div role="cell">Re-diagnosing every bug from zero, often unaware it resembles an incident you already solved.</div>
-            <div role="cell" class="compare-table__accent">An agent that has learned from past incidents proposes a root-cause hypothesis and fix; you challenge it before acting.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Reporting</div>
-            <div role="cell">Building report templates and charts by hand — clarity is the first thing cut when time runs short.</div>
-            <div role="cell" class="compare-table__accent">Using an agent to scaffold report scripts and visualizations in minutes; you refine for clarity and audience.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-   <!-- ============================================================
-    WHAT YOU'LL LEARN
-  ============================================================= -->
-    <section class="section" id="learn">
-      <div class="section__inner">
-        <h2>What you'll walk away with</h2>
-        <ul class="outcomes">
-          <li>
-            <h3>Run the end-to-end testing workflow</h3>
-            <p>Move through Analyze → Strategize → Generate → Validate → Learn on a real requirement, with a Human-in-the-Loop checkpoint at every step.</p>
-          </li>
-          <li>
-            <h3>Turn Copilot into a testing partner, not autocomplete</h3>
-            <p>Write prompts that generate test scripts, healed locators, and test data you can actually trust — and know when to rewrite what it gives you.</p>
-          </li>
-          <li>
-            <h3>Catch AI's blind spots before they ship</h3>
-            <p>Spot hallucinated assertions, false coverage confidence, and missing edge cases in AI-generated test output.</p>
-          </li>
-          <li>
-            <h3>Apply it to a real e-commerce codebase</h3>
-            <p>Practice every technique against UI / REST API / Database tests </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    WHAT YOU'LL ACTUALLY BUILD
-  ============================================================= -->
-    <section class="section section--paper-alt" id="build">
-      <div class="section__inner">
-        <h2>What you will actually build</h2>
-        <p class="section__intro">Concrete outputs, not slides. Every module ends with something you can reuse on your own project.</p>
+        <h2>Where This Shows Up in Your Store</h2>
+        <p class="section__intro">Six areas where AI agents can test faster and catch more than a manual pass would — scoped to e-commerce, not generic software.</p>
         <div class="build-grid">
           <article class="build-card">
-            <p class="build-card__label">01</p>
-            <h3>AI-generated risk analysis</h3>
-            <pre class="build-card__code"><code>Requirement: "Users can add a product to their cart"
-Risk factors: [stock = 0, quantity &gt; stock,
-expired JWT, concurrent cart updates]
-Priority: High</code></pre>
+            <h3>Cart &amp; checkout</h3>
+            <p>Catches stock and pricing errors when two people check out at once.</p>
           </article>
           <article class="build-card">
-            <p class="build-card__label">02</p>
-            <h3>Test scenarios from requirements</h3>
-            <pre class="build-card__code"><code>Given a cart with 1 item in stock
-When two requests add it to cart at once
-Then only one succeeds, stock never goes negative</code></pre>
+            <h3>Payments &amp; fraud rules</h3>
+            <p>Tests failed payments, refunds, and retried charges before customers hit them.</p>
           </article>
           <article class="build-card">
-            <p class="build-card__label">03</p>
-            <h3>Copilot-assisted automated test</h3>
-            <pre class="build-card__code"><code>// Copilot prompt:
-// "Write a pytest test for POST /api/v1/cart/add
-// when product stock is 0"</code></pre>
+            <h3>Catalog &amp; search</h3>
+            <p>Flags when search or product listings break after a catalog update.</p>
           </article>
           <article class="build-card">
-            <p class="build-card__label">04</p>
-            <h3>API test generation</h3>
-            <pre class="build-card__code"><code>POST /api/v1/orders
-→ 201, 400 (invalid address), 401 (expired token)
-Generated: 9 test cases</code></pre>
+            <h3>Inventory &amp; fulfillment</h3>
+            <p>Finds why stock counts or shipments went wrong, and where.</p>
           </article>
           <article class="build-card">
-            <p class="build-card__label">05</p>
-            <h3>Defect root-cause analysis</h3>
-            <pre class="build-card__code"><code>Defect: order created despite stock = 0
-AI hypothesis: stock check only runs client-side,
-not enforced in POST /orders
-Suggested fix location: api/orders.py</code></pre>
+            <h3>Promotions &amp; pricing</h3>
+            <p>Checks coupon and pricing rules for the conflicts a person would miss.</p>
           </article>
           <article class="build-card">
-            <p class="build-card__label">06</p>
-            <h3>AI-generated QA report</h3>
-            <pre class="build-card__code"><code>Coverage: 82% of Cart → Orders critical path
-Open defects: 2 (1 high — stock validation)
-Recommendation: fix high before release</code></pre>
+            <h3>Peak-traffic regression</h3>
+            <p>Tests the highest-risk paths first, before a big sales event.</p>
           </article>
         </div>
-        <p class="build-note">All examples are generated live against the course's reference e-commerce application (React + FastAPI + PostgreSQL) — participants work with these exact endpoints, not sample data.</p>
       </div>
     </section>
 
     <!-- ============================================================
-    CURRICULUM / MODULES
-  ============================================================= -->
-    <section class="section" id="curriculum">
+    BUSINESS ROI & COMPARISON
+    ============================================================= -->
+    <section class="section section--ink" id="roi">
       <div class="section__inner">
-        <h2>Curriculum</h2>
-        <p class="section__intro">One live, hands-on day — six modules, 45–60 minutes each, run entirely against the course's reference e-commerce app.</p>
+        <h2>The Same Job, Done the ADLC Way</h2>
+        <p class="section__intro">Same QA responsibilities. Different way of doing them. Here's the change, capability by capability.</p>
+
+        <div class="compare-table" role="table" aria-label="QA in the SDLC versus QA in the ADLC">
+          <div class="compare-table__row compare-table__row--head" role="row">
+            <div role="columnheader">QA capability</div>
+            <div role="columnheader">In the old SDLC</div>
+            <div role="columnheader" class="compare-table__accent-head">In the ADLC</div>
+          </div>
+
+          <div class="compare-table__row" role="row">
+            <div role="cell">Reading requirements</div>
+            <div role="cell">A person reads the spec by hand and can miss gaps.</div>
+            <div role="cell" class="compare-table__accent">An agent scans every spec and flags gaps before testing starts.</div>
+          </div>
+          <div class="compare-table__row" role="row">
+            <div role="cell">Writing tests</div>
+            <div role="cell">Written one by one; coverage capped by hours in the day.</div>
+            <div role="cell" class="compare-table__accent">Agents draft full test suites in minutes; people review and approve.</div>
+          </div>
+          <div class="compare-table__row" role="row">
+            <div role="cell">Keeping tests working</div>
+            <div role="cell">A UI change breaks tests; someone has to fix each one.</div>
+            <div role="cell" class="compare-table__accent">Agents propose the fix; a person just approves it.</div>
+          </div>
+          <div class="compare-table__row" role="row">
+            <div role="cell">Finding the cause of a bug</div>
+            <div role="cell">Starts from zero each time; can take hours.</div>
+            <div role="cell" class="compare-table__accent">An agent points to the likely cause and a fix, in minutes.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    CONCRETE OUTPUTS
+    ============================================================= -->
+    <section class="section section--paper-alt" id="build">
+      <div class="section__inner">
+        <h2>What This Looks Like on Your Codebase</h2>
+        <p class="section__intro">Three real examples, not theory. Your team leaves with these running in your pipeline.</p>
+        <div class="build-grid">
+          <article class="build-card">
+            <p class="build-card__label">Smart edge-case generation</p>
+            <h3>Concurrency &amp; race conditions, surfaced automatically</h3>
+            <pre class="build-card__code"><code>Generated scenario:
+Given a cart with 1 item in stock
+When two asynchronous requests add it at once
+Then strictly one succeeds, DB stock enforces &gt;= 0</code></pre>
+          </article>
+          <article class="build-card">
+            <p class="build-card__label">Automated test-case synthesis</p>
+            <h3>Full suites from a spec, not a blank file</h3>
+            <pre class="build-card__code"><code>// Copilot-orchestrated prompt:
+// "Synthesize a pytest suite for POST /api/v1/cart/add
+// enforcing strict stock validation rules"</code></pre>
+          </article>
+          <article class="build-card">
+            <p class="build-card__label">Instant root-cause analysis</p>
+            <h3>From defect report to fix location in one pass</h3>
+            <pre class="build-card__code"><code>Defect: order processed despite stock = 0
+AI triage: stock check bypassed in POST /orders middleware
+Actionable fix: inject validation in api/orders.py:42</code></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    MULTI-LLM TOOLCHAIN
+    ============================================================= -->
+    <section class="section" id="toolchain">
+      <div class="section__inner">
+        <h2>Built on the Models Your Team Already Trusts</h2>
+        <p class="section__intro">No single model does every job well. Your team learns which one to reach for, in the tools they already use.</p>
+
+        <div class="toolchain">
+          <article class="tool-card">
+            <span class="tool-badge">
+              <span class="tool-badge__mark">
+                <img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot logo" width="20" height="20" loading="lazy">
+              </span>
+              GitHub Copilot
+            </span>
+            <p>In-IDE automation authoring for checkout, cart, and API test suites — turns a spec comment into a first-draft test file and drafts self-healing selectors when a PDP or cart UI ships a change.</p>
+          </article>
+          <article class="tool-card">
+            <span class="tool-badge">
+              <span class="tool-badge__mark">
+                <img src="https://cdn.simpleicons.org/claude" alt="Claude logo" width="20" height="20" loading="lazy">
+              </span>
+              Claude
+            </span>
+            <p>Long-context reasoning over pricing rules, tax logic, and incident history — requirements-gap detection on promo/discount specs and root-cause hypotheses with a code-level fix.</p>
+          </article>
+          <article class="tool-card">
+            <span class="tool-badge">
+              <span class="tool-badge__mark">
+                <img src="https://cdn.simpleicons.org/googlegemini" alt="Google Gemini logo" width="20" height="20" loading="lazy">
+              </span>
+              Gemini
+            </span>
+            <p>Multimodal triage across checkout screenshots, payment-gateway logs, and session recordings — useful when a defect is visual or spans storefront, payment, and fulfillment services.</p>
+          </article>
+        </div>
+        <p class="toolchain-note">Logos are linked from Simple Icons' public CDN for identification only. Each mark remains the property of its respective owner (GitHub/Microsoft, Anthropic, Google) — review their brand guidelines before using this page publicly.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+    THE UPSKILLING FRAMEWORK
+    ============================================================= -->
+    <section class="section section--paper-alt" id="initiative">
+      <div class="section__inner">
+        <h2>How We Get Your Team There</h2>
+        <p class="section__intro">Four sprints. Each one hands your team a new way of working, not just a new tool.</p>
 
         <div class="modules">
           <details class="module" open>
             <summary>
               <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 1 — From Traditional QA to Agentic Workflow</span>
+              <span class="module__title">Phase 1 — Learn to direct agents, not write scripts</span>
             </summary>
             <div class="module__content">
-              <p>The mindset shift and the agentic model: one AI agent per application layer (UI, API, database), coordinated through GitHub Copilot, always with a Human-in-the-Loop checkpoint. You leave knowing exactly where AI helps — and where it doesn't.</p>
+              <p>Your team shifts from writing every test by hand to setting up AI agents for UI, API, and database testing, then reviewing their work.</p>
             </div>
           </details>
           <details class="module">
             <summary>
               <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 2 — AI-Assisted Requirements Verification &amp; Test Design</span>
+              <span class="module__title">Phase 2 — Let agents draft the tests</span>
             </summary>
             <div class="module__content">
-              <p>Use an LLM to scan requirements for ambiguity and gaps, then generate first-draft test scenarios from them. You review, edit, and approve — the agent never gets the final say.</p>
+              <p>Agents read specs and write first-draft test coverage. What used to take days now takes hours.</p>
             </div>
           </details>
           <details class="module">
             <summary>
               <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 3 — Copilot-Driven Test Automation &amp; Auto-Healing</span>
+              <span class="module__title">Phase 3 — Let agents keep tests working</span>
             </summary>
             <div class="module__content">
-              <p>Author automated tests against the reference app's Cart and Orders APIs with Copilot, then let an agent propose healed locators when the UI changes — reviewed by you before it merges.</p>
+              <p>When the UI changes, agents fix the tests instead of engineers. Your team reviews and approves the fix.</p>
             </div>
           </details>
           <details class="module">
             <summary>
               <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 4 — AI-Assisted Defect Analysis &amp; Reporting</span>
+              <span class="module__title">Phase 4 — Let agents triage defects first</span>
             </summary>
             <div class="module__content">
-              <p>Feed a real defect to an agent that has learned from past incidents, get a root-cause hypothesis and suggested fix location, then challenge it. Scaffold a QA report from the results in minutes.</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 5 — Test Strategy &amp; Risk Optimization</span>
-            </summary>
-            <div class="module__content">
-              <p>Run a standing agent that rescoring risk as code changes land, and practice tuning its output — this is where engineer judgment matters most, not experience-based gut feel.</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Module 6 — Applied Capstone: Testing the Reference App</span>
-            </summary>
-            <div class="module__content">
-              <p>Run the full Analyze → Strategize → Generate → Validate → Learn workflow end-to-end on the Cart → Orders flow, including AI-generated edge cases, and submit a written critique of what the AI missed.</p>
+              <p>Agents look at past incidents to point straight to the likely cause of a new bug, and how risky each release is, before you ship.</p>
             </div>
           </details>
         </div>
@@ -396,340 +1064,95 @@ Recommendation: fix high before release</code></pre>
     </section>
 
     <!-- ============================================================
-    SAMPLE LESSON
-  ============================================================= -->
-    <section class="section section--paper-alt" id="sample-lesson">
-      <div class="section__inner">
-        <h2>Sample lesson</h2>
-        <p class="section__intro">One real workflow, start to finish — this is the shape of every module.</p>
-
-        <ol class="flow flow--horizontal">
-          <li class="flow__step"><span class="flow__dot"></span><span>Requirement</span></li>
-          <li class="flow__step"><span class="flow__dot"></span><span>Prompt</span></li>
-          <li class="flow__step"><span class="flow__dot"></span><span>AI Result</span></li>
-          <li class="flow__step"><span class="flow__dot"></span><span>QA Review</span></li>
-          <li class="flow__step flow__step--accent"><span class="flow__dot"></span><span>Final Test Cases</span></li>
-        </ol>
-        <p class="build-note"><strong>Requirement:</strong> "Users can create an order from their cart." <strong>Prompt:</strong> "Write a pytest test for POST /api/v1/orders when the JWT token has expired." <strong>AI Result:</strong> Copilot generates a test asserting a 401 response. <strong>QA Review:</strong> the engineer checks the error body actually matches the app's schema, and notices Copilot didn't test what happens to cart stock if the order fails partway through. <strong>Final Test Cases:</strong> the original 401 test, plus a new case covering stock rollback on failed order creation — the gap only a human review caught.</p>
-      </div>
-    </section>
-    <!-- ============================================================
-    FAQ
-  ============================================================= -->
-    <section class="section" id="faq">
-      <div class="section__inner section__inner--narrow">
-        <h2>Frequently asked questions</h2>
-        <div class="modules">
-          <details class="module">
-            <summary><span class="module__title">Do I need prior QA experience?</span></summary>
-            <div class="module__content">
-              <p>[Answer — e.g. minimum experience level expected.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">What coding level is required?</span></summary>
-            <div class="module__content">
-              <p>[Answer — be specific: none / basic scripting / comfortable reading code, etc.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">What tools do I need?</span></summary>
-            <div class="module__content">
-              <p>[Answer — list required software/accounts.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">Do I need a GitHub Copilot licence?</span></summary>
-            <div class="module__content">
-              <p>[Answer — clarify if it's required, provided, or optional.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">What's the course format?</span></summary>
-            <div class="module__content">
-              <p>[Answer — live/self-paced, group size, session length.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">Do I get recordings and materials afterward?</span></summary>
-            <div class="module__content">
-              <p>[Answer.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">What language is the course taught in?</span></summary>
-            <div class="module__content">
-              <p>[Answer.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">Do I get a certificate?</span></summary>
-            <div class="module__content">
-              <p>[Answer.]</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary><span class="module__title">Is there support after the training ends?</span></summary>
-            <div class="module__content">
-              <p>[Answer — e.g. follow-up Q&amp;A, community access, office hours.]</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    WHO SHOULD ATTEND
-  ============================================================= -->
-    <section class="section" id="audience">
+    ADVISOR
+    ============================================================= -->
+    <section class="section" id="advisor">
       <div class="section__inner section__inner--split">
         <div class="section__head">
-          <h2>Who should attend</h2>
-        </div>
-        <div class="section__body">
-          <div class="audience-grid">
-            <div>
-              <p class="audience-grid__label">Good fit</p>
-              <ul>
-                <li>[Role or profile, e.g. "Manual or automation QA engineers"]</li>
-                <li>[Role or profile]</li>
-                <li>[Experience level, e.g. "1+ years in a QA role"]</li>
-              </ul>
-            </div>
-            <div>
-              <p class="audience-grid__label">Not the right fit</p>
-              <ul>
-                <li>[Who this course is NOT for, to set expectations]</li>
-                <li>[Prerequisite they'd be missing]</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    WHY LEARN FROM ME — proof cards (separate from bio)
-  ============================================================= -->
-    <section class="section section--ink" id="why-me">
-      <div class="section__inner">
-        <h2>Why learn from me</h2>
-        <div class="proof-grid">
-          <article class="proof-card">
-            <h3>QA Leadership</h3>
-            <p>[Evidence — e.g. years leading QA teams, size of teams, industries.]</p>
-          </article>
-          <article class="proof-card">
-            <h3>AI + Copilot</h3>
-            <p>[Evidence — e.g. specific AI/Copilot projects shipped, tools built.]</p>
-          </article>
-          <article class="proof-card">
-            <h3>Automation</h3>
-            <p>[Evidence — e.g. frameworks built, scale of automated suites maintained.]</p>
-          </article>
-          <article class="proof-card">
-            <h3>Real engineering workflows</h3>
-            <p>[Evidence — e.g. companies/products this was used in production for.]</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    BENEFITS
-  ============================================================= -->
-    <section class="section" id="benefits">
-      <div class="section__inner">
-        <h2>What changes after this course</h2>
-        <div class="benefits">
-          <div class="benefit">
-            <p class="benefit__stat">~50%</p>
-            <p>Less time spent drafting test cases from scratch, once AI generates the first draft for you to review.</p>
-          </div>
-          <div class="benefit">
-            <p class="benefit__stat">2x</p>
-            <p>Faster test automation implementation, following the same coding practices you already use.</p>
-          </div>
-          <div class="benefit">
-            <p class="benefit__stat">6 hrs</p>
-            <p>To go from your first agents used in SDLC workflow on a real codebase.</p>
-          </div>
-        </div>  
-      </div>
-    </section>
-    <!-- ============================================================
-    INSTRUCTOR — expanded
-  ============================================================= -->
-    <section class="section section--paper-alt" id="instructor">
-      <div class="section__inner section__inner--split">
-        <div class="section__head">
-          <h2>Your instructor</h2>
+          <h2>Lead Strategy Advisor</h2>
         </div>
         <div class="section__body instructor">
-          <img class="instructor__photo" src="assets/instructor-photo.jpg" alt="[Instructor name]" width="160"
-            height="160">
+          <svg class="instructor__photo" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Advisor initials">
+            <rect width="120" height="120" fill="#12151B"/>
+            <text x="60" y="70" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="40" fill="#EEF0EF">QA</text>
+          </svg>
           <div>
-            <h3 class="instructor__name">[Instructor Name]</h3>
-            <p class="instructor__role">[Professional title, e.g. "QA Engineering Lead · AI-Driven Testing Specialist"]
-            </p>
-            <p>[3–5 sentences: specific QA/AI expertise, notable projects, and speaking/training experience —
-              conferences, workshops, in-house trainings delivered.]</p>
-
-            <ul class="instructor__credibility">
-              <li>[Credibility indicator, e.g. "X years in QA / test automation"]</li>
-              <li>[Credibility indicator, e.g. "Delivered N workshops on AI for QA"]</li>
-              <li>[Credibility indicator, e.g. "Built/maintained automation suite covering N tests"]</li>
-              <li>[Credibility indicator, e.g. "Speaker at [conference name]"]</li>
-            </ul>
-
+            <h3 class="instructor__name">[Advisor Name]</h3>
+            <p class="instructor__role">Senior QA Strategy Advisor &amp; AI Enablement Specialist</p>
+            <p>I work with CTOs and Engineering Directors to remove delivery bottlenecks at the root. By wiring agentic workflows directly into QA, I help engineering organizations scale their testing capability to match AI-driven development speed — instead of quietly falling behind it.</p>
             <div class="instructor__links">
-              <a href="[LINKEDIN URL]" class="btn btn--ghost">LinkedIn</a>
-              <a href="[GITHUB URL]" class="btn btn--ghost">GitHub</a>
+              <a href="[LINKEDIN URL]" class="btn btn--ghost">Connect on LinkedIn</a>
             </div>
           </div>
         </div>
-
-        <!-- Downloadable expertise asset -->
-        <div class="lead-magnet">
-          <div>
-            <p class="lead-magnet__label">Free download</p>
-            <h3>AI for QA — 20 GitHub Copilot Prompts for Test Engineers</h3>
-            <p>[One sentence describing what's in the PDF and who it's for.]</p>
-          </div>
-          <a href="assets/ai-qa-copilot-prompts.pdf" class="btn btn--primary" download>Download the PDF</a>
-        </div>
-
-        <!-- Course preview video -->
-        <div class="video-embed">
-          <p class="video-embed__label">60–90 second preview</p>
-          <div class="video-embed__frame">
-            <!-- Replace VIDEO_ID with your real YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Course preview: AI-Driven Quality Engineering"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- ============================================================
-    TESTIMONIALS
-    Only add real testimonials from real participants. Do not
-    fabricate quotes or names. Leave slots empty until you have
-    genuine feedback to add.
-  ============================================================= -->
-    <section class="section" id="testimonials">
-      <div class="section__inner">
-        <h2>What participants say</h2>
-        <div class="testimonials">
-          <figure class="testimonial">
-            <img class="testimonial__photo" src="assets/testimonial-1.jpg" alt="" width="56" height="56">
-            <blockquote>
-              <p>[Replace with a genuine quote from a real workshop/course participant.]</p>
-            </blockquote>
-            <figcaption>[Participant name], [Role]</figcaption>
-          </figure>
-          <figure class="testimonial">
-            <img class="testimonial__photo" src="assets/testimonial-2.jpg" alt="" width="56" height="56">
-            <blockquote>
-              <p>[Replace with a genuine quote from a real workshop/course participant.]</p>
-            </blockquote>
-            <figcaption>[Participant name], [Role]</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    CTA BAND
-  ============================================================= -->
-    <section class="cta-band">
-      <div class="cta-band__inner">
-        <h2>[Direct CTA line, e.g. "Seats are limited to keep it hands-on."]</h2>
-        <a href="#signup" class="btn btn--primary">Join the next cohort</a>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    SIGNUP / CONTACT FORM
-  ============================================================= -->
-
-    <section class="section" id="signup">
+    B2B CONTACT / INQUIRY FORM
+    ============================================================= -->
+    <section class="section section--paper-alt" id="inquire">
       <div class="section__inner section__inner--narrow">
-        <h2>Join</h2>
-        <p class="section__intro">[One line on what happens after they submit — e.g. "I'll email you within 2 business
-          days with next steps."]</p>
+        <h2>Book a Team Strategy Session</h2>
+        <p class="section__intro">Tell us where testing is slowing you down. We'll come back with a scoped AI-Augmented QA Playbook for your stack, your team size, and your release cadence.</p>
 
         <form id="signupForm" class="form" novalidate data-thankyou="thank-you.html">
-          <!--
-          WEB3FORMS SETUP
-          1. Go to https://web3forms.com and create a free account with your Gmail.
-          2. Copy your Access Key.
-          3. Paste it below, replacing YOUR_WEB3FORMS_ACCESS_KEY_HERE.
-        -->
           <input type="hidden" name="access_key" value="52103216-7b20-4e88-9d35-9184952fa5cc">
-          <input type="hidden" name="subject" value="New sign-up: AI-Driven Quality Engineering">
+          <input type="hidden" name="subject" value="B2B Inquiry: QA Enablement Initiative">
           <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form__row">
-            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <label for="name">Executive name <span aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" required autocomplete="name" maxlength="50">
           </div>
 
           <div class="form__row">
-            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <label for="email">Work email <span aria-hidden="true">*</span></label>
             <input type="email" id="email" name="email" required autocomplete="email" maxlength="50">
           </div>
 
           <div class="form__row">
-            <label for="role">Company or role <span class="optional">(optional)</span></label>
-            <input type="text" id="role" name="role" autocomplete="organization" maxlength="50">
+            <label for="role">Company &amp; job title <span aria-hidden="true">*</span></label>
+            <input type="text" id="role" name="role" required autocomplete="organization" maxlength="100">
           </div>
 
           <div class="form__row">
-            <label for="message">Message <span class="optional">(optional)</span></label>
-            <textarea id="message" name="message" rows="4"></textarea>
+            <label for="message">Current QA bottlenecks / goals</label>
+            <textarea id="message" name="message" rows="4" placeholder="e.g. release cadence, coverage gaps, team size, current tooling"></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary form__submit">
-            <span class="btn__label">Join</span>
+            <span class="btn__label">Request strategy call</span>
           </button>
-
-          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-
-          <p class="form__privacy">Your details are used only to respond to your course enquiry. See the <a
-              href="privacy.html">privacy notice</a> for details.</p>
+          <p class="form__note">We respond within one business day with next steps — no automated sales sequence.</p>
         </form>
       </div>
     </section>
-
   </main>
 
-  <!-- ============================================================
-  STICKY MOBILE CTA (mobile only, shown after scrolling past hero)
-============================================================= -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="#signup" class="btn btn--primary">Join →</a>
-  </div>
-
-  <!-- ============================================================
-  FOOTER
-============================================================= -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p>&copy; <span id="year"></span> [YOUR NAME OR COMPANY]. All rights reserved.</p>
-      <ul class="site-footer__links">
-        <li><a href="mailto:[YOUR-EMAIL@gmail.com]">Email</a></li>
-        <li><a href="[LINKEDIN URL]">LinkedIn</a></li>
-        <li><a href="[GITHUB OR OTHER URL]">GitHub</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-      </ul>
+      <span>QA Engineering with AI — AI-Augmented QA Playbook</span>
+      <span>[YOUR COMPANY / NAME] · [CONTACT EMAIL]</span>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('nav-menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function () {
+        var open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 </body>
-
 </html>
