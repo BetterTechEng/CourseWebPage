@@ -126,17 +126,16 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(238, 240, 239, 0.92);
-      backdrop-filter: blur(6px);
+      background: var(--paper);
       border-bottom: 1px solid var(--line);
     }
     .nav {
-      max-width: 1180px;
+      max-width: 1320px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 1.5rem;
     }
     .nav__brand {
       font-family: var(--font-display);
@@ -144,6 +143,8 @@
       font-size: 1.05rem;
       text-decoration: none;
       color: var(--ink);
+      flex: none;
+      white-space: nowrap;
     }
     .nav__brand span {
       color: var(--amber);
@@ -156,6 +157,8 @@
       border: 0;
       cursor: pointer;
       padding: 0.4rem;
+      margin-left: auto;
+      flex: none;
     }
     .nav__toggle-bar {
       width: 22px; height: 2px;
@@ -166,25 +169,39 @@
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 1.75rem;
-      margin: 0;
+      gap: 1.4rem;
+      margin: 0 0 0 auto;
       padding: 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 8px), transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 8px), transparent 100%);
     }
+    .nav__menu::-webkit-scrollbar { display: none; }
+    .nav__menu li { flex: none; }
     .nav__menu a {
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: 0.85rem;
       color: var(--ink-soft);
+      white-space: nowrap;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
     }
-    .nav__menu a:hover { color: var(--ink); }
+    .nav__menu a:hover { color: var(--ink); border-color: var(--line-strong); }
     .nav__cta {
       border: 1px solid var(--ink);
-      padding: 0.5rem 0.9rem;
+      padding: 0.55rem 1rem;
       border-radius: var(--radius);
       color: var(--ink) !important;
+      flex: none;
+      border-bottom: 1px solid var(--ink) !important;
     }
-    .nav__cta:hover { background: var(--ink); color: var(--on-ink) !important; }
+    .nav__cta:hover { background: var(--ink); color: var(--on-ink) !important; border-color: var(--ink) !important; }
 
-    @media (max-width: 780px) {
+    @media (max-width: 1150px) {
       .nav__toggle { display: flex; }
       .nav__menu {
         position: absolute;
@@ -196,6 +213,9 @@
         gap: 0;
         padding: 0.5rem 1.5rem 1rem;
         display: none;
+        overflow-x: visible;
+        -webkit-mask-image: none;
+        mask-image: none;
       }
       .nav__menu.is-open { display: flex; }
       .nav__menu li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
@@ -1093,7 +1113,7 @@ Actionable fix: inject validation in api/orders.py:42</code></pre>
     ============================================================= -->
     <section class="section section--paper-alt" id="inquire">
       <div class="section__inner section__inner--narrow">
-        <h2>Book a Team Strategy Session</h2>
+        <h2>Contact Us</h2>
         <p class="section__intro">Tell us where testing is slowing you down. We'll come back with a scoped AI-Augmented QA Playbook for your stack, your team size, and your release cadence.</p>
 
         <form id="signupForm" class="form" novalidate data-thankyou="thank-you.html">
