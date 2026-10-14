@@ -1,1178 +1,656 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Driven QA Engineering | Transform Your QA Team for AI-Driven Delivery</title>
+<meta name="description" content="Transform your existing QA engineers into AI-Augmented quality owners. Deliver software faster, keep quality high and adapt to the AI Development Lifecycle without adding headcount.">
+<meta name="theme-color" content="#111b22">
+<meta property="og:title" content="AI-Driven QA Engineering — QA capability transformation">
+<meta property="og:description" content="Deliver faster, keep quality high and adapt to AI-driven development with the QA engineers you already have.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111b22'/%3E%3Cpath d='M7 17l6 6L25 9' fill='none' stroke='%237ce1b0' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111b22;--paper:#f4f6f7;--muted:#51616d;--line:#d2d9dd;--green:#116647;--green-light:#dff4e9;--mint:#7ce1b0;--amber:#805100;--amber-light:#fff1cc;--display:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif;--mono:'IBM Plex Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.65 var(--body)}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:1.13;font-weight:600;overflow-wrap:anywhere}h1{font-size:clamp(2.75rem,5vw,4.6rem);letter-spacing:-.055em}h2{font-size:clamp(2rem,3.1vw,3rem);letter-spacing:-.04em}h3{font-size:1.3rem;letter-spacing:-.025em}a{color:inherit;text-underline-offset:5px}button,input,select,textarea{font:inherit}button{cursor:pointer}img{max-width:100%}:focus-visible{outline:3px solid #356cb9;outline-offset:5px}::selection{background:var(--green-light);color:var(--ink)}.wrap{width:min(1240px,calc(100% - 80px));margin-inline:auto}.skip{position:fixed;top:-100px;left:20px;z-index:100;background:white;padding:12px 20px}.skip:focus{top:12px}.label,.section-id,.badge{font-family:var(--mono);font-size:.8125rem}.label,.section-id{color:var(--muted)}.section-id{display:block;margin-bottom:18px}.section-id::before{content:'['}.section-id::after{content:']'}.badge{display:inline-flex;align-items:center;padding:4px 9px;line-height:1.5;border:1px solid var(--line);white-space:nowrap}.badge.good{color:var(--green);background:var(--green-light);border-color:#a9d6c0}.badge.risk{color:var(--amber);background:var(--amber-light);border-color:#e6c878}.badge.neutral{color:var(--muted);background:#edf0f2}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:12px 21px;font-weight:700;line-height:1.3;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:white;border-radius:0;transition:background .15s,color .15s}.btn:hover{background:#304451}.btn-secondary{background:transparent;color:inherit;border-color:currentColor}.btn-secondary:hover{background:#e2e7ea;color:var(--ink)}.btn-green{background:var(--mint);color:var(--ink);border-color:var(--mint)}.btn-green:hover{background:#a6edcb}.button-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.section{padding:80px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;gap:48px;justify-content:space-between;align-items:end;margin-bottom:35px}.section-head h2{max-width:740px}.section-head p{max-width:370px;color:var(--muted)}.lede{font-size:1.125rem;color:var(--muted);max-width:720px;margin-top:22px}.fine{font-size:.875rem;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:60px}.split>*,.hero-grid>*,.contact-grid>*{min-width:0}.dark{background:var(--ink);color:white}.dark .section-id,.dark .label,.dark .fine,.dark .lede{color:#b9c5ce}.dark .section-head p{color:#b9c5ce}p+p{margin-top:16px}
+.header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}.header-inner{min-height:78px;display:flex;gap:28px;align-items:center}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--display);font-weight:700;line-height:1.2}.brand-symbol{display:grid;place-items:center;width:30px;height:30px;flex-shrink:0;background:var(--ink);color:var(--mint);font-size:21px}.brand small{display:block;color:var(--muted);font-size:.75rem;font-family:var(--body);font-weight:400;margin-top:4px}.nav{display:flex;align-items:center;gap:22px;flex:1}.nav-links{display:flex;gap:22px;margin-left:auto}.nav-links a{font-size:.875rem;text-decoration:none}.nav-links a:hover{text-decoration:underline}.nav .btn{font-size:.875rem;min-height:43px;padding:10px 16px}.nav-toggle{display:none;margin-left:auto;padding:9px 13px;background:none;border:1px solid var(--line)}
+.hero{padding:72px 0;background:var(--ink);color:white}.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:65px;align-items:center}.hero-intake{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:25px;color:#c3cdd4;font-size:.875rem}.hero-intake .badge{color:#c3cdd4;border-color:#5a6c78;background:transparent}.hero h2{font-family:var(--body);font-size:1.4rem;line-height:1.4;letter-spacing:0;margin-top:24px;color:#e1e9ef}.hero .lede{color:#bdcbd4;font-size:1.0625rem}.hero .btn-secondary{border-color:#73828d}.hero-facts{display:flex;gap:30px;flex-wrap:wrap;margin:30px 0 0;padding:24px 0 0;border-top:1px solid #34424d}.hero-facts dt{font-family:var(--mono);font-size:.75rem;color:#aab9c4}.hero-facts dd{margin:6px 0 0;font-size:.875rem}.hero-note{font-size:.8125rem;color:#b9c5ce;margin-top:17px}.output-board{background:var(--paper);color:var(--ink);border:1px solid #73828d}.output-board header{padding:22px 24px;background:#e9edf0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.output-board h3{font-size:1.2rem}.board-list{padding:0;margin:0;list-style:none;counter-reset:output}.board-list li{padding:20px 24px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:28px 1fr;gap:15px;counter-increment:output}.board-list li::before{content:counter(output,decimal-leading-zero);font-family:var(--mono);font-size:.8125rem;color:var(--muted);margin-top:3px}.board-list strong{display:block;font-size:.9375rem}.board-list span{display:block;font-size:.875rem;color:var(--muted);margin-top:3px}.board-result{padding:20px 24px;background:var(--green-light);color:var(--green);font-weight:600;font-size:.9375rem}.board-caption{margin-top:12px;font-size:.8125rem;color:#b9c5ce}
+.why-copy{display:grid;grid-template-columns:1fr 1fr;gap:65px}.why-copy>div{color:var(--muted)}.risk-banner{margin-top:30px;padding:21px 25px;background:var(--amber-light);color:#624300;border-left:4px solid #b87a12;font-size:.9375rem}.role-intro{margin-bottom:30px}.outcomes{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);list-style:none;margin:30px 0 0;padding:0}.outcomes li{display:flex;gap:20px;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:white}.outcomes li:last-child{grid-column:1/-1}.outcomes .check{font-size:23px;color:var(--green);flex-shrink:0}.outcomes h3{font-size:1.15rem}.outcomes p{font-size:.9375rem;color:var(--muted);margin-top:10px}.table-scroll{overflow:auto;border:1px solid var(--line);margin-top:30px}table{border-collapse:collapse;width:100%;text-align:left;min-width:700px}caption{padding:18px 22px;background:#e9edf0;text-align:left;font-size:.875rem}th,td{padding:23px 22px;border-bottom:1px solid var(--line);vertical-align:top}thead th{font-family:var(--display);background:#edf0f2}tbody th{width:10%;font-family:var(--mono);font-size:.8125rem}tbody td:nth-child(2){width:36%;font-family:var(--display);font-weight:600;font-size:1.05rem}tbody td:last-child{background:#eaf5ef;font-size:.9375rem}tbody tr:last-child>*{border-bottom:0}.curriculum-note{margin-top:20px;font-size:.875rem;color:var(--muted)}
+.tools{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}.tool{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.tool-title{display:flex;align-items:center;gap:18px;margin-bottom:20px}.tool img{width:40px;height:40px;object-fit:contain;flex-shrink:0}.tool p{color:var(--muted);font-size:.9375rem}.tool .use{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;font-size:.875rem;font-weight:600}.fit-panel{border-top:3px solid var(--green);padding:26px 28px;background:white}.fit-panel.secondary{border-color:#8e9da8;background:#e9edf0}.fit-panel h3{margin-bottom:18px}.fit-panel ul{margin:0;padding-left:20px;color:var(--muted)}.fit-panel li{margin-top:12px}.instructor-layout{display:grid;grid-template-columns:280px 1fr;gap:50px;align-items:center}.photo-slot{aspect-ratio:4/5;background:#e4e9ed;border:1px solid #bdc7ce;display:grid;place-items:center;color:var(--muted);font-size:.9375rem;text-align:center;padding:20px}.instructor-copy .badge{margin-bottom:20px}.instructor-copy p{margin-top:18px;color:var(--muted);max-width:650px}.launch-facts{display:grid;grid-template-columns:repeat(5,1fr);margin:30px 0 0;border:1px solid var(--line)}.launch-facts>div{padding:25px 22px;border-left:1px solid var(--line);background:white}.launch-facts>div:first-child{border-left:0}.launch-facts dt{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-bottom:12px}.launch-facts dd{margin:0;font-family:var(--display);font-size:1.05rem;font-weight:600}.pricing-note{margin-top:25px;max-width:800px;color:var(--muted)}.feedback-pending{padding:27px 30px;border:1px solid #52616c;background:#182731;max-width:900px}.feedback-pending h3{margin-bottom:15px}.feedback-pending p{color:#b9c5ce}.faq-list{border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line);padding:24px 0}.faq-list summary{cursor:pointer;font-family:var(--display);font-size:1.15rem;font-weight:600;line-height:1.4}.faq-list p{max-width:850px;color:var(--muted);margin-top:18px}.closing{padding:65px 0;background:var(--green-light);border-bottom:1px solid #afcfbf}.closing .lede{color:var(--green)}.closing h2{max-width:850px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.contact-points{margin:25px 0 0;padding:0;list-style:none;color:var(--muted)}.contact-points li{padding:14px 0;border-top:1px solid var(--line)}.form{border:1px solid var(--line);padding:32px;background:white}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:.875rem;font-weight:600}.field input,.field select,.field textarea{width:100%;min-width:0;padding:12px 13px;min-height:48px;border:1px solid #97a6af;background:white;color:var(--ink);border-radius:0}.field textarea{resize:vertical;min-height:110px}.field-wide{grid-column:1/-1}.consent{display:flex;align-items:start;gap:10px;font-size:.8125rem;margin-top:20px;color:var(--muted)}.consent input{margin-top:6px;accent-color:var(--green);width:16px;height:16px;flex-shrink:0}.form .btn{width:100%;margin-top:23px}.form-note{font-size:.8125rem;color:var(--muted);margin-top:14px}.form-message{padding:15px;font-size:.9375rem;margin-top:20px;border:1px solid var(--line)}.form-message.error{color:var(--amber);background:var(--amber-light);border-color:#e6c878}.form-message.success{color:var(--green);background:var(--green-light);border-color:#a9d6c0}.form-message:empty{display:none}.form button:disabled{cursor:wait;opacity:.65}.honeypot{display:none!important}.privacy{margin-top:18px;font-size:.8125rem;color:var(--muted)}.privacy summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}.privacy p{margin-top:12px}.footer{padding:30px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.footer-links{display:flex;gap:22px;font-size:.875rem}.footer .fine{font-size:.8125rem}
+@media(max-width:1180px){.wrap{width:calc(100% - 56px)}.hero-grid{gap:40px}.nav-links{gap:15px}.brand small{display:none}.launch-facts{grid-template-columns:repeat(3,1fr)}.launch-facts>div:nth-child(4){border-left:0;border-top:1px solid var(--line)}.launch-facts>div:nth-child(5){border-top:1px solid var(--line)}}
+@media(max-width:980px){.nav-toggle{display:block}.nav{display:none;position:absolute;top:100%;left:0;right:0;padding:24px 28px;background:var(--paper);border-bottom:1px solid var(--line)}.nav.is-open{display:flex;align-items:start;flex-direction:column}.nav-links{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0;width:100%}.nav-links a{padding:10px 0;font-size:1rem}.hero-grid{grid-template-columns:1fr 1fr;gap:30px}.section{padding:60px 0}.section-head{gap:30px}.split,.why-copy{gap:30px}.contact-grid{grid-template-columns:1fr;gap:35px}.instructor-layout{grid-template-columns:220px 1fr;gap:30px}}
+@media(max-width:720px){.wrap{width:calc(100% - 36px)}.header-inner{min-height:68px}.brand{font-size:.9375rem}.brand small{display:block;font-size:.6875rem}.hero{padding:42px 0}.hero-grid,.split,.why-copy{grid-template-columns:1fr}.hero h2{font-size:1.2rem}.hero-grid{gap:35px}.hero-facts{gap:20px}.section{padding:50px 0}.section-head{display:block}.section-head p{margin-top:20px;max-width:none}.outcomes{grid-template-columns:1fr}.outcomes li:last-child{grid-column:auto}.outcomes li{padding:23px}.tools{grid-template-columns:1fr}.tool{padding:25px}.instructor-layout{grid-template-columns:1fr}.photo-slot{aspect-ratio:4/3;max-width:320px;width:100%}.launch-facts{grid-template-columns:1fr 1fr}.launch-facts>div{padding:22px}.launch-facts>div:nth-child(3),.launch-facts>div:nth-child(5){border-left:0;border-top:1px solid var(--line)}.launch-facts>div:nth-child(4){border-left:1px solid var(--line)}.form{padding:24px}.footer-inner{align-items:start;flex-direction:column}.closing{padding:45px 0}.feedback-pending{padding:24px}}
+@media(max-width:430px){.form-grid{grid-template-columns:1fr}.form{padding:20px}.button-row{flex-direction:column;align-items:stretch}.button-row .btn{width:100%}.nav-links{grid-template-columns:1fr}.hero-facts{display:grid;grid-template-columns:1fr 1fr}.output-board header{align-items:start;flex-direction:column}.board-list li{padding:18px}.launch-facts dd{font-size:.9375rem}.brand{font-size:.875rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+    .builder-map,.delivery-map{margin:34px 0 0;border:1px solid var(--line);background:white}.builder-map-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 26px;border-bottom:1px solid var(--line);background:#e9edf0}.builder-map-body{display:grid;grid-template-columns:minmax(0,1.4fr) 56px minmax(0,1fr) 56px minmax(0,1fr);align-items:center;padding:36px 28px}.role-inputs h3{margin-bottom:20px;font-size:1.15rem}.role-matrix{display:grid;grid-template-columns:1fr 1fr;gap:10px;list-style:none;margin:0;padding:0}.role-matrix li{display:flex;align-items:center;padding:13px 12px;min-height:66px;font-size:.9375rem;font-weight:600;line-height:1.45;border:1px solid var(--line);background:var(--paper)}.role-matrix li:last-child{grid-column:1/-1;min-height:50px}.map-arrow{width:56px;height:40px;color:#6d7d88}.builder-engine{background:var(--ink);color:white;padding:26px 22px;min-width:0}.builder-engine .label{color:#b9c5ce}.builder-engine h3{margin:12px 0 24px;font-size:1.65rem}.builder-engine ul{margin:0;padding:0;list-style:none}.builder-engine li{padding:9px 0;border-top:1px solid #34424d;font-size:.9375rem}.builder-engine p{color:#b9c5ce;font-size:.875rem;margin-top:22px;padding-top:18px;border-top:1px solid #34424d}.builder-result{padding:26px 22px;border:1px solid #9eafba;border-top:4px solid var(--ink);background:var(--paper);min-width:0}.builder-result h3{font-size:clamp(1.65rem,2.3vw,2.1rem);margin:22px 0 16px;letter-spacing:-.045em}.builder-result p{color:var(--muted);font-size:.9375rem}.builder-result>div span{display:block}.builder-result>div{font-size:.875rem;font-weight:600;line-height:1.9;border-top:1px solid var(--line);padding-top:18px;margin-top:22px}.builder-map figcaption,.delivery-map figcaption{padding:17px 26px;border-top:1px solid var(--line);font-size:.875rem;color:var(--muted);background:var(--paper)}
+    .delivery-lane{padding:30px}.delivery-lane+.delivery-lane{border-top:1px solid var(--line)}.lane-heading{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-bottom:28px}.lane-heading h3{margin-top:9px;font-size:1.45rem}.flow-steps{display:flex;gap:34px;list-style:none;margin:0;padding:0}.flow-steps li{position:relative;flex:1;min-width:0;padding:20px 17px;background:var(--paper);border:1px solid var(--line)}.flow-steps li:not(:last-child)::after{content:'';position:absolute;left:calc(100% + 5px);top:50%;width:25px;height:20px;transform:translateY(-50%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 20'%3E%3Cpath d='M0 10H22M16 4L22 10L16 16' fill='none' stroke='%236d7d88' stroke-width='1.7'/%3E%3C/svg%3E") center/contain no-repeat}.flow-steps strong{display:block;font-family:var(--display);font-size:1.12rem;line-height:1.3;margin:15px 0 9px;overflow-wrap:anywhere}.flow-steps small{display:block;color:var(--muted);font-size:.875rem;line-height:1.5}.step-label{font-family:var(--mono);font-size:.75rem;color:var(--muted)}.flow-steps .qa-gate{background:var(--amber-light);border-color:#d6b365;border-top:3px solid #b87a12}.qa-gate .step-label,.qa-gate small{color:var(--amber)}.lane-note{margin-top:22px;font-size:.875rem;color:var(--muted)}.adlc-lane{background:#edf6f1}.human-direction{display:flex;gap:14px;align-items:center;padding:17px 20px;margin-bottom:25px;background:var(--ink);color:white}.human-direction svg{flex-shrink:0;color:var(--mint)}.human-direction strong{display:block;font-size:.9375rem}.human-direction span{display:block;font-size:.875rem;color:#b9c5ce;margin-top:3px}.adlc-steps li{background:white;border-color:#b0cfbf;border-top:3px solid var(--green)}.feedback-rail{height:61px;position:relative;margin-top:0;color:var(--green)}.feedback-rail svg{width:100%;height:46px;display:block}.feedback-rail span{position:absolute;left:50%;top:18px;transform:translateX(-50%);padding:0 15px;background:#edf6f1;font-size:.8125rem;font-family:var(--mono);white-space:nowrap}.mobile-feedback{display:none}.chapter-tagline{font-size:clamp(1.3rem,2.4vw,2rem);margin-top:18px;color:var(--green)}.chapter-lede{max-width:800px;margin-bottom:32px}.chapter-table{min-width:890px}.chapter-table tbody th{width:18%}.chapter-table tbody td:nth-child(2){width:29%}.chapter-table tbody td:nth-child(3){width:25%}.chapter-table tbody td:last-child{width:28%}.chapter-table tbody td{font-size:.9375rem}.impact-subtitle{display:block;color:var(--muted);font-size:.78em;margin-top:16px}.builder-map-body>*{min-width:0}
+    @media(max-width:1180px){.builder-map-body{grid-template-columns:minmax(0,1.2fr) 38px minmax(0,1fr) 38px minmax(0,1fr);padding:28px 22px}.map-arrow{width:38px}.builder-engine,.builder-result{padding:23px 18px}.role-matrix{grid-template-columns:1fr}.role-matrix li{min-height:0;padding:9px 12px}.flow-steps{gap:25px}.flow-steps li{padding:18px 13px}.flow-steps li:not(:last-child)::after{width:18px;left:calc(100% + 4px)}.delivery-lane{padding:26px}}
+    @media(max-width:800px){.builder-map-body{grid-template-columns:1fr;gap:0;padding:24px}.role-matrix{grid-template-columns:1fr 1fr}.role-matrix li{min-height:56px;padding:13px}.role-matrix li:last-child{min-height:48px}.map-arrow{justify-self:center;transform:rotate(90deg);width:48px;height:40px;margin:15px 0}.builder-engine,.builder-result{padding:25px}.builder-engine ul{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.builder-engine h3{margin-bottom:18px}.builder-engine p{margin-top:15px}.builder-result h3 br{display:none}.builder-result>div br{display:none}.builder-result>div{display:flex;flex-wrap:wrap;gap:8px 18px}.lane-heading{align-items:start;flex-direction:column;gap:15px}.flow-steps{flex-direction:column;gap:26px}.flow-steps li{padding:17px 20px}.flow-steps li:not(:last-child)::after{left:50%;top:calc(100% + 3px);transform:translateX(-50%) rotate(90deg);width:20px;height:20px}.flow-steps strong{margin:8px 0 5px}.flow-steps small{font-size:.875rem}.feedback-rail{display:none}.mobile-feedback{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:.875rem;color:var(--green)}.mobile-feedback svg{flex-shrink:0}.human-direction{align-items:start}.delivery-lane{padding:24px}.builder-map-top{flex-wrap:wrap;padding:18px 22px}.builder-map-top .badge{white-space:normal}}
+    @media(max-width:430px){.role-matrix{grid-template-columns:1fr}.builder-map-body,.delivery-lane{padding:20px}.builder-map figcaption,.delivery-map figcaption{padding:16px 20px}.builder-result>div{display:block}.human-direction{padding:16px}.human-direction span{font-size:.8125rem}.lane-heading .badge{white-space:normal}.builder-result h3{font-size:2rem}}
 
-  <!-- ============================================================
-  SEO / META — B2B Optimized
-  ============================================================= -->
-  <title>QA Engineering with AI — From SDLC to ADLC for E-Commerce Teams</title>
-  <meta name="description"
-    content="QA Engineering with AI for e-commerce platforms: a plain-language Enablement Initiative on moving QA from the old SDLC to the Agentic Development Lifecycle (ADLC) — covering cart, checkout, payments, inventory, and pricing.">
-  <meta name="author" content="[YOUR NAME]">
-  <link rel="canonical" href="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
+.staffing-transition-title{margin:36px 0 0;font-size:clamp(1.2rem,2vw,1.7rem);line-height:1.4}.staffing-illustration{margin:24px 0 0;border:1px solid var(--line);background:#fbfcfd}.staffing-scroll{overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#7395ad #edf2f5}.staffing-art{display:block;width:100%;min-width:1240px;height:auto}.staffing-illustration figcaption{padding:20px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:.875rem;line-height:1.65}
+.board-row{display:flex;justify-content:space-between;align-items:start;gap:12px}.board-row .badge{flex-shrink:0}.outcomes-even li:last-child{grid-column:auto}.mindset-table tbody th{width:16%}.mindset-table tbody td:nth-child(2){width:34%;font-family:var(--body);font-weight:400;font-size:.9375rem;color:var(--muted)}.credential-elements{margin:24px 0 0;padding:0;list-style:none}.credential-elements li{padding:12px 0 12px 28px;border-top:1px solid var(--line);position:relative}.credential-elements li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}.credential-list{display:grid;gap:12px}.credential{padding:20px 22px;background:white;border:1px solid var(--line);border-left:4px solid var(--green)}.credential h3{margin:12px 0 6px;font-size:1.15rem}.credential p{color:var(--muted);font-size:.9375rem}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="QA Engineering with AI — Moving from SDLC to ADLC">
-  <meta property="og:description"
-    content="Software is moving from the SDLC to the ADLC, where AI agents build and test continuously. This Program teaches e-commerce QA teams to lead that shift.">
-  <meta property="og:image" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/assets/og-image.jpg">
-  <meta property="og:url" content="https://[YOUR-USERNAME].github.io/[YOUR-REPO]/">
-
-  <!-- Fonts: Space Grotesk (display/headings), IBM Plex Sans (body/UI), IBM Plex Mono (status + code) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
-
-  <style>
-    /* ============================================================
-       DESIGN TOKENS
-       Palette is drawn from a test-report / status-board vocabulary:
-       ink (base), paper (light surface), amber (bottleneck / risk
-       signal), pass-green (resolved / AI-handled signal).
-    ============================================================= */
-    :root {
-      --ink: #12151B;
-      --ink-soft: #4A505C;
-      --ink-faint: #7B818C;
-      --paper: #EEF0EF;
-      --paper-raised: #FFFFFF;
-      --line: rgba(18, 21, 27, 0.12);
-      --line-strong: rgba(18, 21, 27, 0.22);
-      --amber: #C97A22;
-      --amber-soft: #F4E3CC;
-      --pass: #2C7A5E;
-      --pass-soft: #D7E9E1;
-      --on-ink: #EEF0EF;
-      --on-ink-soft: #A7ADB8;
-
-      --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
-      --font-body: "IBM Plex Sans", sans-serif;
-      --font-mono: "IBM Plex Mono", monospace;
-
-      --measure: 62ch;
-      --radius: 3px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      line-height: 1.12;
-      letter-spacing: -0.01em;
-      margin: 0 0 0.5em;
-      color: var(--ink);
-    }
-
-    h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 700; }
-    h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
-    h3 { font-size: 1.15rem; }
-
-    p { margin: 0 0 1em; }
-    a { color: inherit; }
-
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 0;
-      background: var(--ink);
-      color: var(--on-ink);
-      padding: 0.75rem 1.25rem;
-      z-index: 100;
-    }
-    .skip-link:focus {
-      left: 1rem;
-      top: 1rem;
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--amber);
-      outline-offset: 2px;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    /* ---------- Nav ---------- */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: var(--paper);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0.9rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .nav__brand {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-decoration: none;
-      color: var(--ink);
-      flex: none;
-      white-space: nowrap;
-    }
-    .nav__brand span {
-      color: var(--amber);
-    }
-    .nav__toggle {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      padding: 0.4rem;
-      margin-left: auto;
-      flex: none;
-    }
-    .nav__toggle-bar {
-      width: 22px; height: 2px;
-      background: var(--ink);
-      display: block;
-    }
-    .nav__menu {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 1.4rem;
-      margin: 0 0 0 auto;
-      padding: 0;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 8px), transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 8px), transparent 100%);
-    }
-    .nav__menu::-webkit-scrollbar { display: none; }
-    .nav__menu li { flex: none; }
-    .nav__menu a {
-      text-decoration: none;
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      white-space: nowrap;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .nav__menu a:hover { color: var(--ink); border-color: var(--line-strong); }
-    .nav__cta {
-      border: 1px solid var(--ink);
-      padding: 0.55rem 1rem;
-      border-radius: var(--radius);
-      color: var(--ink) !important;
-      flex: none;
-      border-bottom: 1px solid var(--ink) !important;
-    }
-    .nav__cta:hover { background: var(--ink); color: var(--on-ink) !important; border-color: var(--ink) !important; }
-
-    @media (max-width: 1150px) {
-      .nav__toggle { display: flex; }
-      .nav__menu {
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: var(--paper);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding: 0.5rem 1.5rem 1rem;
-        display: none;
-        overflow-x: visible;
-        -webkit-mask-image: none;
-        mask-image: none;
-      }
-      .nav__menu.is-open { display: flex; }
-      .nav__menu li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
-      .nav__menu li:last-child { border-bottom: 0; padding-top: 0.9rem; }
-    }
-
-    /* ---------- Layout helpers ---------- */
-    .section { padding: 5.5rem 1.5rem; }
-    .section__inner { max-width: 1180px; margin: 0 auto; }
-    .section__inner--narrow { max-width: 680px; }
-    .section__inner--split {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 3rem;
-    }
-    @media (max-width: 900px) {
-      .section__inner--split { grid-template-columns: 1fr; gap: 1.5rem; }
-    }
-    .section--ink { background: var(--ink); color: var(--on-ink); }
-    .section--ink h2, .section--ink h3 { color: var(--on-ink); }
-    .section--paper-alt { background: var(--paper-raised); }
-    .section__intro {
-      max-width: var(--measure);
-      color: var(--ink-soft);
-      font-size: 1.05rem;
-    }
-    .section--ink .section__intro { color: var(--on-ink-soft); }
-    .section__intro a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-    .section__intro a:hover { color: var(--amber); }
-    .section__lead {
-      font-size: 1.15rem;
-      color: var(--ink);
-      max-width: var(--measure);
-    }
-
-    /* status chip — used where the copy communicates an actual state,
-       not decoration */
-    .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--amber);
-      border: 1px solid var(--amber-soft);
-      background: var(--amber-soft);
-      padding: 0.35rem 0.7rem;
-      border-radius: var(--radius);
-      margin-bottom: 1.25rem;
-    }
-    .status-chip__dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--amber);
-      flex: none;
-    }
-
-    /* ---------- Buttons ---------- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.5rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--radius);
-      border: 1px solid transparent;
-      cursor: pointer;
-      font-family: var(--font-body);
-    }
-    .btn--primary {
-      background: var(--ink);
-      color: var(--on-ink);
-      border-color: var(--ink);
-    }
-    .btn--primary:hover { background: #262b35; }
-    .btn--ghost {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--line-strong);
-    }
-    .btn--ghost:hover { border-color: var(--ink); }
-    .section--ink .btn--ghost { color: var(--on-ink); border-color: rgba(238,240,239,0.35); }
-    .section--ink .btn--ghost:hover { border-color: var(--on-ink); }
-
-    /* ---------- Hero ---------- */
-    .hero { padding: 4.5rem 1.5rem 3.5rem; }
-    .hero__inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    @media (max-width: 940px) {
-      .hero__inner { grid-template-columns: 1fr; }
-    }
-    .hero__lede {
-      font-size: 1.15rem;
-      color: var(--ink-soft);
-      max-width: 54ch;
-    }
-    .hero__lede strong { color: var(--ink); }
-
-    .workflow-chain {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0;
-      list-style: none;
-      padding: 0;
-      margin: 1.75rem 0 2rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-    }
-    .workflow-chain li {
-      padding: 0.4rem 0.8rem 0.4rem 0;
-      position: relative;
-    }
-    .workflow-chain li:not(:last-child)::after {
-      content: "→";
-      margin-left: 0.8rem;
-      color: var(--ink-faint);
-    }
-
-    .hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
-
-    /* status-board visual replacing the generic "browser chrome" card */
-    .status-board {
-      background: var(--ink);
-      color: var(--on-ink);
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px -25px rgba(18,21,27,0.45);
-    }
-    .status-board__bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.85rem 1.1rem;
-      border-bottom: 1px solid rgba(238,240,239,0.12);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--on-ink-soft);
-    }
-    .status-board__runid { letter-spacing: 0.02em; }
-    .status-board__badge {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background: var(--amber-soft);
-      color: var(--amber);
-    }
-    .status-board__list {
-      list-style: none;
-      margin: 0;
-      padding: 0.6rem 0;
-    }
-    .status-board__row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.7rem 1.1rem;
-      font-size: 0.88rem;
-      border-bottom: 1px solid rgba(238,240,239,0.06);
-    }
-    .status-board__row:last-child { border-bottom: 0; }
-    .status-board__icon {
-      width: 16px; height: 16px;
-      flex: none;
-      border-radius: 4px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.6rem;
-      font-family: var(--font-mono);
-    }
-    .status-board__icon--pass { background: var(--pass); color: var(--on-ink); }
-    .status-board__icon--wait { background: rgba(238,240,239,0.14); color: var(--on-ink-soft); }
-    .status-board__meta {
-      margin-left: auto;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--on-ink-soft);
-    }
-
-    /* ---------- Facts strip ---------- */
-    .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-raised); }
-    .facts__inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 1.75rem 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 900px) {
-      .facts__inner { grid-template-columns: repeat(2, 1fr); }
-    }
-    .facts__item { border-left: 2px solid var(--amber); padding-left: 0.85rem; }
-    .facts__label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--ink-faint);
-      margin-bottom: 0.3rem;
-    }
-    .facts__value { font-weight: 600; font-size: 0.95rem; }
-
-    /* ---------- Compare table ---------- */
-    .compare-table {
-      display: grid;
-      border: 1px solid rgba(238,240,239,0.16);
-      border-radius: 6px;
-      overflow: hidden;
-      margin-top: 2.5rem;
-    }
-    .compare-table__row {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr 1.3fr;
-      border-bottom: 1px solid rgba(238,240,239,0.1);
-    }
-    .compare-table__row:last-child { border-bottom: 0; }
-    .compare-table__row > div {
-      padding: 1.1rem 1.25rem;
-      font-size: 0.92rem;
-    }
-    .compare-table__row--head {
-      background: rgba(238,240,239,0.05);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--on-ink-soft);
-      text-transform: none;
-    }
-    .compare-table__row--head > div { padding: 0.9rem 1.25rem; }
-    .compare-table__accent-head { color: var(--pass) !important; }
-    .compare-table__row > div:first-child { color: var(--on-ink); font-weight: 600; }
-    .compare-table__row > div:nth-child(2) { color: var(--on-ink-soft); }
-    .compare-table__accent {
-      color: var(--on-ink);
-      background: rgba(44,122,94,0.14);
-      border-left: 2px solid var(--pass);
-    }
-    @media (max-width: 780px) {
-      .compare-table__row, .compare-table__row--head { grid-template-columns: 1fr; }
-      .compare-table__row > div:first-child { background: rgba(238,240,239,0.04); }
-    }
-
-    /* ---------- Build cards ---------- */
-    .build-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 900px) { .build-grid { grid-template-columns: 1fr; } }
-    .build-card {
-      background: var(--paper-raised);
-      border: 1px solid var(--line);
-      border-left: 2px solid var(--pass);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-    }
-    .build-card__label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--ink-faint);
-      margin: 0 0 0.6rem;
-    }
-    .build-card__code {
-      background: var(--ink);
-      color: var(--on-ink);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      padding: 1rem;
-      border-radius: var(--radius);
-      overflow-x: auto;
-      line-height: 1.6;
-      margin: 1rem 0 0;
-    }
-
-    /* ---------- Toolchain / multi-LLM strip ---------- */
-    .toolchain {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    @media (max-width: 900px) { .toolchain { grid-template-columns: 1fr; } }
-    .tool-card {
-      background: var(--paper-raised);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-    .tool-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      align-self: flex-start;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 0.5rem 0.85rem;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      background: var(--paper);
-    }
-    .tool-badge__mark {
-      width: 22px; height: 22px;
-      border-radius: 4px;
-      flex: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--paper-raised);
-      border: 1px solid var(--line);
-    }
-    .tool-badge__mark img { width: 14px; height: 14px; display: block; }
-    .tool-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
-    .toolchain-note {
-      margin-top: 1.25rem;
-      font-size: 0.82rem;
-      color: var(--ink-faint);
-    }
-
-    /* ---------- Lifecycle compare (SDLC vs ADLC) ---------- */
-    .lifecycle-compare {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin: 2.5rem 0 2rem;
-    }
-    .lifecycle-row {
-      border: 1px solid rgba(238,240,239,0.14);
-      border-radius: 6px;
-      padding: 1.5rem;
-    }
-    .lifecycle-row--new {
-      border-color: var(--pass);
-      background: rgba(44,122,94,0.08);
-    }
-    .lifecycle-row__label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--on-ink-soft);
-      margin-bottom: 1rem;
-    }
-    .lifecycle-row--new .lifecycle-row__label { color: var(--pass); }
-    .lifecycle-steps {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-    .lifecycle-step {
-      padding: 0.6rem 1rem;
-      border: 1px solid rgba(238,240,239,0.2);
-      border-radius: var(--radius);
-      font-size: 0.88rem;
-      color: var(--on-ink);
-    }
-    .lifecycle-step--gate {
-      border-color: var(--amber);
-      color: var(--amber);
-    }
-    .lifecycle-step--pass {
-      border-color: var(--pass);
-      color: var(--pass);
-    }
-    .lifecycle-arrow {
-      color: var(--on-ink-soft);
-      font-size: 1rem;
-    }
-    .lifecycle-arrow--pass { color: var(--pass); }
-    .lifecycle-row__note {
-      color: var(--on-ink-soft);
-      font-size: 0.9rem;
-      margin: 0;
-      max-width: var(--measure);
-    }
-    @media (max-width: 640px) {
-      .lifecycle-steps { flex-direction: column; align-items: flex-start; }
-      .lifecycle-arrow { transform: rotate(90deg); margin-left: 0.5rem; }
-    }
-
-    /* ---------- Modules / framework ---------- */
-    .modules { margin-top: 2.5rem; border-top: 1px solid var(--line); }
-    .module { border-bottom: 1px solid var(--line); }
-    .module summary {
-      list-style: none;
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 1.35rem 0;
-      cursor: pointer;
-      font-family: var(--font-display);
-      font-weight: 600;
-    }
-    .module summary::-webkit-details-marker { display: none; }
-    .module__dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--amber);
-      flex: none;
-      transform: translateY(-2px);
-    }
-    .module[open] .module__dot { background: var(--pass); }
-    .module__title { font-size: 1.05rem; }
-    .module__content {
-      padding: 0 0 1.5rem 1.75rem;
-      color: var(--ink-soft);
-      max-width: var(--measure);
-    }
-
-    /* ---------- Advisor ---------- */
-    .instructor { display: flex; gap: 1.5rem; }
-    .instructor__photo {
-      border-radius: 6px;
-      flex: none;
-      display: block;
-    }
-    .instructor__name { margin-bottom: 0.15rem; }
-    .instructor__role {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--amber);
-      margin-bottom: 0.9rem;
-    }
-    .instructor__links { margin-top: 1rem; }
-    @media (max-width: 560px) {
-      .instructor { flex-direction: column; }
-    }
-
-    /* ---------- Form ---------- */
-    .form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
-    .form__row { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form__row label { font-size: 0.85rem; font-weight: 600; }
-    .form__row input, .form__row textarea {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      padding: 0.75rem 0.85rem;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      background: var(--paper-raised);
-      color: var(--ink);
-    }
-    .form__row input:focus, .form__row textarea:focus {
-      border-color: var(--ink);
-    }
-    .honeypot { display: none; }
-    .form__submit { align-self: flex-start; margin-top: 0.5rem; }
-    .form__note { font-size: 0.82rem; color: var(--ink-faint); margin-top: -0.5rem; }
-
-    /* ---------- Footer ---------- */
-    .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 2rem 1.5rem;
-      font-size: 0.85rem;
-      color: var(--ink-faint);
-    }
-    .site-footer__inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-  </style>
+</style>
+<noscript><style>.nav-toggle{display:none!important}.nav{display:flex!important;position:static;flex-wrap:wrap;padding:12px 0}.header-inner{flex-wrap:wrap}</style></noscript>
 </head>
-
 <body>
-
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <!-- ============================================================
-  NAV
-  ============================================================= -->
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary">
-      <a href="#top" class="nav__brand">QA Engineering <span>with AI</span></a>
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-      <ul class="nav__menu" id="nav-menu">
-        <li><a href="#adlc">SDLC → ADLC</a></li>
-        <li><a href="#agent-testing">Testing Agents</a></li>
-        <li><a href="#initiative">The Program</a></li>
-        <li><a href="#ecommerce-qa">E-Commerce QA</a></li>
-        <li><a href="#roi">Business Case</a></li>
-        <li><a href="#toolchain">Toolchain</a></li>
-        <li><a href="#advisor">Lead Advisor</a></li>
-        <li><a href="#inquire" class="nav__cta">Book a Strategy Call</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main">
-
-    <!-- ============================================================
-    HERO — The Bottleneck Warning
-    ============================================================= -->
-    <section class="hero" id="top">
-      <div class="hero__inner">
-        <div class="hero__text">
-          <span class="status-chip"><span class="status-chip__dot"></span>The shift: SDLC → ADLC</span>
-          <h1>QA Engineering with AI, for the Agentic Development Lifecycle</h1>
-          <p class="hero__lede"><strong>Software teams are moving from the SDLC to the ADLC</strong> — from people writing and testing code stage by stage, to AI agents building and testing continuously, with people directing. For e-commerce platforms, that change hits cart, checkout, pricing, and inventory logic first, where a missed edge case costs revenue. This Program teaches your QA team how to lead that shift, not get left behind by it.</p>
-
-          <ol class="workflow-chain" aria-label="AI-Augmented QA Workflow">
-            <li>Requirements Parsing</li>
-            <li>AI Risk Modeling</li>
-            <li>Smart Edge-Case Generation</li>
-            <li>Copilot Automation</li>
-            <li>Instant Root-Cause Analysis</li>
-          </ol>
-
-          <div class="hero__actions">
-            <a href="#inquire" class="btn btn--primary">Book a Strategy Call</a>
-            <a href="#initiative" class="btn btn--ghost">See the Playbook</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="wrap header-inner"><a class="brand" href="#top"><span class="brand-symbol" aria-hidden="true">✓</span><span>AI-Driven QA Engineering<small>QA capability transformation for the AI era</small></span></a><button class="nav-toggle" id="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">Menu</button><nav class="nav" id="site-nav" aria-label="Main navigation"><div class="nav-links"><a href="#why-now">Why now</a><a href="#mindset">Mindset</a><a href="#capabilities">Capabilities</a><a href="#approach">Approach</a><a href="#credentials">Micro-credentials</a><a href="#faq">FAQ</a></div><a class="btn" href="#contact" data-inquiry="consultation">Talk to us</a></nav></div></header>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="hero-title"><div class="wrap hero-grid"><div><p class="hero-intake"><span class="badge">For QA &amp; engineering leaders</span><span>Capability transformation, not training</span></p><h1 id="hero-title">Transform your QA team for AI-driven delivery</h1><h2>Deliver software faster, keep quality high and adapt to the AI Development Lifecycle — with the QA engineers you already have.</h2><p class="lede">AI is accelerating how software is built. Adding testers does not scale with it. Transforming your existing QA capability does.</p><p class="lede">We help your QA engineers adopt an AI-driven mindset, embed AI in everyday quality work and take ownership of quality across the lifecycle.</p><div class="button-row"><a class="btn btn-green" href="#contact" data-inquiry="consultation">Start the conversation</a><a class="btn btn-secondary" href="#mindset">See the transformation</a></div><dl class="hero-facts"><div><dt>For</dt><dd>QA teams &amp; engineering organizations</dd></div><div><dt>Focus</dt><dd>AI-Augmented QA &amp; quality ownership</dd></div><div><dt>Recognition</dt><dd>EU-aligned micro-credentials</dd></div></dl></div><div><div class="output-board"><header><h3>Quality orchestration board</h3><span class="badge neutral">Human-in-the-loop</span></header><ol class="board-list"><li><div class="board-row"><div><strong>Requirements analyzed</strong><span>Requirements agent · QA validates assumptions</span></div><span class="badge good">Done</span></div></li><li><div class="board-row"><div><strong>Business risks ranked</strong><span>Risk agent · QA sets risk-based priorities</span></div><span class="badge good">Done</span></div></li><li><div class="board-row"><div><strong>Test scenarios generated</strong><span>Test design agent · QA reviews coverage</span></div><span class="badge good">Done</span></div></li><li><div class="board-row"><div><strong>Broken locators repaired</strong><span>Self-healing automation · QA approves changes</span></div><span class="badge risk">Review</span></div></li><li><div class="board-row"><div><strong>Release evidence evaluated</strong><span>AI evals · QA owns the release decision</span></div><span class="badge neutral">Pending</span></div></li></ol><div class="board-result">Agents execute. Your QA engineers orchestrate and own quality.</div></div><p class="board-caption">Illustrative workflow. Each engagement is shaped around your systems and delivery process.</p></div></div></section>
+<section class="section" id="why-now" aria-labelledby="why-title"><div class="wrap"><span class="section-id">01 / Why now</span><div class="why-copy"><h2 id="why-title">AI builds software faster.<br>Your QA capability has to keep pace.</h2><div><p><strong>SDLC — Software Development Lifecycle:</strong> people plan, build and test in stages.</p><p><strong>ADLC — AI Development Lifecycle:</strong> agentic AI builds, tests and fixes code in a continuous loop while people direct, review and decide.</p><p>More generated code means more decisions about trust. <strong>Quality is no longer a final checkpoint. Continuous quality is what makes AI speed usable for the business.</strong></p></div></div>        <h3 class="staffing-transition-title">SDLC — Sequential delivery → ADLC — Continuous quality</h3>
+<figure class="staffing-illustration" aria-label="SDLC, Hybrid SDLC and ADLC comparison">
+<div class="staffing-scroll" tabindex="0" role="region" aria-label="Scrollable SDLC, Hybrid SDLC and ADLC illustration">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3690" class="staffing-art" role="img" aria-labelledby="lifecycle-svg-title lifecycle-svg-desc" style="font-family:Arial, sans-serif">
+<title id="lifecycle-svg-title">SDLC vs. ADLC — an illustrative staffing scenario</title><desc id="lifecycle-svg-desc">Six SDLC stages with 1, 1, 4, 3, 2 and 2 human icons; six Hybrid SDLC stages with 1, 1, 2, 1, 1 and 1 humans and one AI agent each; ADLC roles Business Architect with one human and two agents, AI Engineer (Software Builder) with two humans and four agents, and System Architect with one human and two agents. Six blue arrows connect SDLC to Hybrid SDLC; one large arrow connects Hybrid SDLC to ADLC.</desc>
+<defs>
+<symbol id="lifecycle-human" viewBox="0 0 48 56"><circle cx="24" cy="12" r="10" fill="#315c5a"/><path d="M6 54V42C6 30 14 26 24 26S42 30 42 42V54Z" fill="#315c5a"/></symbol>
+<symbol id="lifecycle-agent" viewBox="0 0 56 56"><path d="M28 3V10" stroke="#3378c4" stroke-width="3"/><circle cx="28" cy="3" r="3" fill="#3378c4"/><rect x="8" y="11" width="40" height="34" rx="10" fill="#e5f0ff" stroke="#3378c4" stroke-width="3"/><path d="M3 23V33M53 23V33M18 49H38" stroke="#3378c4" stroke-width="3" stroke-linecap="round"/><circle cx="20" cy="24" r="3" fill="#3378c4"/><circle cx="36" cy="24" r="3" fill="#3378c4"/><path d="M20 34Q28 40 36 34" fill="none" stroke="#3378c4" stroke-width="2.5" stroke-linecap="round"/></symbol>
+</defs>
+<rect x="0" y="0" width="3000" height="3690" rx="0" fill="#fbfcfd"/>
+<text x="1500.0" y="115" font-family="Helvetica, Arial, sans-serif" font-size="82" fill="#162f3b" font-weight="700" text-anchor="middle">SDLC vs. ADLC</text>
+<g transform="translate(0 -130)">
+<rect x="74" y="312" width="848" height="3288" rx="22" fill="#e6f6ee"/>
+<rect x="74" y="334.0" width="848" height="34.791666666666664" rx="0" fill="#e6f6ee"/>
+<rect x="74" y="367.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#e6f6ee"/>
+<rect x="74" y="401.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#e6f6ee"/>
+<rect x="74" y="435.375" width="848" height="34.791666666666664" rx="0" fill="#e6f6ee"/>
+<rect x="74" y="469.16666666666663" width="848" height="34.791666666666664" rx="0" fill="#e7f6ee"/>
+<rect x="74" y="502.95833333333337" width="848" height="34.791666666666664" rx="0" fill="#e7f6ee"/>
+<rect x="74" y="536.75" width="848" height="34.791666666666664" rx="0" fill="#e7f6ef"/>
+<rect x="74" y="570.5416666666666" width="848" height="34.791666666666664" rx="0" fill="#e7f6ef"/>
+<rect x="74" y="604.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#e7f6ef"/>
+<rect x="74" y="638.125" width="848" height="34.791666666666664" rx="0" fill="#e7f6ef"/>
+<rect x="74" y="671.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#e7f6ef"/>
+<rect x="74" y="705.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#e8f6ef"/>
+<rect x="74" y="739.5" width="848" height="34.791666666666664" rx="0" fill="#e8f7ef"/>
+<rect x="74" y="773.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#e8f7ef"/>
+<rect x="74" y="807.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#e8f7ef"/>
+<rect x="74" y="840.875" width="848" height="34.791666666666664" rx="0" fill="#e8f7ef"/>
+<rect x="74" y="874.6666666666666" width="848" height="34.791666666666664" rx="0" fill="#e8f7f0"/>
+<rect x="74" y="908.4583333333334" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="942.25" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="976.0416666666666" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="1009.8333333333334" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="1043.625" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="1077.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="1111.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#e9f7f0"/>
+<rect x="74" y="1145.0" width="848" height="34.791666666666664" rx="0" fill="#eaf7f0"/>
+<rect x="74" y="1178.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#eaf7f0"/>
+<rect x="74" y="1212.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#eaf7f0"/>
+<rect x="74" y="1246.375" width="848" height="34.791666666666664" rx="0" fill="#eaf7f1"/>
+<rect x="74" y="1280.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#eaf7f1"/>
+<rect x="74" y="1313.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#eaf7f1"/>
+<rect x="74" y="1347.75" width="848" height="34.791666666666664" rx="0" fill="#eaf7f1"/>
+<rect x="74" y="1381.5416666666667" width="848" height="34.791666666666664" rx="0" fill="#ebf7f1"/>
+<rect x="74" y="1415.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#ebf7f1"/>
+<rect x="74" y="1449.125" width="848" height="34.791666666666664" rx="0" fill="#ebf7f1"/>
+<rect x="74" y="1482.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#ebf7f1"/>
+<rect x="74" y="1516.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#ebf7f1"/>
+<rect x="74" y="1550.5" width="848" height="34.791666666666664" rx="0" fill="#ebf8f1"/>
+<rect x="74" y="1584.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#ebf8f2"/>
+<rect x="74" y="1618.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1651.875" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1685.6666666666667" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1719.4583333333333" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1753.25" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1787.0416666666667" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1820.8333333333333" width="848" height="34.791666666666664" rx="0" fill="#ecf8f2"/>
+<rect x="74" y="1854.625" width="848" height="34.791666666666664" rx="0" fill="#edf8f2"/>
+<rect x="74" y="1888.4166666666667" width="848" height="34.791666666666664" rx="0" fill="#edf8f2"/>
+<rect x="74" y="1922.2083333333333" width="848" height="34.791666666666664" rx="0" fill="#edf8f2"/>
+<rect x="74" y="1956.0" width="848" height="34.791666666666664" rx="0" fill="#edf8f3"/>
+<rect x="74" y="1989.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#edf8f3"/>
+<rect x="74" y="2023.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#edf8f3"/>
+<rect x="74" y="2057.375" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2091.166666666667" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2124.958333333333" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2158.75" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2192.541666666667" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2226.333333333333" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2260.125" width="848" height="34.791666666666664" rx="0" fill="#eef8f3"/>
+<rect x="74" y="2293.916666666667" width="848" height="34.791666666666664" rx="0" fill="#eff8f3"/>
+<rect x="74" y="2327.708333333333" width="848" height="34.791666666666664" rx="0" fill="#eff8f4"/>
+<rect x="74" y="2361.5" width="848" height="34.791666666666664" rx="0" fill="#eff9f4"/>
+<rect x="74" y="2395.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#eff9f4"/>
+<rect x="74" y="2429.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#eff9f4"/>
+<rect x="74" y="2462.875" width="848" height="34.791666666666664" rx="0" fill="#eff9f4"/>
+<rect x="74" y="2496.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#eff9f4"/>
+<rect x="74" y="2530.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#f0f9f4"/>
+<rect x="74" y="2564.25" width="848" height="34.791666666666664" rx="0" fill="#f0f9f4"/>
+<rect x="74" y="2598.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#f0f9f4"/>
+<rect x="74" y="2631.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#f0f9f4"/>
+<rect x="74" y="2665.625" width="848" height="34.791666666666664" rx="0" fill="#f0f9f5"/>
+<rect x="74" y="2699.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#f0f9f5"/>
+<rect x="74" y="2733.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#f0f9f5"/>
+<rect x="74" y="2767.0" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2800.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2834.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2868.375" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2902.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2935.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="2969.75" width="848" height="34.791666666666664" rx="0" fill="#f1f9f5"/>
+<rect x="74" y="3003.5416666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f9f5"/>
+<rect x="74" y="3037.3333333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f9f6"/>
+<rect x="74" y="3071.125" width="848" height="34.791666666666664" rx="0" fill="#f2f9f6"/>
+<rect x="74" y="3104.9166666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f9f6"/>
+<rect x="74" y="3138.7083333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f9f6"/>
+<rect x="74" y="3172.5" width="848" height="34.791666666666664" rx="0" fill="#f2faf6"/>
+<rect x="74" y="3206.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#f3faf6"/>
+<rect x="74" y="3240.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#f3faf6"/>
+<rect x="74" y="3273.875" width="848" height="34.791666666666664" rx="0" fill="#f3faf6"/>
+<rect x="74" y="3307.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#f3faf6"/>
+<rect x="74" y="3341.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#f3faf6"/>
+<rect x="74" y="3375.25" width="848" height="34.791666666666664" rx="0" fill="#f3faf7"/>
+<rect x="74" y="3409.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#f3faf7"/>
+<rect x="74" y="3442.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#f4faf7"/>
+<rect x="74" y="3476.625" width="848" height="34.791666666666664" rx="0" fill="#f4faf7"/>
+<rect x="74" y="3510.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#f4faf7"/>
+<rect x="74" y="3544.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#f4faf7"/>
+<rect x="1008" y="312" width="848" height="3288" rx="22" fill="#edf5ff"/>
+<rect x="1008" y="334.0" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="367.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="401.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="435.375" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="469.16666666666663" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="502.95833333333337" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="536.75" width="848" height="34.791666666666664" rx="0" fill="#edf5ff"/>
+<rect x="1008" y="570.5416666666666" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="604.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="638.125" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="671.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="705.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="739.5" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="773.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="807.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="840.875" width="848" height="34.791666666666664" rx="0" fill="#eef5ff"/>
+<rect x="1008" y="874.6666666666666" width="848" height="34.791666666666664" rx="0" fill="#eef6fe"/>
+<rect x="1008" y="908.4583333333334" width="848" height="34.791666666666664" rx="0" fill="#eef6fe"/>
+<rect x="1008" y="942.25" width="848" height="34.791666666666664" rx="0" fill="#eef6fe"/>
+<rect x="1008" y="976.0416666666666" width="848" height="34.791666666666664" rx="0" fill="#eef6fe"/>
+<rect x="1008" y="1009.8333333333334" width="848" height="34.791666666666664" rx="0" fill="#eef6fe"/>
+<rect x="1008" y="1043.625" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1077.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1111.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1145.0" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1178.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1212.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1246.375" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1280.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1313.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1347.75" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1381.5416666666667" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1415.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1449.125" width="848" height="34.791666666666664" rx="0" fill="#eff6fe"/>
+<rect x="1008" y="1482.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1516.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1550.5" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1584.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1618.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1651.875" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1685.6666666666667" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1719.4583333333333" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1753.25" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1787.0416666666667" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1820.8333333333333" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1854.625" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1888.4166666666667" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1922.2083333333333" width="848" height="34.791666666666664" rx="0" fill="#f0f6fe"/>
+<rect x="1008" y="1956.0" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="1989.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2023.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2057.375" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2091.166666666667" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2124.958333333333" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2158.75" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2192.541666666667" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2226.333333333333" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2260.125" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2293.916666666667" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2327.708333333333" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2361.5" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2395.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#f1f7fd"/>
+<rect x="1008" y="2429.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2462.875" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2496.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2530.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2564.25" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2598.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2631.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2665.625" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2699.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2733.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2767.0" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2800.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2834.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#f2f7fd"/>
+<rect x="1008" y="2868.375" width="848" height="34.791666666666664" rx="0" fill="#f3f7fd"/>
+<rect x="1008" y="2902.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#f3f7fd"/>
+<rect x="1008" y="2935.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#f3f7fd"/>
+<rect x="1008" y="2969.75" width="848" height="34.791666666666664" rx="0" fill="#f3f7fd"/>
+<rect x="1008" y="3003.5416666666665" width="848" height="34.791666666666664" rx="0" fill="#f3f7fd"/>
+<rect x="1008" y="3037.3333333333335" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3071.125" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3104.9166666666665" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3138.7083333333335" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3172.5" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3206.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3240.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3273.875" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3307.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#f3f8fc"/>
+<rect x="1008" y="3341.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3375.25" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3409.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3442.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3476.625" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3510.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="1008" y="3544.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#f4f8fc"/>
+<rect x="2078" y="312" width="848" height="3288" rx="22" fill="#fff0e9"/>
+<rect x="2078" y="334.0" width="848" height="34.791666666666664" rx="0" fill="#fff0e9"/>
+<rect x="2078" y="367.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#fff0e9"/>
+<rect x="2078" y="401.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#fff0e9"/>
+<rect x="2078" y="435.375" width="848" height="34.791666666666664" rx="0" fill="#fff0e9"/>
+<rect x="2078" y="469.16666666666663" width="848" height="34.791666666666664" rx="0" fill="#fff0e9"/>
+<rect x="2078" y="502.95833333333337" width="848" height="34.791666666666664" rx="0" fill="#fff0ea"/>
+<rect x="2078" y="536.75" width="848" height="34.791666666666664" rx="0" fill="#fff0ea"/>
+<rect x="2078" y="570.5416666666666" width="848" height="34.791666666666664" rx="0" fill="#fff0ea"/>
+<rect x="2078" y="604.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#fef0ea"/>
+<rect x="2078" y="638.125" width="848" height="34.791666666666664" rx="0" fill="#fef0ea"/>
+<rect x="2078" y="671.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#fef0ea"/>
+<rect x="2078" y="705.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#fef0ea"/>
+<rect x="2078" y="739.5" width="848" height="34.791666666666664" rx="0" fill="#fef0ea"/>
+<rect x="2078" y="773.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#fef0eb"/>
+<rect x="2078" y="807.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#fef0eb"/>
+<rect x="2078" y="840.875" width="848" height="34.791666666666664" rx="0" fill="#fef0eb"/>
+<rect x="2078" y="874.6666666666666" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="908.4583333333334" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="942.25" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="976.0416666666666" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="1009.8333333333334" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="1043.625" width="848" height="34.791666666666664" rx="0" fill="#feefeb"/>
+<rect x="2078" y="1077.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#feefec"/>
+<rect x="2078" y="1111.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#feefec"/>
+<rect x="2078" y="1145.0" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1178.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1212.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1246.375" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1280.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1313.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1347.75" width="848" height="34.791666666666664" rx="0" fill="#fdefec"/>
+<rect x="2078" y="1381.5416666666667" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1415.3333333333333" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1449.125" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1482.9166666666667" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1516.7083333333333" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1550.5" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1584.2916666666667" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1618.0833333333333" width="848" height="34.791666666666664" rx="0" fill="#fdefed"/>
+<rect x="2078" y="1651.875" width="848" height="34.791666666666664" rx="0" fill="#fdefee"/>
+<rect x="2078" y="1685.6666666666667" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1719.4583333333333" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1753.25" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1787.0416666666667" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1820.8333333333333" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1854.625" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1888.4166666666667" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1922.2083333333333" width="848" height="34.791666666666664" rx="0" fill="#fcefee"/>
+<rect x="2078" y="1956.0" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="1989.7916666666667" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2023.5833333333333" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2057.375" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2091.166666666667" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2124.958333333333" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2158.75" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2192.541666666667" width="848" height="34.791666666666664" rx="0" fill="#fceeef"/>
+<rect x="2078" y="2226.333333333333" width="848" height="34.791666666666664" rx="0" fill="#fbeeef"/>
+<rect x="2078" y="2260.125" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2293.916666666667" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2327.708333333333" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2361.5" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2395.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2429.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2462.875" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2496.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#fbeef0"/>
+<rect x="2078" y="2530.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2564.25" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2598.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2631.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2665.625" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2699.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2733.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#fbeef1"/>
+<rect x="2078" y="2767.0" width="848" height="34.791666666666664" rx="0" fill="#faeef1"/>
+<rect x="2078" y="2800.7916666666665" width="848" height="34.791666666666664" rx="0" fill="#faeef1"/>
+<rect x="2078" y="2834.5833333333335" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="2868.375" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="2902.1666666666665" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="2935.9583333333335" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="2969.75" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="3003.5416666666665" width="848" height="34.791666666666664" rx="0" fill="#faeef2"/>
+<rect x="2078" y="3037.3333333333335" width="848" height="34.791666666666664" rx="0" fill="#faedf2"/>
+<rect x="2078" y="3071.125" width="848" height="34.791666666666664" rx="0" fill="#faedf2"/>
+<rect x="2078" y="3104.9166666666665" width="848" height="34.791666666666664" rx="0" fill="#faedf2"/>
+<rect x="2078" y="3138.7083333333335" width="848" height="34.791666666666664" rx="0" fill="#faedf3"/>
+<rect x="2078" y="3172.5" width="848" height="34.791666666666664" rx="0" fill="#faedf3"/>
+<rect x="2078" y="3206.2916666666665" width="848" height="34.791666666666664" rx="0" fill="#faedf3"/>
+<rect x="2078" y="3240.0833333333335" width="848" height="34.791666666666664" rx="0" fill="#faedf3"/>
+<rect x="2078" y="3273.875" width="848" height="34.791666666666664" rx="0" fill="#faedf3"/>
+<rect x="2078" y="3307.6666666666665" width="848" height="34.791666666666664" rx="0" fill="#f9edf3"/>
+<rect x="2078" y="3341.4583333333335" width="848" height="34.791666666666664" rx="0" fill="#f9edf3"/>
+<rect x="2078" y="3375.25" width="848" height="34.791666666666664" rx="0" fill="#f9edf3"/>
+<rect x="2078" y="3409.0416666666665" width="848" height="34.791666666666664" rx="0" fill="#f9edf4"/>
+<rect x="2078" y="3442.8333333333335" width="848" height="34.791666666666664" rx="0" fill="#f9edf4"/>
+<rect x="2078" y="3476.625" width="848" height="34.791666666666664" rx="0" fill="#f9edf4"/>
+<rect x="2078" y="3510.4166666666665" width="848" height="34.791666666666664" rx="0" fill="#f9edf4"/>
+<rect x="2078" y="3544.2083333333335" width="848" height="34.791666666666664" rx="0" fill="#f9edf4"/>
+<rect x="96" y="330" width="804" height="96" rx="12" fill="#ffffff" stroke="#b8cbd1" stroke-width="2"/>
+<text x="498.0" y="372" font-family="Helvetica, Arial, sans-serif" font-size="43" fill="#1b3a49" font-weight="700" text-anchor="middle">SDLC</text>
+<text x="498.0" y="406" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#516975" font-weight="500" text-anchor="middle">SOFTWARE DEVELOPMENT LIFECYCLE</text>
+<rect x="1030" y="330" width="804" height="96" rx="12" fill="#ffffff" stroke="#b8cbd1" stroke-width="2"/>
+<text x="1432.0" y="372" font-family="Helvetica, Arial, sans-serif" font-size="43" fill="#1b3a49" font-weight="700" text-anchor="middle">Hybrid SDLC</text>
+<text x="1432.0" y="406" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#516975" font-weight="500" text-anchor="middle">HUMAN EXPERTISE + AI EXECUTION</text>
+<rect x="2100" y="330" width="804" height="96" rx="12" fill="#ffffff" stroke="#b8cbd1" stroke-width="2"/>
+<text x="2502.0" y="372" font-family="Helvetica, Arial, sans-serif" font-size="43" fill="#1b3a49" font-weight="700" text-anchor="middle">ADLC</text>
+<text x="2502.0" y="406" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#516975" font-weight="500" text-anchor="middle">AGENTIC DEVELOPMENT LIFECYCLE</text>
+<g data-column="sdlc" data-panel="1" data-humans="1" data-agents="0">
+<rect x="96" y="460" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="486" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="528" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">1</text>
+<text x="200" y="526" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">REQUIREMENTS</text>
+<text x="126" y="585" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Gathering requirements, analysis</text>
+<use href="#lifecycle-human" x="128" y="638" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="787" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Requires extensive stakeholder input,</text>
+<text x="128" y="829" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">multiple analysts, product managers.</text>
+</g>
+<path d="M64 750.0V1196.0" fill="none" stroke="#a1b3b2" stroke-width="3" />
+<path d="M57 1185.0L64 1196.0L71 1185.0" fill="none" stroke="#a1b3b2" stroke-width="3"/>
+<path d="M910 710.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 694.0L1018 710.0L998 726.0Z" fill="#3378c4"/>
+<g data-column="sdlc" data-panel="2" data-humans="1" data-agents="0">
+<rect x="96" y="986" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="1012" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="1054" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">2</text>
+<text x="200" y="1052" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">DESIGN</text>
+<text x="126" y="1111" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">System, database, UI</text>
+<use href="#lifecycle-human" x="128" y="1164" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="1313" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Involves architects, lead developers, UI/UX</text>
+<text x="128" y="1355" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">designers.</text>
+</g>
+<path d="M64 1276.0V1722.0" fill="none" stroke="#a1b3b2" stroke-width="3" />
+<path d="M57 1711.0L64 1722.0L71 1711.0" fill="none" stroke="#a1b3b2" stroke-width="3"/>
+<path d="M910 1236.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 1220.0L1018 1236.0L998 1252.0Z" fill="#3378c4"/>
+<g data-column="sdlc" data-panel="3" data-humans="4" data-agents="0">
+<rect x="96" y="1512" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="1538" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="1580" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">3</text>
+<text x="200" y="1578" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">IMPLEMENTATION</text>
+<text x="126" y="1637" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Coding, development</text>
+<use href="#lifecycle-human" x="128" y="1690" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="228" y="1690" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="328" y="1690" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="428" y="1690" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="1839" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Core team of front-end, back-end, and</text>
+<text x="128" y="1881" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">full-stack developers.</text>
+</g>
+<path d="M64 1802.0V2248.0" fill="none" stroke="#a1b3b2" stroke-width="3" />
+<path d="M57 2237.0L64 2248.0L71 2237.0" fill="none" stroke="#a1b3b2" stroke-width="3"/>
+<path d="M910 1762.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 1746.0L1018 1762.0L998 1778.0Z" fill="#3378c4"/>
+<g data-column="sdlc" data-panel="4" data-humans="3" data-agents="0">
+<rect x="96" y="2038" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="2064" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="2106" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">4</text>
+<text x="200" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">TESTING</text>
+<text x="126" y="2163" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">QA, manual, automated</text>
+<use href="#lifecycle-human" x="128" y="2216" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="228" y="2216" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="328" y="2216" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="2365" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Dedicated QA engineers, test automation</text>
+<text x="128" y="2407" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">specialists.</text>
+</g>
+<path d="M64 2328.0V2774.0" fill="none" stroke="#a1b3b2" stroke-width="3" />
+<path d="M57 2763.0L64 2774.0L71 2763.0" fill="none" stroke="#a1b3b2" stroke-width="3"/>
+<path d="M910 2288.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 2272.0L1018 2288.0L998 2304.0Z" fill="#3378c4"/>
+<g data-column="sdlc" data-panel="5" data-humans="2" data-agents="0">
+<rect x="96" y="2564" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="2590" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="2632" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">5</text>
+<text x="200" y="2630" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">DEPLOYMENT</text>
+<text x="126" y="2689" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Release, environment setup</text>
+<use href="#lifecycle-human" x="128" y="2742" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="228" y="2742" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="2891" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">DevOps and release managers.</text>
+</g>
+<path d="M64 2854.0V3300.0" fill="none" stroke="#a1b3b2" stroke-width="3" />
+<path d="M57 3289.0L64 3300.0L71 3289.0" fill="none" stroke="#a1b3b2" stroke-width="3"/>
+<path d="M910 2814.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 2798.0L1018 2814.0L998 2830.0Z" fill="#3378c4"/>
+<g data-column="sdlc" data-panel="6" data-humans="2" data-agents="0">
+<rect x="96" y="3090" width="804" height="500" rx="16" fill="#ffffff" stroke="#c3d9cd" stroke-width="2"/>
+<rect x="122" y="3116" width="58" height="58" rx="9" fill="#e5f2eb"/>
+<text x="151" y="3158" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#315c5a" font-weight="700" text-anchor="middle">6</text>
+<text x="200" y="3156" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#173b39" font-weight="700" text-anchor="start">MAINTENANCE</text>
+<text x="126" y="3215" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Support, updates, fixes</text>
+<use href="#lifecycle-human" x="128" y="3268" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="228" y="3268" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<text x="128" y="3417" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Ongoing support team, bug-fix developers.</text>
+</g>
+<path d="M910 3340.0H1014" fill="none" stroke="#3378c4" stroke-width="7" />
+<path d="M998 3324.0L1018 3340.0L998 3356.0Z" fill="#3378c4"/>
+<g data-column="hybrid" data-panel="1" data-humans="1" data-agents="1">
+<rect x="1030" y="460" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="486" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="528" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">1</text>
+<text x="1134" y="526" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC REQUIREMENTS</text>
+<text x="1060" y="585" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Define agent goals, guardrails, context</text>
+<use href="#lifecycle-human" x="1188" y="636" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="629" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="760" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">Product Owner</text>
+<text x="1595" y="760" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="815" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Human guides the AI agents in</text>
+<text x="1062" y="855" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">requirement discovery and validation.</text>
+</g>
+<g data-column="hybrid" data-panel="2" data-humans="1" data-agents="1">
+<rect x="1030" y="986" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="1012" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="1054" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">2</text>
+<text x="1134" y="1052" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC DESIGN</text>
+<text x="1060" y="1111" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Define agent tools, memory, workflows</text>
+<use href="#lifecycle-human" x="1188" y="1162" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="1155" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="1286" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">Software Architect</text>
+<text x="1595" y="1286" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="1341" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Human defines system, structure and</text>
+<text x="1062" y="1381" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">boundaries.</text>
+</g>
+<g data-column="hybrid" data-panel="3" data-humans="2" data-agents="1">
+<rect x="1030" y="1512" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="1538" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="1580" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">3</text>
+<text x="1134" y="1578" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC IMPLEMENTATION</text>
+<text x="1060" y="1637" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Prompting, fine-tuning, integration</text>
+<use href="#lifecycle-human" x="1129" y="1688" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="1247" y="1688" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="1681" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">Software Developer</text>
+<text x="1595" y="1812" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="1867" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Humans configure and prompt agents,</text>
+<text x="1062" y="1907" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">integrate components, while AI agents</text>
+<text x="1062" y="1947" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">write code and self-correct.</text>
+</g>
+<g data-column="hybrid" data-panel="4" data-humans="1" data-agents="1">
+<rect x="1030" y="2038" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="2064" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="2106" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">4</text>
+<text x="1134" y="2104" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC QUALITY &amp; TESTING</text>
+<text x="1060" y="2163" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Benchmarking, quality, alignment</text>
+<use href="#lifecycle-human" x="1188" y="2214" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="2207" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="2338" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">QA Engineer</text>
+<text x="1595" y="2338" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="2393" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Human defines test metrics. AI agents</text>
+<text x="1062" y="2433" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">conduct vast, parallel evaluations, provide</text>
+<text x="1062" y="2473" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">reports and explore system bottlenecks.</text>
+</g>
+<g data-column="hybrid" data-panel="5" data-humans="1" data-agents="1">
+<rect x="1030" y="2564" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="2590" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="2632" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">5</text>
+<text x="1134" y="2630" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC DEPLOYMENT</text>
+<text x="1060" y="2689" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Orchestration, scaling, management</text>
+<use href="#lifecycle-human" x="1188" y="2740" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="2733" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="2864" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">DevOps</text>
+<text x="1595" y="2864" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="2919" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Human manages the deployment pipeline;</text>
+<text x="1062" y="2959" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">AI agents scale and optimize</text>
+<text x="1062" y="2999" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">infrastructure.</text>
+</g>
+<g data-column="hybrid" data-panel="6" data-humans="1" data-agents="1">
+<rect x="1030" y="3090" width="804" height="500" rx="16" fill="#ffffff" stroke="#c2d2e5" stroke-width="2"/>
+<rect x="1056" y="3116" width="58" height="58" rx="9" fill="#e9f1fc"/>
+<text x="1085" y="3158" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#2d5680" font-weight="700" text-anchor="middle">6</text>
+<text x="1134" y="3156" font-family="Helvetica, Arial, sans-serif" font-size="37" fill="#203f5d" font-weight="700" text-anchor="start">AGENTIC MAINTENANCE</text>
+<text x="1060" y="3215" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Monitoring, learning, adaptation</text>
+<use href="#lifecycle-human" x="1188" y="3266" width="90" height="90" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="1543" y="3259" width="103" height="103" data-icon="agent" aria-hidden="true"/>
+<text x="1233" y="3390" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#315c5a" font-weight="600" text-anchor="middle">IT Support</text>
+<text x="1595" y="3390" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#3378c4" font-weight="600" text-anchor="middle">AI agent</text>
+<text x="1062" y="3445" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">Human sets performance goals; AI agents</text>
+<text x="1062" y="3485" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">monitor, learn and dynamically adjust</text>
+<text x="1062" y="3525" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#405660" font-weight="400" text-anchor="start">behavior.</text>
+</g>
+<g data-column="adlc" data-panel="1" data-humans="1" data-agents="2">
+<rect x="2100" y="460" width="804" height="1026" rx="16" fill="#fffefe" stroke="#dfcbd4" stroke-width="2"/>
+<rect x="2134" y="494" width="62" height="62" rx="10" fill="#f8e9e9"/>
+<text x="2165" y="539" font-family="Helvetica, Arial, sans-serif" font-size="36" fill="#765566" font-weight="700" text-anchor="middle">1</text>
+<text x="2220" y="540" font-family="Helvetica, Arial, sans-serif" font-size="49" fill="#51354b" font-weight="700" text-anchor="start">Business Architect</text>
+<text x="2138" y="611" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#67535f" font-weight="400" text-anchor="start">Define agent goals, guardrails,</text>
+<text x="2138" y="659" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#67535f" font-weight="400" text-anchor="start">context</text>
+<rect x="2128" y="732" width="748" height="230" rx="12" fill="#fdf5f6"/>
+<use href="#lifecycle-human" x="2329.0" y="772" width="110" height="110" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2447.0" y="772" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2565.0" y="772" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<text x="2502.0" y="936" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#563a4d" font-weight="600" text-anchor="middle">1 person + 2 AI agents</text>
+<text x="2142" y="1049" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">Human guides the AI agents in</text>
+<text x="2142" y="1102" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">requirement discovery, validation</text>
+<text x="2142" y="1155" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">and business compliance.</text>
+</g>
+<g data-column="adlc" data-panel="2" data-humans="2" data-agents="4">
+<rect x="2100" y="1512" width="804" height="1026" rx="16" fill="#fffefe" stroke="#dfcbd4" stroke-width="2"/>
+<rect x="2134" y="1546" width="62" height="62" rx="10" fill="#f8e9e9"/>
+<text x="2165" y="1591" font-family="Helvetica, Arial, sans-serif" font-size="36" fill="#765566" font-weight="700" text-anchor="middle">2</text>
+<text x="2220" y="1592" font-family="Helvetica, Arial, sans-serif" font-size="49" fill="#51354b" font-weight="700" text-anchor="start">AI Engineer</text>
+<text x="2138" y="1663" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#67535f" font-weight="400" text-anchor="start">Software Builder</text>
+<rect x="2128" y="1774" width="748" height="230" rx="12" fill="#fdf5f6"/>
+<use href="#lifecycle-human" x="2152.0" y="1814" width="110" height="110" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-human" x="2270.0" y="1814" width="110" height="110" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2388.0" y="1814" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2506.0" y="1814" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2624.0" y="1814" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2742.0" y="1814" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<text x="2502.0" y="1978" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#563a4d" font-weight="600" text-anchor="middle">2 people + 4 AI agents</text>
+<text x="2142" y="2091" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">Human acts as the main</text>
+<text x="2142" y="2144" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">orchestrator for design,</text>
+<text x="2142" y="2197" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">development, testing and</text>
+<text x="2142" y="2250" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">deployment with dedicated AI</text>
+<text x="2142" y="2303" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">agents.</text>
+</g>
+<g data-column="adlc" data-panel="3" data-humans="1" data-agents="2">
+<rect x="2100" y="2564" width="804" height="1026" rx="16" fill="#fffefe" stroke="#dfcbd4" stroke-width="2"/>
+<rect x="2134" y="2598" width="62" height="62" rx="10" fill="#f8e9e9"/>
+<text x="2165" y="2643" font-family="Helvetica, Arial, sans-serif" font-size="36" fill="#765566" font-weight="700" text-anchor="middle">3</text>
+<text x="2220" y="2644" font-family="Helvetica, Arial, sans-serif" font-size="49" fill="#51354b" font-weight="700" text-anchor="start">System Architect</text>
+<text x="2138" y="2715" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#67535f" font-weight="400" text-anchor="start">Agent Architecture, Context Protocols</text>
+<text x="2138" y="2763" font-family="Helvetica, Arial, sans-serif" font-size="38" fill="#67535f" font-weight="400" text-anchor="start">&amp; Security Sandboxing</text>
+<rect x="2128" y="2836" width="748" height="230" rx="12" fill="#fdf5f6"/>
+<use href="#lifecycle-human" x="2329.0" y="2876" width="110" height="110" data-icon="human" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2447.0" y="2876" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<use href="#lifecycle-agent" x="2565.0" y="2876" width="110" height="110" data-icon="agent" aria-hidden="true"/>
+<text x="2502.0" y="3040" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#563a4d" font-weight="600" text-anchor="middle">1 person + 2 AI agents</text>
+<text x="2142" y="3153" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">Human defines the entire solution</text>
+<text x="2142" y="3206" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">architecture, data flow, system</text>
+<text x="2142" y="3259" font-family="Helvetica, Arial, sans-serif" font-size="39" fill="#5d4a57" font-weight="400" text-anchor="start">technology and agent strategy.</text>
+</g>
+<path data-flow="hybrid-to-adlc" d="M1870 2004.0H2008V1968.0L2070 2025.0L2008 2082.0V2046.0H1870Z" fill="#3378c4"/>
+<use href="#lifecycle-human" x="105" y="3650" width="46" height="46" data-icon="human" aria-hidden="true"/>
+<text x="168" y="3690" font-family="Helvetica, Arial, sans-serif" font-size="31" fill="#617580" font-weight="400" text-anchor="start">Human</text>
+<use href="#lifecycle-agent" x="340" y="3645" width="52" height="52" data-icon="agent" aria-hidden="true"/>
+<text x="405" y="3690" font-family="Helvetica, Arial, sans-serif" font-size="31" fill="#617580" font-weight="400" text-anchor="start">AI agent</text>
+<text x="1500.0" y="3740" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#617580" font-weight="400" text-anchor="middle">Sequential delivery → Hybrid SDLC → Continuous quality</text>
+</g>
+</svg>
+</div>
+</figure><aside class="risk-banner"><strong>AI speed in development needs AI speed in QA. Hiring more testers does not scale with AI-generated code — transforming the QA engineers you already have does.</strong></aside></div></section>
+<section class="section" id="mindset" aria-labelledby="mindset-title"><div class="wrap"><div class="section-head"><div><span class="section-id">02 / Mindset shift</span><h2 id="mindset-title">Learning AI tools is the easy part.<br>Changing how QA works is the transformation.</h2></div><p>AI becomes part of everyday development and quality work, not an occasional add-on. That needs a new mindset as well as new skills.</p></div><div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable comparison of traditional QA and AI-augmented QA"><table class="mindset-table"><caption>From traditional QA to AI-Augmented QA</caption><thead><tr><th scope="col">Dimension</th><th scope="col">Traditional QA</th><th scope="col">AI-Augmented QA</th></tr></thead><tbody><tr><th scope="row">Role</th><td>Executes test cases and reports defects</td><td><strong>Quality Orchestration</strong> — directs AI agents across the lifecycle</td></tr><tr><th scope="row">Timing</th><td>Tests at the end, before release</td><td><strong>Continuous Quality</strong> — feedback at every step of the ADLC</td></tr><tr><th scope="row">Focus</th><td>Tries to cover everything equally</td><td><strong>Risk-Based Testing</strong> — effort follows business impact</td></tr><tr><th scope="row">AI output</th><td>Trusted or ignored</td><td><strong>Human-in-the-Loop &amp; Critical Thinking</strong> — evaluated with <strong>AI Evals</strong></td></tr><tr><th scope="row">Automation</th><td>Brittle scripts repaired by hand</td><td><strong>Self-Healing Test Automation</strong> — agents propose fixes, QA approves</td></tr><tr><th scope="row">Responsibility</th><td>QA is a gate owned by one team</td><td><strong>Quality Ownership</strong> — defined and shared across roles</td></tr></tbody></table></div></div></section>
+<section class="section" id="role-shift" aria-labelledby="role-title"><div class="wrap"><span class="section-id">03 / Quality ownership</span><div class="section-head role-intro"><h2 id="role-title">The boundaries of QA are blurring.<br>Quality ownership is not.</h2><p>QA, development and business analysis increasingly overlap. Someone still has to own the answer to “can we ship this?”</p></div><p class="lede">AI lets developers generate tests, analysts validate requirements and QA engineers write code with agents. We help your organization redefine who owns which quality decisions in an AI-driven development lifecycle — and equip your QA engineers to lead them.</p>        <figure class="builder-map" aria-labelledby="builder-caption">
+          <div class="builder-map-top"><span class="label">The role evolution</span><span class="badge neutral">Expertise stays · Scope expands</span></div>
+          <div class="builder-map-body">
+            <div class="role-inputs"><h3>Overlapping responsibilities.</h3><ul class="role-matrix"><li>QA Engineers write code with AI agents</li><li>Developers generate tests with AI</li><li>Business Analysts validate requirements with AI</li><li>DevOps automate quality gates</li><li>Everyone uses AI every day</li></ul></div>
+            <svg class="map-arrow" viewBox="0 0 56 40" aria-hidden="true" focusable="false"><path d="M0 20H47M39 12L47 20L39 28" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <div class="builder-engine"><span class="label">AI Development Lifecycle</span><h3>Agentic AI.</h3><ul><li>Analyze requirements</li><li>Generate code &amp; tests</li><li>Execute &amp; self-heal</li><li>Triage failures</li></ul><p>Agents accelerate the work.<br>People keep the judgment.</p></div>
+            <svg class="map-arrow" viewBox="0 0 56 40" aria-hidden="true" focusable="false"><path d="M0 20H47M39 12L47 20L39 28" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <div class="builder-result"><span class="badge good">Quality owner</span><h3>AI-Augmented<br> QA Engineer</h3><p>Orchestrates AI across the lifecycle and owns the evidence behind every release decision.</p><div><span>Orchestrate agents.</span><span>Evaluate output.</span><span>Own quality.</span></div></div>
           </div>
-        </div>
-
-        <div class="hero__visual" aria-hidden="true">
-          <div class="status-board">
-            <div class="status-board__bar">
-              <span class="status-board__runid">run: ai-qa-transformation.pipeline</span>
-              <span class="status-board__badge">before → after</span>
-            </div>
-            <ol class="status-board__list">
-              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Strategic scoping &amp; risk map</span><span class="status-board__meta">Week 1</span></li>
-              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Automated test-case synthesis live</span><span class="status-board__meta">Week 1</span></li>
-              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Smart edge-case generation in CI</span><span class="status-board__meta">Week 2</span></li>
-              <li class="status-board__row"><span class="status-board__icon status-board__icon--pass">✓</span><span>Agentic UI / API automation</span><span class="status-board__meta">Week 2</span></li>
-              <li class="status-board__row"><span class="status-board__icon status-board__icon--wait">…</span><span>Instant root-cause analysis handed off</span><span class="status-board__meta">ongoing</span></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    PROGRAM FACTS STRIP
-    ============================================================= -->
-    <section class="facts" aria-label="Program facts">
-      <div class="facts__inner">
-        <div class="facts__item"><span class="facts__label">Built for</span><span class="facts__value">CTOs, QA Leads &amp; Eng. Directors</span></div>
-        <div class="facts__item"><span class="facts__label">Duration</span><span class="facts__value">2-Week Sprint</span></div>
-        <div class="facts__item"><span class="facts__label">Format</span><span class="facts__value">Guided Enablement Initiative</span></div>
-        <div class="facts__item"><span class="facts__label">Model stack</span><span class="facts__value">Copilot, Claude, Gemini</span></div>
-        <div class="facts__item"><span class="facts__label">Domain focus</span><span class="facts__value">E-commerce: cart, checkout, catalog, payments</span></div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    SDLC → ADLC EXPLAINER
-    ============================================================= -->
-    <section class="section section--ink" id="adlc">
-      <div class="section__inner">
-        <h2>Two Ways of Working, in Plain Terms</h2>
-        <p class="section__intro">
-          <strong>SDLC</strong> (Software Development Lifecycle) is the familiar way: people plan, build, and test in stages, one after another.
-          <strong>ADLC</strong> (Agentic Development Lifecycle) is the new way: AI agents build and test continuously, while people direct and review. This Program is about moving your QA team from the first row below to the second.
-        </p>
-
-        <div class="lifecycle-compare">
-          <div class="lifecycle-row">
-            <span class="lifecycle-row__label">Old way — SDLC</span>
-            <div class="lifecycle-steps">
-              <span class="lifecycle-step">Plan</span>
-              <span class="lifecycle-arrow">→</span>
-              <span class="lifecycle-step">Build</span>
-              <span class="lifecycle-arrow">→</span>
-              <span class="lifecycle-step lifecycle-step--gate">QA tests, at the end</span>
-              <span class="lifecycle-arrow">→</span>
-              <span class="lifecycle-step">Release</span>
-            </div>
-            <p class="lifecycle-row__note">QA is one slow stage near the end. If it runs late, the release runs late.</p>
-          </div>
-
-          <div class="lifecycle-row lifecycle-row--new">
-            <span class="lifecycle-row__label">New way — ADLC</span>
-            <div class="lifecycle-steps">
-              <span class="lifecycle-step">Agents build</span>
-              <span class="lifecycle-arrow lifecycle-arrow--pass">⇄</span>
-              <span class="lifecycle-step lifecycle-step--gate lifecycle-step--pass">Agents test, every change</span>
-              <span class="lifecycle-arrow lifecycle-arrow--pass">⇄</span>
-              <span class="lifecycle-step">Agents fix</span>
-            </div>
-            <p class="lifecycle-row__note">People direct and review. Testing happens constantly, not once at the end — so QA stops being the bottleneck.</p>
-          </div>
-        </div>
-
-        <p class="section__intro">Your team's new job: tell the agents what "correct" looks like for your storefront, check their judgment on the cases that matter, and step in when something needs a human call.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    HOW AGENTS GET TESTED (ADLC: Test)
-    ============================================================= -->
-    <section class="section section--paper-alt" id="agent-testing">
-      <div class="section__inner">
-        <h2>How You Know an Agent Is Ready to Ship</h2>
-        <p class="section__intro">
-          Testing an agent isn't like testing a script. Before a checkout assistant, a returns bot, or a pricing agent goes live, your team needs a fast way to tell if it's ready — not a perfect test suite on day one, just enough to catch obvious failures, compare one version against another, and avoid shipping a change blind.
-        </p>
-
-        <div class="build-grid">
-          <article class="build-card">
-            <p class="build-card__label">Start small, not perfect</p>
-            <h3>A first set of real tasks, not a full suite</h3>
-            <p>Most teams start with a small set of representative tasks: a few pulled from expected use cases, others from manual testing, support tickets, or known edge cases. It's a regression suite for a system that talks and decides, not one that only executes steps. Real traffic makes it stronger later — it doesn't need to start there.</p>
-          </article>
-          <article class="build-card">
-            <p class="build-card__label">Datasets &amp; metrics</p>
-            <h3>So a fixed failure doesn't quietly come back</h3>
-            <p>Datasets capture what your team has already learned, so a bug fixed once doesn't resurface after a prompt change or model upgrade. Some checks have one right answer — did the agent apply the correct discount, pull the correct order ID. Others don't — did the agent explain a delay clearly, or know when to hand off to a person. Those get judged against criteria, not a single correct answer.</p>
-          </article>
-          <article class="build-card">
-            <p class="build-card__label">Experiments</p>
-            <h3>Proof a change actually helped</h3>
-            <p>Experiments run a new prompt, model, or tool setup against the same evaluation set as the last version, so your team can see whether a change made things better or worse before it ever reaches a customer.</p>
-          </article>
-          <article class="build-card">
-            <p class="build-card__label">Simulation</p>
-            <h3>Testing a conversation, not just an answer</h3>
-            <p>Many agents don't just answer once — they hold a conversation, look things up, and adjust. A support agent may need to calm a frustrated shopper, check an order, and decide whether to escalate. That needs a simulated back-and-forth, not a single question and answer.</p>
-          </article>
-        </div>
-
-        <p class="section__intro">Put together, this is what "testing" means in the ADLC: turn what "good" looks like into a dataset, the dataset into an experiment, and the experiment into a better version of the agent. Once it's live, real conversations feed back into the same datasets, so the eval set keeps getting harder and more realistic. Further reading: <a href="https://docs.langchain.com/langsmith/multi-turn-simulation">multi-turn simulation for agent evals</a>.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    ABOUT THE INITIATIVE
-    ============================================================= -->
-    <section class="section" id="about">
-      <div class="section__inner section__inner--split">
-        <div class="section__head">
-          <h2>The Transformation Program</h2>
-        </div>
-        <div class="section__body">
-          <p class="section__lead">
-            Manual, hand-scripted testing was built for the old SDLC. It can't keep up with agents that build and change code continuously.
-          </p>
-          <p>
-            The AI-Augmented QA Playbook prepares your existing testing staff for the ADLC — no backfill, no headcount risk. They keep their jobs; the job itself changes, from writing every test by hand to directing and checking AI agents that do.
-          </p>
-          <p>
-            Built for teams scaling e-commerce, API, and data-heavy platforms, so QA speed stops trailing engineering speed and starts matching it.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    E-COMMERCE QA ACTIVITIES
-    ============================================================= -->
-    <section class="section section--paper-alt" id="ecommerce-qa">
-      <div class="section__inner">
-        <h2>Where This Shows Up in Your Store</h2>
-        <p class="section__intro">Six areas where AI agents can test faster and catch more than a manual pass would — scoped to e-commerce, not generic software.</p>
-        <div class="build-grid">
-          <article class="build-card">
-            <h3>Cart &amp; checkout</h3>
-            <p>Catches stock and pricing errors when two people check out at once.</p>
-          </article>
-          <article class="build-card">
-            <h3>Payments &amp; fraud rules</h3>
-            <p>Tests failed payments, refunds, and retried charges before customers hit them.</p>
-          </article>
-          <article class="build-card">
-            <h3>Catalog &amp; search</h3>
-            <p>Flags when search or product listings break after a catalog update.</p>
-          </article>
-          <article class="build-card">
-            <h3>Inventory &amp; fulfillment</h3>
-            <p>Finds why stock counts or shipments went wrong, and where.</p>
-          </article>
-          <article class="build-card">
-            <h3>Promotions &amp; pricing</h3>
-            <p>Checks coupon and pricing rules for the conflicts a person would miss.</p>
-          </article>
-          <article class="build-card">
-            <h3>Peak-traffic regression</h3>
-            <p>Tests the highest-risk paths first, before a big sales event.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    BUSINESS ROI & COMPARISON
-    ============================================================= -->
-    <section class="section section--ink" id="roi">
-      <div class="section__inner">
-        <h2>The Same Job, Done the ADLC Way</h2>
-        <p class="section__intro">Same QA responsibilities. Different way of doing them. Here's the change, capability by capability.</p>
-
-        <div class="compare-table" role="table" aria-label="QA in the SDLC versus QA in the ADLC">
-          <div class="compare-table__row compare-table__row--head" role="row">
-            <div role="columnheader">QA capability</div>
-            <div role="columnheader">In the old SDLC</div>
-            <div role="columnheader" class="compare-table__accent-head">In the ADLC</div>
-          </div>
-
-          <div class="compare-table__row" role="row">
-            <div role="cell">Reading requirements</div>
-            <div role="cell">A person reads the spec by hand and can miss gaps.</div>
-            <div role="cell" class="compare-table__accent">An agent scans every spec and flags gaps before testing starts.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Writing tests</div>
-            <div role="cell">Written one by one; coverage capped by hours in the day.</div>
-            <div role="cell" class="compare-table__accent">Agents draft full test suites in minutes; people review and approve.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Keeping tests working</div>
-            <div role="cell">A UI change breaks tests; someone has to fix each one.</div>
-            <div role="cell" class="compare-table__accent">Agents propose the fix; a person just approves it.</div>
-          </div>
-          <div class="compare-table__row" role="row">
-            <div role="cell">Finding the cause of a bug</div>
-            <div role="cell">Starts from zero each time; can take hours.</div>
-            <div role="cell" class="compare-table__accent">An agent points to the likely cause and a fix, in minutes.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    CONCRETE OUTPUTS
-    ============================================================= -->
-    <section class="section section--paper-alt" id="build">
-      <div class="section__inner">
-        <h2>What This Looks Like on Your Codebase</h2>
-        <p class="section__intro">Three real examples, not theory. Your team leaves with these running in your pipeline.</p>
-        <div class="build-grid">
-          <article class="build-card">
-            <p class="build-card__label">Smart edge-case generation</p>
-            <h3>Concurrency &amp; race conditions, surfaced automatically</h3>
-            <pre class="build-card__code"><code>Generated scenario:
-Given a cart with 1 item in stock
-When two asynchronous requests add it at once
-Then strictly one succeeds, DB stock enforces &gt;= 0</code></pre>
-          </article>
-          <article class="build-card">
-            <p class="build-card__label">Automated test-case synthesis</p>
-            <h3>Full suites from a spec, not a blank file</h3>
-            <pre class="build-card__code"><code>// Copilot-orchestrated prompt:
-// "Synthesize a pytest suite for POST /api/v1/cart/add
-// enforcing strict stock validation rules"</code></pre>
-          </article>
-          <article class="build-card">
-            <p class="build-card__label">Instant root-cause analysis</p>
-            <h3>From defect report to fix location in one pass</h3>
-            <pre class="build-card__code"><code>Defect: order processed despite stock = 0
-AI triage: stock check bypassed in POST /orders middleware
-Actionable fix: inject validation in api/orders.py:42</code></pre>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    MULTI-LLM TOOLCHAIN
-    ============================================================= -->
-    <section class="section" id="toolchain">
-      <div class="section__inner">
-        <h2>Built on the Models Your Team Already Trusts</h2>
-        <p class="section__intro">No single model does every job well. Your team learns which one to reach for, in the tools they already use.</p>
-
-        <div class="toolchain">
-          <article class="tool-card">
-            <span class="tool-badge">
-              <span class="tool-badge__mark">
-                <img src="https://cdn.simpleicons.org/githubcopilot" alt="GitHub Copilot logo" width="20" height="20" loading="lazy">
-              </span>
-              GitHub Copilot
-            </span>
-            <p>In-IDE automation authoring for checkout, cart, and API test suites — turns a spec comment into a first-draft test file and drafts self-healing selectors when a PDP or cart UI ships a change.</p>
-          </article>
-          <article class="tool-card">
-            <span class="tool-badge">
-              <span class="tool-badge__mark">
-                <img src="https://cdn.simpleicons.org/claude" alt="Claude logo" width="20" height="20" loading="lazy">
-              </span>
-              Claude
-            </span>
-            <p>Long-context reasoning over pricing rules, tax logic, and incident history — requirements-gap detection on promo/discount specs and root-cause hypotheses with a code-level fix.</p>
-          </article>
-          <article class="tool-card">
-            <span class="tool-badge">
-              <span class="tool-badge__mark">
-                <img src="https://cdn.simpleicons.org/googlegemini" alt="Google Gemini logo" width="20" height="20" loading="lazy">
-              </span>
-              Gemini
-            </span>
-            <p>Multimodal triage across checkout screenshots, payment-gateway logs, and session recordings — useful when a defect is visual or spans storefront, payment, and fulfillment services.</p>
-          </article>
-        </div>
-        <p class="toolchain-note">Logos are linked from Simple Icons' public CDN for identification only. Each mark remains the property of its respective owner (GitHub/Microsoft, Anthropic, Google) — review their brand guidelines before using this page publicly.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    THE UPSKILLING FRAMEWORK
-    ============================================================= -->
-    <section class="section section--paper-alt" id="initiative">
-      <div class="section__inner">
-        <h2>How We Get Your Team There</h2>
-        <p class="section__intro">Four sprints. Each one hands your team a new way of working, not just a new tool.</p>
-
-        <div class="modules">
-          <details class="module" open>
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Phase 1 — Learn to direct agents, not write scripts</span>
-            </summary>
-            <div class="module__content">
-              <p>Your team shifts from writing every test by hand to setting up AI agents for UI, API, and database testing, then reviewing their work.</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Phase 2 — Let agents draft the tests</span>
-            </summary>
-            <div class="module__content">
-              <p>Agents read specs and write first-draft test coverage. What used to take days now takes hours.</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Phase 3 — Let agents keep tests working</span>
-            </summary>
-            <div class="module__content">
-              <p>When the UI changes, agents fix the tests instead of engineers. Your team reviews and approves the fix.</p>
-            </div>
-          </details>
-          <details class="module">
-            <summary>
-              <span class="module__dot" aria-hidden="true"></span>
-              <span class="module__title">Phase 4 — Let agents triage defects first</span>
-            </summary>
-            <div class="module__content">
-              <p>Agents look at past incidents to point straight to the likely cause of a new bug, and how risky each release is, before you ship.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    ADVISOR
-    ============================================================= -->
-    <section class="section" id="advisor">
-      <div class="section__inner section__inner--split">
-        <div class="section__head">
-          <h2>Lead Strategy Advisor</h2>
-        </div>
-        <div class="section__body instructor">
-          <svg class="instructor__photo" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Advisor initials">
-            <rect width="120" height="120" fill="#12151B"/>
-            <text x="60" y="70" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="40" fill="#EEF0EF">QA</text>
-          </svg>
-          <div>
-            <h3 class="instructor__name">[Advisor Name]</h3>
-            <p class="instructor__role">Senior QA Strategy Advisor &amp; AI Enablement Specialist</p>
-            <p>I work with CTOs and Engineering Directors to remove delivery bottlenecks at the root. By wiring agentic workflows directly into QA, I help engineering organizations scale their testing capability to match AI-driven development speed — instead of quietly falling behind it.</p>
-            <div class="instructor__links">
-              <a href="[LINKEDIN URL]" class="btn btn--ghost">Connect on LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-    B2B CONTACT / INQUIRY FORM
-    ============================================================= -->
-    <section class="section section--paper-alt" id="inquire">
-      <div class="section__inner section__inner--narrow">
-        <h2>Contact Us</h2>
-        <p class="section__intro">Tell us where testing is slowing you down. We'll come back with a scoped AI-Augmented QA Playbook for your stack, your team size, and your release cadence.</p>
-
-        <form id="signupForm" class="form" novalidate data-thankyou="thank-you.html">
-          <input type="hidden" name="access_key" value="52103216-7b20-4e88-9d35-9184952fa5cc">
-          <input type="hidden" name="subject" value="B2B Inquiry: QA Enablement Initiative">
-          <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="form__row">
-            <label for="name">Executive name <span aria-hidden="true">*</span></label>
-            <input type="text" id="name" name="name" required autocomplete="name" maxlength="50">
-          </div>
-
-          <div class="form__row">
-            <label for="email">Work email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" required autocomplete="email" maxlength="50">
-          </div>
-
-          <div class="form__row">
-            <label for="role">Company &amp; job title <span aria-hidden="true">*</span></label>
-            <input type="text" id="role" name="role" required autocomplete="organization" maxlength="100">
-          </div>
-
-          <div class="form__row">
-            <label for="message">Current QA bottlenecks / goals</label>
-            <textarea id="message" name="message" rows="4" placeholder="e.g. release cadence, coverage gaps, team size, current tooling"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--primary form__submit">
-            <span class="btn__label">Request strategy call</span>
-          </button>
-          <p class="form__note">We respond within one business day with next steps — no automated sales sequence.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <span>QA Engineering with AI — AI-Augmented QA Playbook</span>
-      <span>[YOUR COMPANY / NAME] · [CONTACT EMAIL]</span>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var toggle = document.getElementById('navToggle');
-      var menu = document.getElementById('nav-menu');
-      if (!toggle || !menu) return;
-      toggle.addEventListener('click', function () {
-        var open = menu.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          menu.classList.remove('is-open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    })();
-  </script>
+          <figcaption id="builder-caption">As QA, development and business analysis responsibilities converge, the AI-Augmented QA Engineer keeps quality ownership clear across the AI Development Lifecycle.</figcaption>
+        </figure></div></section>
+<section class="section" id="capabilities" aria-labelledby="capabilities-title"><div class="wrap"><span class="section-id">04 / Team capabilities</span><h2 id="capabilities-title">What your QA team will be able to do.</h2><ul class="outcomes outcomes-even"><li><span class="check" aria-hidden="true">✓</span><div><h3>Orchestrate quality with agentic AI.</h3><p>Direct AI agents for requirements analysis, test design, execution and triage — and integrate them into daily work.</p></div></li><li><span class="check" aria-hidden="true">✓</span><div><h3>Keep humans in the loop.</h3><p>Apply critical thinking to AI output: check assumptions, missed failure conditions and generated tests.</p></div></li><li><span class="check" aria-hidden="true">✓</span><div><h3>Evaluate AI with AI Evals.</h3><p>Define what “correct” means, build representative evaluation sets and compare model, prompt and agent changes objectively.</p></div></li><li><span class="check" aria-hidden="true">✓</span><div><h3>Prioritize with risk-based testing.</h3><p>Focus validation where failures would have the largest business impact.</p></div></li><li><span class="check" aria-hidden="true">✓</span><div><h3>Run self-healing test automation.</h3><p>Let agents detect application changes and propose automation fixes that QA reviews and approves.</p></div></li><li><span class="check" aria-hidden="true">✓</span><div><h3>Own continuous quality.</h3><p>Build quality feedback into every stage of the ADLC and back release decisions with evidence.</p></div></li></ul></div></section>
+<section class="section" id="impact" aria-labelledby="impact-title"><div class="wrap"><div class="section-head"><div><span class="section-id">05 / Business outcomes</span><h2 id="impact-title">Faster delivery. Sustained quality.<br>No extra headcount.</h2></div><p>The goal is not more testing. It is QA capability that keeps pace with AI-driven development.</p></div><div class="tools"><article class="tool"><h3>Faster delivery</h3><p>QA stops being the bottleneck when AI-generated code arrives faster than manual testing can follow. Quality feedback moves at AI speed.</p></article><article class="tool"><h3>Quality that holds</h3><p>Risk-based priorities, AI evals and human review keep release decisions grounded in evidence as delivery speeds up.</p></article><article class="tool"><h3>Transform, don’t hire</h3><p>Your QA engineers already know your products, architecture and customers. Transforming them preserves that knowledge instead of adding headcount.</p></article><article class="tool"><h3>AI adoption that lasts</h3><p>AI is embedded in your team’s real workflows, with clear quality responsibilities — not left as a tool trial nobody owns.</p></article></div><p class="fine" style="margin-top:20px">We agree measurable baselines with you at the start, such as feedback time, escaped defects and automation maintenance effort, rather than promising generic ROI figures.</p></div></section>
+<section class="section" id="approach" aria-labelledby="approach-title"><div class="wrap"><div class="section-head"><div><span class="section-id">06 / Our approach</span><h2 id="approach-title">Five steps from today’s QA<br>to AI-Augmented QA.</h2></div><p>Each step works on your own systems and delivery process, so new ways of working stay in place afterwards.</p></div><div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable transformation approach"><table><caption>Transformation approach — tailored to each organization</caption><thead><tr><th scope="col">Step</th><th scope="col">Focus</th><th scope="col">Your team leaves with</th></tr></thead><tbody><tr><th scope="row">01</th><td>Assess current QA capability</td><td>A capability baseline, AI readiness review and a transformation plan agreed with your leadership.</td></tr><tr><th scope="row">02</th><td>Shift the mindset</td><td>A shared understanding of the AI Development Lifecycle, human-in-the-loop review and redefined quality responsibilities.</td></tr><tr><th scope="row">03</th><td>Embed AI in daily quality work</td><td>AI-assisted requirements analysis, risk-based test design and AI evals running in your team’s real workflows.</td></tr><tr><th scope="row">04</th><td>Orchestrate and automate</td><td>Agentic, self-healing test automation and continuous quality feedback in your pipeline.</td></tr><tr><th scope="row">05</th><td>Recognize and sustain</td><td>Assessed competencies, EU-aligned micro-credentials and a roadmap for continued adoption.</td></tr></tbody></table></div><p class="curriculum-note">Examples can be drawn from your domain. For e-commerce teams, this includes checkout, payment retries, promotions and inventory contention.</p><div class="button-row"><a class="btn" href="#contact" data-inquiry="assessment">Request a capability assessment</a></div></div></section>
+<section class="section" id="tools" aria-labelledby="tools-title"><div class="wrap"><div class="section-head"><div><span class="section-id">07 / AI toolchain</span><h2 id="tools-title">Tool-enabled, not tool-dependent.</h2></div><p>Models and tools will change. The engineering principles and quality ownership your team builds remain valuable across them.</p></div><div class="tools"><article class="tool"><div class="tool-title"><img src="https://cdn.simpleicons.org/githubcopilot/111b22" width="40" height="40" alt="GitHub Copilot logo" loading="lazy"><h3>GitHub Copilot</h3></div><p>Generate and review test code. Refactor automation while preserving the intended assertions.</p><div class="use">In your workflow: turn a reviewed scenario into an executable test.</div></article><article class="tool"><div class="tool-title"><img src="https://cdn.simpleicons.org/claude/111b22" width="40" height="40" alt="Claude logo" loading="lazy"><h3>Claude</h3></div><p>Analyze requirements and architecture. Draft risks, edge cases and acceptance criteria for review.</p><div class="use">In your workflow: build a risk register from a requirement change.</div></article><article class="tool"><div class="tool-title"><img src="https://cdn.simpleicons.org/googlegemini/111b22" width="40" height="40" alt="Google Gemini logo" loading="lazy"><h3>Gemini</h3></div><p>Inspect interface screenshots and documentation together. Identify states that need validation.</p><div class="use">In your workflow: create a UI evidence checklist from a customer journey.</div></article><article class="tool"><div class="tool-title"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" width="40" height="40" alt="OpenAI logo for ChatGPT" loading="lazy"><h3>ChatGPT</h3></div><p>Challenge a proposed test strategy. Draft scenarios and refine a reusable quality workflow.</p><div class="use">In your workflow: turn risks and constraints into a reviewable test plan.</div></article></div><p class="fine" style="margin-top:20px">We work with the AI tools your organization already approves. Names and marks belong to their respective owners. Inclusion does not imply endorsement.</p></div></section>
+<section class="section" id="credentials" aria-labelledby="credentials-title"><div class="wrap"><div class="section-head"><div><span class="section-id">08 / Recognition</span><h2 id="credentials-title">Recognized competence,<br>not attendance certificates.</h2></div><p>We follow the European approach to micro-credentials to formally recognize the AI and QA competencies your engineers acquire.</p></div><div class="split"><div><p class="lede" style="margin-top:0">We develop our own clearly defined micro-credentials. Each one transparently describes the skills it represents, the competencies demonstrated and the criteria used to assess them.</p><ul class="credential-elements"><li>Defined learning outcomes and competencies</li><li>Transparent assessment criteria and method</li><li>Evidence from real work, not quiz scores</li><li>Stated workload and level</li><li>Issuer, holder and date of award</li></ul></div><div class="credential-list"><article class="credential"><span class="badge good">Micro-credential</span><h3>AI-Augmented QA Practitioner</h3><p>Uses AI in everyday quality work with human-in-the-loop review and critical thinking.</p></article><article class="credential"><span class="badge good">Micro-credential</span><h3>Risk-Based Testing with AI</h3><p>Uses AI to identify, rank and validate business-critical risks.</p></article><article class="credential"><span class="badge good">Micro-credential</span><h3>Quality Orchestration &amp; AI Evals</h3><p>Orchestrates agentic quality workflows and evaluates AI output against defined criteria.</p></article><article class="credential"><span class="badge good">Micro-credential</span><h3>Self-Healing Test Automation</h3><p>Designs and governs agent-maintained automation within continuous quality pipelines.</p></article></div></div><p class="curriculum-note">Proposed credential set. Full descriptions, competencies and assessment criteria will be published before engagements begin.</p></div></section>
+<section class="section" id="fit" aria-labelledby="fit-title"><div class="wrap"><span class="section-id">09 / Fit</span><h2 id="fit-title" style="margin-bottom:32px">Is this right for your organization?</h2><div class="split"><div class="fit-panel"><h3>A strong fit if…</h3><ul><li>Your developers already use AI and QA is becoming the bottleneck.</li><li>You want to grow the capability of your existing QA team rather than hire more testers.</li><li>You need clear quality ownership as roles start to overlap.</li></ul></div><div class="fit-panel secondary"><h3>Not the right fit if…</h3><ul><li>You are looking for a generic course or attendance certificate.</li><li>You only want AI tool licences or a list of prompts.</li><li>You expect AI to replace QA judgment and review.</li></ul></div></div></div></section>
+<section class="section" id="advisor" aria-labelledby="advisor-title"><div class="wrap"><span class="section-id">10 / Your advisor</span><div class="instructor-layout"><div class="photo-slot" role="img" aria-label="Advisor photo has not yet been supplied">Advisor photo<br>To be added</div><div class="instructor-copy"><span class="badge neutral">Details to be announced</span><h2 id="advisor-title">Your transformation advisor.</h2><p>The advisor’s name, experience and credentials will be published before engagements begin.</p><p>The profile will focus on Quality Engineering, AI adoption, test automation and leading QA transformation in delivery teams.</p><!-- Add the real photo, name, verified 2–3 sentence bio, relevant projects/results and LinkedIn URL. --></div></div></div></section>
+<section class="section" id="engagement" aria-labelledby="engagement-title"><div class="wrap"><span class="section-id">11 / Engagement</span><h2 id="engagement-title">Shaped around your team.</h2><dl class="launch-facts"><div><dt>Team size</dt><dd>Scoped per organization</dd></div><div><dt>Duration</dt><dd>Agreed after assessment</dd></div><div><dt>Delivery</dt><dd>On-site, remote or hybrid</dd></div><div><dt>Recognition</dt><dd>EU-aligned micro-credentials</dd></div><div><dt>Investment</dt><dd>Quoted per engagement</dd></div></dl><p class="pricing-note">Every engagement starts with a conversation about your delivery process, your QA team and the outcomes you need.</p><div class="button-row"><a class="btn" href="#contact" data-inquiry="consultation">Start the conversation</a><a class="btn btn-secondary" href="#contact" data-inquiry="assessment">Request a capability assessment</a></div></div></section>
+<section class="section dark" id="results" aria-labelledby="results-title"><div class="wrap"><div class="section-head"><div><span class="section-id">12 / Results</span><h2 id="results-title">Client results.</h2></div></div><div class="feedback-pending"><h3>Verified results are not available yet.</h3><p>Client outcomes and testimonials will be published when verified results are available.</p><!-- Replace with 2–3 real, approved client results or testimonials. --></div></div></section>
+<section class="section" id="faq" aria-labelledby="faq-title"><div class="wrap"><span class="section-id">13 / Questions</span><h2 id="faq-title" style="margin-bottom:30px">FAQ</h2><div class="faq-list"><details><summary>Is this a training course?</summary><p>No. Training teaches tools; this engagement changes how your QA team works. We work on your systems and delivery process to embed AI in daily quality work, redefine quality responsibilities and build lasting capability.</p></details><details><summary>Will we need to hire additional testers?</summary><p>The aim is the opposite: increase the capability of the QA engineers you already have, who know your products and domain, so quality keeps pace with AI-driven development.</p></details><details><summary>What happens to the QA role as it overlaps with development and business analysis?</summary><p>The boundaries become less distinct, but quality ownership remains critical. Part of the engagement is defining who owns which quality decisions across the AI Development Lifecycle.</p></details><details><summary>How are the micro-credentials recognized?</summary><p>They follow the European approach to micro-credentials, with transparent learning outcomes, competencies and assessment criteria. Full credential descriptions will be published before engagements begin.</p></details><details><summary>Which AI tools do we need?</summary><p>We work with the tools your organization already approves. The approach is tool-enabled, not tool-dependent, and any access requirements are agreed during scoping.</p></details></div></div></section>
+<section class="closing" aria-labelledby="closing-title"><div class="wrap"><h2 id="closing-title">Don’t add testers. Transform the QA team you have.</h2><p class="lede">Build the mindset, AI capability and quality ownership your organization needs to deliver faster in the AI Development Lifecycle.</p><div class="button-row"><a class="btn" href="#contact" data-inquiry="consultation">Start the conversation</a><a class="btn btn-secondary" href="#contact" data-inquiry="assessment">Request a capability assessment</a></div></div></section>
+<section class="section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><span class="section-id">14 / Next step</span><h2 id="contact-title">Talk to us about<br>your QA team.</h2><p class="lede">Tell us where your QA capability is today and what you need it to achieve. We’ll reply to arrange a conversation.</p><ul class="contact-points"><li>Discuss your delivery process and AI adoption.</li><li>Explore a capability assessment for your QA team.</li><li>Learn how the micro-credentials are defined and assessed.</li></ul><p class="fine" style="margin-top:22px">This form sends an inquiry. It does not schedule a meeting or create a commitment.</p></div><form class="form" id="inquiry-form" action="https://api.web3forms.com/submit" method="POST"><!-- Insert your public Web3Forms access key below. --><input type="hidden" name="access_key" value=""><input type="hidden" name="subject" value="AI-Driven QA Engineering — Consultation"><input type="hidden" name="from_name" value="AI-Driven QA Engineering"><input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true"><div class="form-grid"><div class="field field-wide"><label for="inquiry-type">I’m interested in <span aria-hidden="true">*</span></label><select id="inquiry-type" name="inquiry_type" required><option value="consultation">A transformation conversation</option><option value="assessment">A QA capability assessment</option><option value="credentials">Micro-credential details</option></select></div><div class="field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" autocomplete="name" maxlength="120" required></div><div class="field"><label for="email">Work email <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div><div class="field"><label for="company">Company <span aria-hidden="true">*</span></label><input id="company" name="company" autocomplete="organization" maxlength="180" required></div><div class="field"><label for="role">Role / title (optional)</label><input id="role" name="role" autocomplete="organization-title" maxlength="120"></div><div class="field field-wide"><label for="team-size">QA team size (optional)</label><select id="team-size" name="team_size"><option value="">Select</option><option>1–5</option><option>6–15</option><option>16–50</option><option>50+</option></select></div><div class="field field-wide"><label for="goals">What would you like your QA team to achieve? (optional)</label><textarea id="goals" name="message" maxlength="5000" placeholder="For example: keep pace with AI-generated code, reduce automation maintenance or define quality ownership across roles."></textarea></div></div><label class="consent"><input type="checkbox" name="contact_consent" value="yes" required><span>I agree to be contacted about this inquiry. I have read the <a href="#privacy-details" id="privacy-open">privacy notice</a>.</span></label><button class="btn" id="submit-button" type="submit">Start the conversation</button><p class="form-note">No spam. Your details will only be used to respond to your inquiry. Fields marked * are required.</p><div class="form-message" id="form-message" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div><noscript><p class="form-message error">Enable JavaScript to use this page’s inquiry form.</p></noscript><details class="privacy" id="privacy-details"><summary>Privacy notice</summary><p>Your name, email, company and any optional role, team size or message details are used to respond to your inquiry. Please do not include credentials or confidential project data.</p><p>If you submit an inquiry, Web3Forms processes it for delivery. See the <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms privacy policy</a>. You may ask the recipient of the reply to stop further contact.</p><!-- Add business/controller identity, contact, legal basis, retention and applicable rights before launch. --></details></form></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#top"><span class="brand-symbol" aria-hidden="true">✓</span><span>AI-Driven QA Engineering</span></a><div class="footer-links"><a href="#contact" data-inquiry="consultation">Talk to us</a><a href="#privacy-details" data-open-privacy>Privacy notice</a></div><p class="fine">© <span id="year">2026</span> AI-Driven QA Engineering</p></div></footer>
+<script>
+(() => {
+'use strict';
+const toggle=document.getElementById('nav-toggle');
+const nav=document.getElementById('site-nav');
+const setMenu=open=>{toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'Close':'Menu';nav.classList.toggle('is-open',open);};
+toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
+nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){setMenu(false);toggle.focus();}});
+window.matchMedia('(min-width:981px)').addEventListener('change',()=>setMenu(false));
+document.querySelectorAll('#privacy-open,[data-open-privacy]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('privacy-details').open=true;}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const form=document.getElementById('inquiry-form');
+const inquiry=document.getElementById('inquiry-type');
+const button=document.getElementById('submit-button');
+const message=document.getElementById('form-message');
+let submitting=false;
+const inquiryTypes={consultation:{button:'Start the conversation',subject:'Consultation'},assessment:{button:'Request a capability assessment',subject:'Capability assessment'},credentials:{button:'Request micro-credential details',subject:'Micro-credentials'}};
+const updateInquiry=()=>{const type=inquiryTypes[inquiry.value]||inquiryTypes.consultation;button.textContent=type.button;form.elements.subject.value='AI-Driven QA Engineering — '+type.subject;};
+inquiry.addEventListener('change',updateInquiry);
+document.querySelectorAll('[data-inquiry]').forEach(link=>link.addEventListener('click',()=>{if(submitting)return;inquiry.value=link.dataset.inquiry;updateInquiry();}));
+const showMessage=(text,state)=>{message.textContent=text;message.className='form-message '+state;message.focus();};
+form.addEventListener('submit',async event=>{
+ event.preventDefault();if(submitting||!form.reportValidity())return;if(form.elements.botcheck.checked)return;
+ if(!form.elements.access_key.value.trim()){showMessage('The inquiry service is not available yet. Your details have not been sent. Please try again when it is available.','error');return;}
+ const selected=inquiry.value;submitting=true;button.disabled=true;inquiry.disabled=true;button.textContent='Sending inquiry…';message.textContent='';form.setAttribute('aria-busy','true');
+ const controller=new AbortController();const timeout=window.setTimeout(()=>controller.abort(),20000);
+ try {
+  const fields=Object.fromEntries(new FormData(form));fields.inquiry_type=selected;delete fields.botcheck;
+  const response=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(fields),signal:controller.signal});
+  const result=await response.json();if(!response.ok||result.success!==true)throw new Error('Submission rejected');
+  form.reset();inquiry.value=selected;
+  showMessage('Your inquiry has been sent. We’ll reply to arrange a conversation about your QA team.','success');
+ } catch(error){showMessage(error.name==='AbortError'?'We could not confirm delivery in time. Your details are still here. Please check for a reply before sending again.':'We could not confirm delivery. Your details are still here. Please try again when the connection is available.','error');}
+ finally{window.clearTimeout(timeout);submitting=false;button.disabled=false;inquiry.disabled=false;updateInquiry();form.removeAttribute('aria-busy');}
+});
+updateInquiry();
+})();
+</script>
 </body>
 </html>

@@ -1,115 +1,68 @@
-# AI-Augmented Quality Engineering — Landing Page (v2)
+# QA Engineering with AI
 
-A static, QA/AI-specific landing page with a sign-up form, built to run on GitHub Pages with no backend.
+A single-page B2B landing page for an e-commerce Quality Engineering Transformation Program.
 
-This version implements the full improvement proposal. See "What changed" below for a checklist against the original P1/P2/P3 list.
+## Project contents
 
-## File structure
+- `index.html` — complete page, inline CSS and vanilla JavaScript.
+- `README.md` — launch configuration and verification notes.
 
-```
-course-landing/
-├── index.html              ← main page (edit the [bracketed] placeholders)
-├── thank-you.html           ← shown after a successful sign-up
-├── privacy.html              ← privacy notice, linked from the form and footer
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js               ← nav, sticky mobile CTA, form submission + redirect
-└── assets/
-    ├── favicon.png            ← add your own
-    ├── og-image.jpg            ← add your own (1200x630)
-    ├── og-pattern.svg           ← included — base pattern for building og-image.jpg
-    ├── instructor-photo.jpg      ← add your own
-    ├── testimonial-1.jpg          ← add your own (real participant only)
-    ├── testimonial-2.jpg          ← add your own (real participant only)
-    └── ai-qa-copilot-prompts.pdf   ← included, placeholder content — edit before publishing
+No build step or JavaScript framework is required. Open `index.html` in a browser to inspect it, or upload it to a static website host. Use HTTPS for the live page.
+
+Google Fonts and genuine Simple Icons logo images are linked externally. No local image assets are required. System font fallbacks keep the copy readable without Google Fonts. An internet connection is required to load the vendor logo images and submit inquiries.
+
+## Enable inquiry delivery
+
+The form uses Web3Forms. No working recipient key was supplied, so live submission is intentionally unconfigured.
+
+Find this field in `index.html`:
+
+```html
+<input type="hidden" name="access_key" value="">
 ```
 
-## 1. Fill in your content
+Insert your public Web3Forms access key into `value`. This key routes inquiries to the email configured in your Web3Forms account. Do not insert an API secret or a model-provider credential.
 
-Open `index.html` and replace every bracketed placeholder — course facts, comparison table rows, module titles, FAQ answers, instructor bio and credibility indicators, CTA line, etc. Also fill in `thank-you.html` (expected response time, LinkedIn link) and `privacy.html` (retention period, contact email, and any jurisdiction-specific rights).
+The form collects name, work email, company, role and the team's objective. It includes required-field validation, a honeypot, duplicate-submit prevention, pending feedback and success/error messages. It reports success only when Web3Forms confirms the request. Failed requests preserve the entered details. A successful inquiry requests a call; it does not reserve a meeting time.
 
-**Testimonials:** only add genuine quotes from real participants, with their real name and role. Leave the slots as placeholders (or remove the section) until you have real feedback — do not write quotes yourself and attribute them to a person.
+Before launch, submit an inquiry from the deployed domain and verify receipt at the intended address. No real inquiries were sent during development.
 
-**Lead magnet PDF:** `assets/ai-qa-copilot-prompts.pdf` is a real, working file with placeholder prompt text and section structure. Replace the bracketed prompts with your own 20 before linking to it publicly.
+Integration reference: https://docs.web3forms.com/how-to-guides/html-and-javascript
 
-**Video preview:** replace `VIDEO_ID` in the YouTube embed (in `index.html`, instructor section) with your real video's ID once you've recorded and uploaded it.
+## Finish your business details
 
-**OG image:** `assets/og-pattern.svg` shows the node/flow visual motif reused across the site. Use it as a starting point (open in any vector or design tool) to produce a real `assets/og-image.jpg` at 1200×630.
+1. Add a verified advisor name, a short biography, a real photo and a LinkedIn URL in the section marked `id="advisor"`. No identity, testimonial, certification or client result was invented.
+2. Complete the privacy notice with your business/controller identity, contact details, legal basis, retention period and applicable rights.
+3. Confirm the program's delivery format and duration. The current copy describes project-based enablement and scopes duration on the strategy call.
+4. If desired, add your contact email and verified LinkedIn link to the footer.
 
-## 2. Configure Web3Forms
+## Copy and conversion decisions
 
-1. Go to **web3forms.com** and sign up with your Gmail address.
-2. Create a form and copy the **Access Key**.
-3. In `index.html`, find:
-   ```html
-   <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-   ```
-4. Replace the placeholder with your real key.
+- Lead with the business bottleneck: faster AI development requires faster, reliable quality feedback.
+- Define SDLC and ADLC at first mention, then show the change in the engineer's responsibility.
+- Use e-commerce throughout, including duplicate payments, stock contention, pricing rules and peak traffic.
+- Show reviewable risk, test and triage artifacts instead of broad claims about AI.
+- Give Copilot, Claude and Gemini different jobs, with official capability links and a trademark note.
+- Include developers and platform engineers as well as QA; Quality Engineering is a capability for every AI Builder.
+- Tie business impact to measurable baselines rather than invented ROI percentages.
+- Use strategy-call CTAs throughout and keep the final inquiry form focused on qualification.
 
-On successful submission, the form now redirects to `thank-you.html` (configured via the form's `data-thankyou` attribute) instead of only showing an inline message.
+## Accessibility and responsive behavior
 
-## 3. Configure analytics (optional)
+Includes a skip link, semantic landmarks, labeled inputs, visible focus states, native table headers, a mobile navigation toggle, keyboard-accessible artifact tabs, readable status text and reduced-motion support. Narrow layouts stack content; wide tables and code snippets use their own scroll regions. The page includes fallbacks for navigation and artifact access when JavaScript is disabled.
 
-`index.html` includes a commented-out Cloudflare Web Analytics snippet in the `<head>`. To enable it:
-1. Sign up at cloudflare.com/web-analytics — it works on any site, not just ones hosted on Cloudflare.
-2. Copy the token it gives you.
-3. Uncomment the `<script>` block and paste in your token.
-4. Add the same snippet to `thank-you.html` — since that page only loads after a successful sign-up, its visit count is a simple proxy for conversions.
+## Verification performed
 
-## 4. Deploy to GitHub Pages
+- JavaScript syntax check passed.
+- Static HTML checks passed: one H1, unique IDs, working section anchors, labeled fields, scoped table headers, image alt text and no prohibited terminology in visible copy.
+- Interaction handlers passed isolated checks using DOM stubs and mocked requests: navigation toggle, Escape, link dismissal, keyboard tabs, privacy disclosure, unconfigured form guard, rejected submission, timeout feedback, confirmed success, honeypot and duplicate-submit prevention.
 
-1. Create a GitHub repository and push these files to the root (or a `/docs` folder):
-   ```bash
-   git init
-   git add .
-   git commit -m "AI-augmented QA landing page"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-   git push -u origin main
-   ```
-2. In the repo, go to **Settings → Pages** → set source to your branch/folder.
-3. Your site publishes at `https://YOUR-USERNAME.github.io/YOUR-REPO/`.
-4. Update `<link rel="canonical">`, the `og:url`/`og:image`/`twitter:image` meta tags, and the JSON-LD block in `index.html` with this final URL.
+Rendered desktop/mobile checks could not run because this environment had no browser binary and blocked the browser download. External logo CDN retrieval was also blocked here. Responsive CSS is implemented, but rendered layout, font loading, actual logo availability and live inquiry delivery still need verification in a normal browser before publication.
 
-## 5. Test before sharing
+## Vendor references
 
-- Submit the form yourself and confirm you land on `thank-you.html` and the email arrives in Gmail.
-- On a phone (or a browser's device toolbar): check the hamburger menu opens/closes (tap, Escape key, and tap-outside all close it), hero CTA buttons are full-width, and the sticky "Join the next cohort" bar appears once you scroll past the hero.
-- Click every nav/CTA anchor link and confirm the target heading isn't hidden behind the sticky header.
-- Run Lighthouse in Chrome DevTools for a quick accessibility/performance/SEO check.
+- GitHub Copilot: https://docs.github.com/en/copilot/get-started/about-github-copilot
+- Claude: https://platform.claude.com/docs/en/intro
+- Gemini image understanding: https://ai.google.dev/gemini-api/docs/image-understanding
 
-## What changed from v1 (mapped to your proposal)
-
-**P1**
-- Hero rewritten for QA engineers, with the Requirements → Test Design → Automation → Defects → Reporting chain shown directly under the headline.
-- Generic terminal replaced with the Requirement → AI Analysis → Risk Identification → Test Scenarios → Copilot-assisted Automation flow visual; this pattern is now the page's visual identity (reused in curriculum module markers and the `og-pattern.svg` asset).
-- Course facts strip added directly below the hero (Level, Duration, Format, Language, Tools, Next cohort).
-- "Old way / new way" expanded into a 6-row comparison table (Requirements Analysis, Test Planning, Test Design, Automation, Defect Analysis, Reporting).
-- "What you will actually build" section added with 6 concrete output cards (code/report fragments — replace with real screenshots).
-- Instructor section expanded: larger photo, title, expertise, credibility indicators, LinkedIn/GitHub links.
-- New, separate "Why learn from me" proof-card section (QA Leadership, AI + Copilot, Automation, Real engineering workflows).
-- Testimonials section added, structured for genuine quotes only — no fabricated testimonials included.
-- FAQ accordion added after the curriculum, covering prerequisites, coding level, tools, Copilot requirement, format, recordings, language, certificate, post-course support.
-- All CTAs unified to a single phrase: "Join the next cohort."
-- Privacy notice added under the form, plus a full `privacy.html` page.
-
-**P2**
-- `thank-you.html` added; form redirects there on success.
-- Cloudflare Web Analytics snippet included (commented out, ready to enable).
-- Palette changed to dark navy / off-white with electric blue + violet accents; typography moved to IBM Plex Sans for headings/body, IBM Plex Mono kept for technical labels and code.
-- Node/flow visual pattern reused across hero, curriculum, and provided as an SVG base for the OG image.
-- `scroll-margin-top` added to all anchor-target sections so the sticky nav never covers a heading on jump.
-- Mobile hero CTAs are full-width below 500px.
-- Mobile menu now closes on Escape and on click-outside, with an animated hamburger → X.
-- SEO improved: canonical URL, absolute OG/Twitter image references, Twitter card metadata, JSON-LD Course + Person structured data.
-- Free downloadable PDF added ("AI for QA — 20 GitHub Copilot Prompts"), placed near the instructor section — real file, placeholder content.
-- Course-preview video embed added near the instructor section (YouTube, placeholder video ID).
-- "Sample lesson" section added: Requirement → Prompt → AI Result → QA Review → Final Test Cases.
-
-**P3**
-- Sticky mobile-only CTA bar added, appearing once the visitor scrolls past the hero.
-
-## Notes on scale
-
-Web3Forms' free tier is generally suitable for tens to low hundreds of monthly sign-ups, but confirm current limits at web3forms.com/pricing before launch, since pricing pages change.
+Vendor names and marks belong to their respective owners. Their inclusion does not imply sponsorship or endorsement.

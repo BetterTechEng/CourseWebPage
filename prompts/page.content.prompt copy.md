@@ -1,11 +1,11 @@
 Here's a consolidated prompt that would produce this page in one pass, folding in everything from role/rules through the SDLC→ADLC and agent-testing content added later.
 
 ---
-
-# Prompt: AI-Augmented QA Landing Page (B2B, E-Commerce, ADLC-Focused)
+# Prompt: AI-Driven QA Engineering - Landing Page (B2B, E-Commerce, ADLC-Focused)
 
 ## Role & Goal
 Act as an expert Landing Page Conversion Specialist and Senior QA Strategy Advisor. Rewrite/build `index.html` into a high-converting B2B page aimed at decision-makers (CTOs, QA Leads/Managers, Engineering Directors) at small tech companies, selling an AI-augmented QA enablement offering.
+
 
 ## Objective
 Show immediate ROI in adopting AI-augmented QA, framed around a real shift in how software gets built: from the **SDLC** (Software Development Lifecycle — people plan/build/test in stages) to the **ADLC** (Agentic Development Lifecycle — AI agents build and test continuously while people direct and review). QA's job is changing, not just its tools. The goal is direct B2B bookings via a strategy-call form.
