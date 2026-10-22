@@ -1,0 +1,104 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ShopLite Architecture" id="shoplite-arch">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Boundaries -->
+        <mxCell id="laptop" value="Laptop uczestnika – localhost (lub GitHub Codespaces)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#666666;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1060" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="node" value="Proces Node.js – jeden port :3000 (npm start)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#f5f5f5;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="60" width="440" height="530" as="geometry" />
+        </mxCell>
+
+        <!-- Clients -->
+        <mxCell id="ui" value="&lt;b&gt;UI – SPA w przeglądarce&lt;/b&gt;&lt;br&gt;HTML5 + Tailwind (vendored) + Vanilla JS&lt;br&gt;hash router, koszyk w localStorage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="pw" value="&lt;b&gt;Playwright&lt;/b&gt;&lt;br&gt;testy UI (page) + testy API (request)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="swagger" value="&lt;b&gt;Swagger UI / Postman / curl&lt;/b&gt;&lt;br&gt;eksploracja API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="380" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ai" value="&lt;b&gt;Asystent AI&lt;/b&gt;&lt;br&gt;(poza aplikacją – ChatGPT / Claude / Gemini / Copilot)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="230" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Node process internals -->
+        <mxCell id="static" value="&lt;b&gt;Static&lt;/b&gt;&lt;br&gt;GET / → public/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="100" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="docs" value="&lt;b&gt;API docs&lt;/b&gt;&lt;br&gt;/api/docs ← openapi.yaml" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="560" y="100" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mw" value="&lt;b&gt;Middleware&lt;/b&gt;: requestId · logger · CORS · fault injection (latency/errors) · auth · error handler" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="170" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="&lt;b&gt;REST API /api&lt;/b&gt;&lt;br&gt;auth · products · cart/quote · orders · payments · admin · health" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="240" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="&lt;b&gt;Services (logika biznesowa)&lt;/b&gt;&lt;br&gt;pricing · inventory · orders · payments (mock) · auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="320" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="flags" value="&lt;b&gt;Config &amp;amp; Flags&lt;/b&gt;&lt;br&gt;version v1/v2 · bug flags · clock (FAKE_NOW)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="350" y="400" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dal" value="&lt;b&gt;Data access&lt;/b&gt;&lt;br&gt;better-sqlite3 · raw SQL · prepared statements · transakcje" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="470" width="400" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Data -->
+        <mxCell id="db" value="&lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;data/shoplite.db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="840" y="440" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="seed" value="&lt;b&gt;Seed&lt;/b&gt;&lt;br&gt;db/schema.sql&lt;br&gt;db/seed-data.json&lt;br&gt;public/img/*.svg" style="shape=note;whiteSpace=wrap;html=1;size=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="840" y="290" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dbtool" value="&lt;b&gt;DB Browser for SQLite&lt;/b&gt;&lt;br&gt;/ rozszerzenie VS Code&lt;br&gt;(weryfikacja danych)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="840" y="100" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" value="GET html/js/css" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="ui" target="static">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="fetch HTTP/JSON (same origin)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="ui" target="mw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="steruje" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="pw" target="ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="HTTP/JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="pw" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="HTTP/JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="swagger" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="mw" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="api" target="svc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="svc" target="flags">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="flags" target="dal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="dal" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="init / reset" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="seed" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="SELECT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="dbtool" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
