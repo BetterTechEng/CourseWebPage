@@ -63,7 +63,7 @@
 
 | ID | Decyzja | Alternatywa | Uzasadnienie |
 |---|---|---|---|
-| ADR-01 | Node.js 22 LTS (lub nowszy LTS) + Express 4/5 | Python + FastAPI | Jeden runtime razem z Playwrightem. FastAPI ma lepsze automatyczne OpenAPI, ale wymaga instalacji Pythona. |
+| ADR-01 | Node.js 24 LTS (minimum 22, `engines: ">=22"`) + Express 4/5 | Python + FastAPI | Jeden runtime razem z Playwrightem. FastAPI ma lepsze automatyczne OpenAPI, ale wymaga instalacji Pythona. |
 | ADR-02 | `better-sqlite3` (synchroniczne, prebuilt binaries dla Win/macOS/Linux) | wbudowany `node:sqlite` | Stabilne i proste transakcje. `node:sqlite` rozważyć, gdy będzie stabilny w LTS, bo usunie natywną zależność. |
 | ADR-03 | Spec-first OpenAPI: ręcznie utrzymywany `openapi.yaml` + `swagger-ui-express` | adnotacje w kodzie | Kontrakt jest artefaktem do testowania („czy API zgadza się z dokumentacją?”). |
 | ADR-04 | Vanilla JS (moduły ES) + hash router | Alpine.js | Brak dodatkowej abstrakcji, łatwiejsza praca z AI i przewidywalny DOM dla testów. |
@@ -495,7 +495,8 @@ specyfikacją (shoplite-tech-spec.md). Specyfikacja jest źródłem prawdy – j
 niejednoznaczne, ZAPYTAJ zamiast zgadywać.
 
 Zasady:
-1. Stos: Node.js 22 LTS, Express, better-sqlite3, swagger-ui-express, bcryptjs, vanilla JS (ES modules)
+1. Stos: Node.js 24 LTS (minimum 22, w package.json "engines": { "node": ">=22" }), Express, better-sqlite3
+   (wersja z gotowymi binarkami dla Node 24 na Windows/macOS/Linux), swagger-ui-express, bcryptjs, vanilla JS (ES modules)
    na froncie, Tailwind vendorowany lokalnie. Bez bundlera, bez TypeScriptu w aplikacji, bez ORM.
 2. Pracuj ETAPAMI z sekcji 11. Po każdym etapie: pokaż drzewo zmienionych plików, uruchom testy
    etapu, wypisz jak ręcznie zweryfikować wynik, i ZATRZYMAJ SIĘ na moją akceptację.
