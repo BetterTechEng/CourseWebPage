@@ -496,6 +496,9 @@
 
     // ---- SDLC / ADLC illustration (SVG text lines)
     'svg.02': 'Sześć etapów SDLC z 1, 1, 4, 3, 2 i 2 ikonami ludzi; sześć etapów hybrydowego SDLC z 1, 1, 2, 1, 1 i 1 człowiekiem oraz jednym agentem AI w każdym; role w ADLC: Business Architect z jednym człowiekiem i dwoma agentami, AI Engineer (Software Builder) z dwoma ludźmi i czterema agentami oraz System Architect z jednym człowiekiem i dwoma agentami. Sześć niebieskich strzałek łączy SDLC z hybrydowym SDLC; jedna duża strzałka łączy hybrydowy SDLC z ADLC.',
+    'img.sdlc.src': 'assets/sdlc-vs-adlc-pl.webp',
+    'img.sdlc.srcset': 'assets/sdlc-vs-adlc-pl-640.webp 640w, assets/sdlc-vs-adlc-pl.webp 1122w',
+    'img.sdlc.href': 'assets/sdlc-vs-adlc-pl.webp',
   };
 
   var nodes = [];   // {el, key, en}
