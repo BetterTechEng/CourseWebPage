@@ -208,7 +208,6 @@
     // ---- 03 quality ownership
     'role.01': '03 / Odpowiedzialność za jakość',
     'role.02': 'Granice QA się zacierają.<br>Odpowiedzialność za jakość — nie.',
-    'role.03': 'QA, programowanie i analiza biznesowa coraz bardziej się nakładają. Ktoś wciąż musi odpowiadać na pytanie „czy możemy to wypuścić?”',
     'role.04': 'Dzięki AI programiści generują testy, analitycy walidują wymagania, a inżynierowie QA piszą kod z agentami. Ta edycja przygotowuje Cię do podejmowania tych decyzji — popartych dowodami — niezależnie od tego, co jeszcze obejmuje Twoja rola w zespole.',
     'role.05': 'Ewolucja roli',
     'role.06': 'Ekspertyza zostaje · Zakres rośnie',
