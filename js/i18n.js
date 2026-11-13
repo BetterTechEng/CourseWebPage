@@ -85,7 +85,6 @@
     'hero.42': 'Twój proces spotyka prawdziwe wydanie',
     'hero.43': 'Tydz. 8',
     'hero.44': 'AI wykonuje żmudną pracę. Ty pozostajesz sędzią jakości.',
-    'hero.45': 'Twoje osiem tygodni w programie: jedna premiera, osiem etapów, dwa spotkania na żywo w tygodniu.',
 
     // ---- 01 why now
     'why.01': '01 / Dlaczego teraz',
@@ -331,7 +330,6 @@
     'journey.54': 'Jak to działa · 4',
     'journey.55': 'Rytm',
     'journey.56': 'Dwa spotkania na żywo w tygodniu i samodzielne działanie w systemach Lumeo, łącznie 4–6 godzin tygodniowo.',
-    'journey.57': 'Przez cały czas prowadzisz dziennik AI: każdy wynik AI wraz z Twoją decyzją.',
     'journey.58': 'Zarezerwuj miejsce',
     'journey.59': 'Przewijane etapy AI-Driven QA Journey',
 
@@ -372,8 +370,8 @@
     'topics.35': '<strong>Analiza przyczyn źródłowych z AI:</strong> hipotezy sprawdzane na dowodach',
     'topics.36': '<strong>Raportowanie i decyzje o wydaniu</strong> bez zmyślonych metryk',
     'topics.37': '<strong>Ocena wyników AI</strong> za pomocą rubryk i mini-ewaluacji',
-    'topics.38': 'Wspierane przez narzędzia, ale od nich niezależne.',
-    'topics.39': 'Każde wyzwanie da się wykonać w dowolnym z tych asystentów. Wystarczy darmowy plan; płatny jest zalecany.',
+    'topics.38': 'Nauka Modeli AI',
+    'topics.39': 'Kluczem do sukcesu jest dopasowanie odpowiedniego modelu sztucznej inteligencji do specyfiki stawianego przed nim zadania.',
     'topics.40': 'GitHub Copilot',
     'topics.41': 'Generuj i recenzuj kod testów w VS Code. Sprawdzaj, co zmienia agent, zanim to zaakceptujesz.',
     'topics.42': 'W programie: zamień zrecenzowany scenariusz w test automatyczny.',
@@ -386,7 +384,6 @@
     'topics.49': 'ChatGPT',
     'topics.50': 'Kwestionuj strategię testów, proponuj dane testowe i przygotuj szkic raportu z podanych przez Ciebie faktów.',
     'topics.51': 'W programie: zamień ryzyka w plan testów gotowy do recenzji.',
-    'topics.52': 'Nazwy i znaki należą do ich właścicieli. Ich użycie nie oznacza poparcia.',
     'topics.53': 'Kroki AI Verification Loop',
     'topics.54': 'Logo GitHub Copilot',
     'topics.55': 'Logo Claude',
@@ -394,30 +391,6 @@
     'topics.57': 'Logo OpenAI dla ChatGPT',
 
     // ---- 08 recognition
-    'recognition.01': '08 / Potwierdzenie kompetencji',
-    'recognition.02': 'Dowód kompetencji,<br>a nie certyfikat uczestnictwa.',
-    'recognition.03': 'Nie ma certyfikatu. Wychodzisz z ośmioma działającymi rozwiązaniami i opisanym procesem — dowodem Twoich kompetencji, niezależnie od branży i stanowiska.',
-    'recognition.04': 'Twoje portfolio to osiem rozwiązań zbudowanych w Lumeo, przechowywanych we własnym repozytorium, oraz opis procesu jakości, który możesz zastosować w dowolnym projekcie.',
-    'recognition.05': 'Mapa procesu jakości AI-first',
-    'recognition.06': 'Zweryfikowane wymagania z kryteriami akceptacji',
-    'recognition.07': 'Analiza ryzyka i zestaw przypadków testowych',
-    'recognition.08': 'Generator danych testowych',
-    'recognition.09': 'Działający zestaw testów automatycznych',
-    'recognition.10': 'Narzędzie o powtarzalnym wyniku',
-    'recognition.11': 'Zintegrowany proces jakości',
-    'recognition.12': 'Wdrożony proces i jego opis',
-    'recognition.13': 'W cenie',
-    'recognition.14': 'Portfolio działających rozwiązań',
-    'recognition.15': 'Osiem etapów, a każdy kończy się rozwiązaniem działającym w systemach Lumeo.',
-    'recognition.16': 'W cenie',
-    'recognition.17': 'Informacja zwrotna do efektów uczenia się',
-    'recognition.18': 'Twoje rozwiązania są oceniane według przejrzystych rubryk, odniesionych do efektów uczenia się.',
-    'recognition.19': 'W cenie',
-    'recognition.20': 'Samoocena przed i po',
-    'recognition.21': 'Te same stwierdzenia i krótki test scenariuszowy przed programem i po nim, aby Twój postęp był widoczny.',
-    'recognition.22': 'Planowane',
-    'recognition.23': 'Mikropoświadczenia',
-    'recognition.24': 'Rozważane dla kolejnych edycji. Nie są częścią obecnej oferty.',
 
     // ---- 09 who it's for
     'fit.01': '09 / Dla kogo',
@@ -503,6 +476,16 @@
     'results.04': 'Opinie uczestników i wyniki opublikujemy po jej zakończeniu. Mierzymy zadowolenie po każdym etapie, postępy w efektach uczenia się oraz to, co uczestnicy stosują w praktyce 30 dni później.',
 
     // ---- 13 FAQ
+    // ---- 08 pricing
+    'pricing.01': '08 / Cennik',
+    'pricing.02': 'Cennik',
+    'pricing.03': 'Lista oczekujących',
+    'pricing.04': 'Otrzymasz:',
+    'pricing.05': '8 tygodni pracy bazując na istniejącym projekcie e-commerce',
+    'pricing.06': '10 obszernych lekcji + ćwiczenia',
+    'pricing.07': 'Nagrywane sesje LIVE Q&amp;A — dwie sesje co tydzień',
+    'pricing.08': 'Wszystkie instrukcje i materiały od prowadzących',
+    'pricing.09': '12 miesięcy dostępu do materiałów',
     'faq.01': '13 / FAQ',
     'faq.21': 'Najczęściej zadawane pytania',
     'faq.22': 'Masz dodatkowe pytania?',
