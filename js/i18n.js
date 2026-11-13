@@ -42,7 +42,7 @@
     'nav.10': 'Menu główne',
 
     // ---- hero
-    'hero.01': 'Otwarta edycja · Online',
+    'hero.01': 'Zapisy na I edycję',
     'hero.02': 'Dla osób z IT: testerów, analityków systemowych i analityków wymagań',
     'hero.03': 'Zostań inżynierem jakości, który wie, kiedy zaufać AI',
     'hero.04': 'Ośmiotygodniowa edycja online: jedna premiera, osiem etapów, AI na każdym kroku — a decyzje podejmujesz Ty.',
