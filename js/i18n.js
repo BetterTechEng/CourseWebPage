@@ -43,13 +43,12 @@
 
     // ---- hero
     'hero.01': 'Zapisy na I edycję',
-    'hero.02': 'Dla osób z IT: testerów, analityków systemowych i analityków wymagań',
     'hero.03': 'Zostań inżynierem jakości, który wie, kiedy zaufać AI',
     'hero.04': 'Ośmiotygodniowa edycja online: jedna premiera, osiem etapów, AI na każdym kroku — a decyzje podejmujesz Ty.',
     'hero.05': 'Dołączasz do Lumeo, szybko rosnącego sklepu internetowego, jako inżynier jakości. Za osiem tygodni jego nowa platforma sprzedażowa wystartuje, a Ty od podstaw projektujesz proces jakości oparty na AI i uruchamiasz go w systemach Lumeo przed dniem premiery.',
     'hero.06': 'AI przygotowuje szkic. Ty weryfikujesz, decydujesz i dokumentujesz.',
     'hero.07': 'Zarezerwuj miejsce',
-    'hero.08': 'Zobacz podróż',
+    'hero.08': 'Program',
     'hero.09': 'Format',
     'hero.10': '8 tygodni online · 2 spotkania na żywo w tygodniu',
     'hero.11': 'Dla kogo',
@@ -464,7 +463,7 @@
     'cohort.08': 'Nakład pracy tygodniowo',
     'cohort.09': 'Łącznie 4–6 godz.',
     'cohort.10': 'Wielkość grupy',
-    'cohort.11': '8–16 uczestników',
+    'cohort.11': 'maks. 100',
     'cohort.12': 'Cena',
     'cohort.13': 'Wkrótce',
     'cohort.14': 'Dzień zero · luty',
@@ -532,7 +531,7 @@
     'closing.01': 'Nie ucz się tylko narzędzi AI. Naucz się inaczej myśleć i pracować.',
     'closing.02': 'Osiem tygodni, jedna prawdziwa premiera i sposób pracy z AI, który zabierzesz do każdego projektu.',
     'closing.03': 'Zarezerwuj miejsce',
-    'closing.04': 'Zobacz podróż',
+    'closing.04': 'Program',
 
     // ---- 14 contact form
     'contact.01': '14 / Rezerwacja',
