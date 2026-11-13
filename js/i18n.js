@@ -535,12 +535,11 @@
     'closing.04': 'Zobacz podróż',
 
     // ---- 14 contact form
-    'contact.01': '14 / Następny krok',
+    'contact.01': '14 / Rezerwacja',
     'contact.02': 'Zarezerwuj miejsce<br>w najbliższej edycji.',
-    'contact.03': 'Edycja jest planowana na 1 lutego – 26 marca 2027. Cena nie jest jeszcze ostateczna. Zarezerwuj miejsce, a cenę poznasz, zanim ją ogłosimy — wtedy zdecydujesz.',
-    'contact.04': 'Poznaj cenę i warunki, zanim zostaną opublikowane.',
-    'contact.05': 'Zabezpiecz miejsce w edycji startującej 1 lutego 2027.',
-    'contact.06': 'Rezerwacja miejsca nie jest zakupem i nie tworzy zobowiązania. Potwierdzimy terminy, cenę i warunki, zanim zapłacisz.',
+    'contact.03': 'Data Rozpoczęcia',
+    'contact.04': 'Maks. Ilość Miejsc',
+    'contact.05': '01.02.2027',
     'contact.07': 'Chcę <span aria-hidden="true">*</span>',
     'contact.08': 'zarezerwować miejsce w najbliższej edycji',
     'contact.09': 'zadać pytanie',
