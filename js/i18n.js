@@ -206,7 +206,7 @@
     'mindset.26': 'Przewijane porównanie tradycyjnego QA i QA wspieranego przez AI',
 
     // ---- 03 quality ownership
-    'role.01': '03 / Odpowiedzialność za jakość',
+    'role.01': '03 / Nowe odpowiedzialności',
     'role.02': 'Granice QA się zacierają.<br>Odpowiedzialność za jakość — nie.',
     'role.04': 'Dzięki AI programiści generują testy, analitycy walidują wymagania, a inżynierowie QA piszą kod z agentami. Ta edycja przygotowuje Cię do podejmowania tych decyzji — popartych dowodami — niezależnie od tego, co jeszcze obejmuje Twoja rola w zespole.',
     'role.05': 'Ewolucja roli',
@@ -231,7 +231,7 @@
     'role.25': 'Odpowiadaj za jakość.',
 
     // ---- 04 learning outcomes
-    'outcomes.01': '04 / Efekty uczenia się',
+    'outcomes.01': '04',
     'outcomes.02': 'Co będziesz potrafić.',
     'outcomes.04': 'Kwestionować wymagania z pomocą AI.',
     'outcomes.05': 'Znajdziesz luki i sprzeczności w specyfikacji, odrzucisz zmyślone wymagania i zamienisz to, co zostanie, w zweryfikowane wymagania z kryteriami akceptacji.',
@@ -277,7 +277,7 @@
     'lumeo.29': 'Wyłącznie fikcyjne dane: użytkownicy, produkty i karty testowe',
 
     // ---- 06 journey
-    'journey.01': '06 / AI-Driven QA Journey',
+    'journey.01': '06 / Program',
     'journey.02': 'Jedna premiera. Osiem etapów.<br>Osiem tygodni.',
     'journey.04': 'AI-Driven QA Journey — Dzień zero i osiem etapów',
     'journey.05': 'Etap',
@@ -337,7 +337,7 @@
     'journey.59': 'Przewijane etapy AI-Driven QA Journey',
 
     // ---- 07 AI topics
-    'topics.01': '07 / Tematy AI',
+    'topics.01': '07 / Modele Sztucznej Inteligencji',
     'topics.02': 'Umiejętności AI, uczone dokładnie<br>tam, gdzie ich potrzebujesz.',
     'topics.04': 'AI Verification Loop',
     'topics.05': 'Kontekst',
@@ -441,10 +441,10 @@
     'fit.18': 'Otwartości na zmianę sposobu pracy i czasu na 4–6 godzin tygodniowo przez osiem tygodni.',
 
     // ---- 10 trainer
-    'trainer.01': '10 / Twoi trenerzy',
+    'trainer.01': '10 / Prowadzący',
     'trainer.02': 'Zdjęcie trenera<br>Wkrótce',
     'trainer.03': 'Szczegóły wkrótce',
-    'trainer.04': 'Twoi trenerzy.',
+    'trainer.04': 'Prowadzący.',
     'trainer.05': 'Imiona i nazwiska trenerów, ich doświadczenie i tło zawodowe opublikujemy razem z terminami edycji.',
     'trainer.07': 'Zdjęcie trenera nie zostało jeszcze dostarczone',
     'trainer.n1': 'Trener 1 — imię i nazwisko wkrótce',
@@ -504,8 +504,11 @@
     'results.04': 'Opinie uczestników i wyniki opublikujemy po jej zakończeniu. Mierzymy zadowolenie po każdym etapie, postępy w efektach uczenia się oraz to, co uczestnicy stosują w praktyce 30 dni później.',
 
     // ---- 13 FAQ
-    'faq.01': '13 / Pytania',
-    'faq.02': 'FAQ',
+    'faq.01': '13 / FAQ',
+    'faq.21': 'Najczęściej zadawane pytania',
+    'faq.22': 'Masz dodatkowe pytania?',
+    'faq.23': 'E-mail',
+    'faq.24': 'Telefon',
     'faq.03': 'Czy potrzebuję płatnej subskrypcji AI?',
     'faq.04': 'Nie. Darmowy plan ChatGPT, Claude, Gemini lub GitHub Copilot wystarczy do każdego wyzwania. Płatny plan jest zalecany, bo daje dłuższe rozmowy i mniej limitów.',
     'faq.05': 'Jakiego sprzętu i oprogramowania potrzebuję?',
