@@ -393,7 +393,7 @@
     // ---- 08 recognition
 
     // ---- 09 who it's for
-    'fit.01': '09 / Dla kogo',
+    'fit.01': '08 / Dla kogo',
     'fit.02': 'Czy ta edycja jest dla Ciebie?',
     'fit.03': 'To dobre dopasowanie, jeśli…',
     'fit.04': 'Masz doświadczenie w projektach IT, na przykład w testowaniu, analizie systemowej lub analizie wymagań.',
@@ -413,7 +413,7 @@
     'fit.18': 'Otwartości na zmianę sposobu pracy i czasu na 4–6 godzin tygodniowo przez osiem tygodni.',
 
     // ---- 10 trainer
-    'trainer.01': '10 / Prowadzący',
+    'trainer.01': '09 / Prowadzący',
     'trainer.02': 'Zdjęcie trenera<br>Wkrótce',
     'trainer.03': 'Szczegóły wkrótce',
     'trainer.04': 'Prowadzący.',
@@ -427,7 +427,7 @@
     'trainer.b2': 'Krótki opis: dwa–trzy zdania o doświadczeniu w inżynierii jakości, automatyzacji testów i wykorzystaniu AI w codziennej pracy testowej.',
 
     // ---- 11 the cohort
-    'cohort.01': '11 / Edycja',
+    'cohort.01': '10 / Edycja',
     'cohort.02': 'Najbliższa edycja:<br>1 lut – 26 mar 2027.',
     'cohort.04': 'Czas trwania',
     'cohort.05': '8 tygodni + Dzień zero',
@@ -470,14 +470,14 @@
     'cohort.42': 'Harmonogram edycji',
 
     // ---- 12 results
-    'results.01': '12 / Wyniki',
+    'results.01': '11 / Wyniki',
     'results.02': 'Opinie uczestników.',
     'results.03': 'Pierwsza edycja to pilotaż.',
     'results.04': 'Opinie uczestników i wyniki opublikujemy po jej zakończeniu. Mierzymy zadowolenie po każdym etapie, postępy w efektach uczenia się oraz to, co uczestnicy stosują w praktyce 30 dni później.',
 
     // ---- 13 FAQ
     // ---- 08 pricing
-    'pricing.01': '08 / Cennik',
+    'pricing.01': '13 / Cennik',
     'pricing.02': 'Cennik',
     'pricing.03': 'Lista oczekujących',
     'pricing.04': 'Otrzymasz:',
@@ -486,7 +486,7 @@
     'pricing.07': 'Nagrywane sesje LIVE Q&amp;A — dwie sesje co tydzień',
     'pricing.08': 'Wszystkie instrukcje i materiały od prowadzących',
     'pricing.09': '12 miesięcy dostępu do materiałów',
-    'faq.01': '13 / FAQ',
+    'faq.01': '12 / FAQ',
     'faq.21': 'Najczęściej zadawane pytania',
     'faq.22': 'Masz dodatkowe pytania?',
     'faq.23': 'E-mail',
